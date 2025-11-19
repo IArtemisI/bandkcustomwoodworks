@@ -1,0 +1,183 @@
+/* Header Styles */
+header {
+  background: #3e2b23;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #d8b56a;
+}
+
+.logo {                 /*Logo Image*/
+  height: 300px;
+  width: auto;
+  margin-bottom: -180px;
+  background-color: #3e2b23;
+  z-index: 3;
+  clip-path: circle(51%);
+}
+
+/* Navigation Styles */
+nav a {
+  color: #d8b56a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
+  transition: color 0.1s ease, border-bottom 0.1s ease;
+}
+
+nav ul {
+  padding: 0;
+  margin: 10px 0 0;
+} 
+
+nav li {
+  display: inline-block;
+  margin: 0 18px;
+}
+
+nav a:hover {
+  color: #f2d89b;
+  border-bottom: 2px solid #f2d89b;
+  padding-bottom: 2px;
+}
+/* Welcome Section */
+.welcome {
+  position: relative;
+  width: 100%;
+  padding: 50px 0 10px; 
+  text-align: center;
+  background-image: url("background-images/wood-panels.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay that covers the whole section */
+.welcome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);  /* adjust darkness here */
+  z-index: 1;
+}
+
+/* Ensure text stays ABOVE the overlay */
+.welcome p {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 25px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  background: none; /* remove background from text */
+}
+
+  /* Card Styles */
+.products-title {
+  color: #742626;
+  font-size: 28px;
+  margin-top: 40px;     /* adds breathing room above */
+  margin-bottom: 20px;
+  text-align: center;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;   
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 22px;
+  color: #742626;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Structural Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  background: #f9f4ef;
+}
+
+footer {
+  background: #3e2b23;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 6px solid #d8b56a;
+}
+
+/* --------------------------------Available Woods Page Styles----------------------------------------- */
+.available-woods-page h2 {           
+  font-size: 36px;
+  text-align: center;
+  color: #742626;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d8b56a;
+  padding-bottom: 10px;
+}
+
+.wood-name h3 {           
+  font-size: 20px;
+  text-align: center;
+  color: #742626;
+}
+
+.wood-name h4 {           
+  font-size: 16px;
+  text-align: center;
+  color: #742626;
+}
+.wood-name p {
+  font-size: 16px;
+  text-align: center;
+  color: #742626;
+}
+
+.container-wood {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;   
+  justify-content: center;
+}
+
+.card-wood {
+  background: white;
+  padding: 10px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
