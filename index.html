@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>B&K Custom Woodworks</title>   
+    <link rel="stylesheet" href="main-style.css" />
+  </head>
+<!-----------------------------------------------------Navigation-----------------------------------------------------><!--#region-->
+  <body>
+    <header class="nav-header">
+      <nav class="nav-bar">
+        <img src="Logo.svg" class="nav-logo" alt="">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#available-woods">Available Woods</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--------------------------- #endregion --------------------------------->
+
+<!----------------------------------------------------Hero Section--------------------------------------------------><!--#region-->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img src="Logo.svg" alt="B&K Custom Woodworks Logo" class="hero-logo">
+        <h1>B&K Custom Woodworks</h1>
+        <p>Handcrafted Woodworks For Every Home.</p>
+      </div>
+    </section>
+    <!--------------------------- #endregion --------------------------------->
+
+<!--------------------------------------------------------Welcome ---------------------------------------------><!--#region-->
+    <div class="section-divider"></div>    
+    <section class="welcome">
+      <h2>Welcome to B&K Custom Woodworks</h2>
+      <p>
+        We are a family-owned shop based in the small town of Wilson,
+        Oklahoma. What started as a simple hobby quickly turned into a passion for 
+        keeping traditional woodworking alive. We specialize in handcrafted butcher 
+        blocks, but have extensive experience in crafting high end furniture as well. 
+        Our products are made with high quality exotic hardwoods that will stand 
+        the test of time ensuring they can be shared with future generations. 
+      </p>
+    </section>
+    <div class="section-divider"></div>
+    <!--------------------------- #endregion --------------------------------->
+
+<!----------------------------------------------------Image Slides--------------------------------------------------><!--#region-->
+    <section class="simple-slider">
+      <button class="arrow prev">‹</button>
+      
+      <div class="slides">
+        <img src="product-images/wood-console-table.jpeg" class="slide active">
+        <img src="product-images/set-of-three.jpg" class="slide">
+        <img src="product-images/shop-display.jpg" class="slide">
+      </div>
+
+      <button class="arrow next">›</button>
+      
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+    <!--------------------------- #endregion --------------------------------->
+
+<!--------------------------------------------------Available Woods-------------------------------------------------><!--#region-->
+    <section id="available-woods" class="available-woods-page">
+    <h2 class="fade-in">Available Woods</h2>
+      <section class="wood-grid">
+
+        <article class="wood-card fade-in">  <!-- Purple Heart Card -->
+          <img src="available-woods/purpleheart.jpg" alt="purple heart">
+          <div class="wood-info">
+            <h3>Purple Heart</h3>
+            <p>Purple heart is a beautiful tropical hardwood that is native to Central
+              and South America. It has a medium texture with purple and red undertones.
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">   <!-- Bodark Card -->
+          <img src="available-woods/bodark.jpg" alt="bodark">
+          <div class="wood-info">
+            <h3>Bodark</h3>
+            <p> Bodark is a straight grain hardwood native in the south-central region of the
+              United States. It has a fine to medium texture with a bright yellow to orange hue.
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">    <!-- Bloodwood Card -->
+          <img src="available-woods/bloodwood.jpg" alt="bloodwood">
+          <div class="wood-info">
+            <h3>Blood Wood</h3>
+            <p>Blood wood is a striking hardwood that is native to South America.
+              It has a medium to coarse texture with a deep red color that resembles
+              dried blood.
+            </p>
+          </div>  
+        </article>
+        
+        <article class="wood-card fade-in">   <!-- Padauk Card -->
+          <img src="available-woods/Padauk.jpg" alt="padauk">
+          <div class="wood-info">
+            <h3>African Padauk</h3>
+            <p>Padauk is a tropical hardwood native to Africa and Southeast Asia.
+              It has a medium to coarse texture with a vibrant reddish-orange color that
+              tends to darken over time. 
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">   <!-- Zebra Wood Card -->
+          <img src="available-woods/zebrawood.jpg" alt="zebrawood">
+          <div class="wood-info">
+            <h3>Zebra Wood</h3>
+            <p>Zebra wood is an exotic hardwood native to West Africa.
+            It has a medium to coarse texture with a distinctive striped pattern
+            resembling that of a zebra.
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">    <!-- Black Walnut Card -->
+          <img src="available-woods/blackwalnut.jpg" alt="black walnut">
+          <div class="wood-info">
+            <h3>Black Walnut</h3>
+            <p>Black walnut is a hardwood native to North America.
+              It has a fine to medium texture with a rich dark brown color and
+              beautiful grain patterns.
+            </p> 
+          </div>
+        </article>
+
+      </section>
+    </section>  
+    <!--------------------------- #endregion --------------------------------->
+
+<!--------------------------------------------------------Footer---------------------------------------------------------><!--#region-->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#available-woods">Available Woods</a>
+    <a href="products.html">Our Work</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <p>© B&K Custom Woodworks — Handcrafted Woodworks For Every Home.</p>
+</footer>
+<!--------------------------- #endregion --------------------------------->
+
+<!-------------------------------------------Javascript Slide Functionality------------------------------><!--#region-->
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
+
+      let index = 0;
+
+      function showSlide(i) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        dots.forEach(dot => dot.classList.remove("active"));
+
+        slides[i].classList.add("active");
+        dots[i].classList.add("active");
+      }
+
+      next.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      });
+
+      prev.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          showSlide(index);
+        });
+      });
+    </script>
+    <!--------------------------- #endregion --------------------------------->
+
+<!--------------------------------------------Javascript Card Fade in------------------------------------><!--#region-->
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.2
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+<!--------------------------- #endregion --------------------------------->
+
+  </body>
+</html>
