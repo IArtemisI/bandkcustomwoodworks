@@ -1,49 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Products - Your Dad's Woodworking</title>
-    <link rel="stylesheet" href="main-style.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Our Work – B&K Custom Woodworks</title>
+  <link rel="stylesheet" href="main-style.css" />
+</head>
 
-  <body>
-    <header>
-      <section class="logo-heading">
-        <img src="Logo.svg" alt="B&K Custom Woodworks Logo" class="logo">
-        <h1>B&K Custom Woodworks</h1>
-      </section>  
-      
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="available-woods.html">Available Woods</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+<body>
 
-    <main>
-      <h2 class="page-title">Products</h2>
-      
-      <section>
-        <h3>Cutting Boards</h3>
-        <p>Made from exotic hardwoods like bodark, padauk, purpleheart, and bloodwood.</p>
-      </section>
+<!---------------------------------------------------------- Navigation-----------------------------------------------><!--#region-->
+  <header class="nav-header">
+    <button class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <section>
-        <h3>Butcher Blocks</h3>
-        <p>Durable and beautifully crafted for everyday use.</p>
-      </section>
+    <div class="nav-overlay">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#available-woods">Available Woods</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--#endregion-->
 
-      <section>
-        <h3>Furniture</h3>
-        <p>Custom handmade pieces built with care.</p>
-      </section>
-    </main>
+<!------------------------------------------------------------ Hero Section -------------------------------------------><!--#region-->
+    <section class="products-hero">
+      <h1>Our Products</h1>
+    </section>
+    <!--#endregion-->
 
-    <footer>
-      <p>© B&K Custom Woodworks</p>
-    </footer>
-  </body>
+<!---------------------------------------------------- Products Section --------------------------------------------><!--#region-->
+  <section class="products-container">
+<!------------------------------------------Product 1------------------------------------------->
+    <article class="product-card">
+      <div class="product-image">
+        <div class="product-image-frame">
+          <img src="product-images/under-construction.svg" alt="Cutting Board">
+        </div>
+      </div>      
+
+      <div class="product-info">
+        <h3>Cutting Board</h3>
+
+        <p class="product-price">$99.98</p>
+
+        <p class="product-description">
+          Handmade End Grain Cutting Board – Padauk, Zebra Wood, and Purple Heart.
+        </p>
+
+        <div class="product-buttons">
+          <button>Add to Cart</button>
+          <button class="wishlist">Wishlist</button>
+        </div>
+      </div>
+    </article>
+<!------------------------------------------Product 2---------------------------------------------->
+    <article class="product-card">
+      <div class="product-image">
+        <div class="product-image-frame">
+          <img src="product-images/under-construction.svg" alt="Cutting Board">
+        </div>
+      </div>      
+
+      <div class="product-info">
+        <h3>Cutting Board</h3>
+
+        <p class="product-price">$99.98</p>
+
+        <p class="product-description">
+          Handmade End Grain Cutting Board – Padauk, Zebra Wood, and Purple Heart.
+        </p>
+
+        <div class="product-buttons">
+          <button>Add to Cart</button>
+          <button class="wishlist">Wishlist</button>
+        </div>
+      </div>
+    </article>
+
+<!----------------------------------------------Product 3------------------------------------------------->    
+    <article class="product-card">
+      <div class="product-image">
+        <div class="product-image-frame">
+          <img src="product-images/under-construction.svg" alt="Cutting Board">
+        </div>
+      </div>      
+
+      <div class="product-info">
+        <h3>Cutting Board</h3>
+
+        <p class="product-price">$99.98</p>
+
+        <p class="product-description">
+          Handmade End Grain Cutting Board – Padauk, Zebra Wood, and Purple Heart.
+        </p>
+
+        <div class="product-buttons">
+          <button>Add to Cart</button>
+          <button class="wishlist">Wishlist</button>
+        </div>
+      </div>
+    </article>
+
+  </section>
+<!--#endregion-->
+
+<!-------------------------------------------------------- Footer -----------------------------------------------------><!--#region-->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>© B&K Custom Woodworks — Handcrafted Woodworks For Every Home.</p>
+  </footer>
+  <!--#endregion-->
+
+<!-------------------------------------------- Javascript Hamburger Menu -----------------------------------><!--#region-->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.nav-overlay');
+
+    hamburger.addEventListener('click', () => {
+      overlay.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-overlay a').forEach(link => {
+      link.addEventListener('click', () => {
+        overlay.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+  </script>
+<!--#endregion-->
+
+</body>
 </html>

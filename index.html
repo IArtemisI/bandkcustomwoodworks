@@ -8,19 +8,27 @@
 <!-----------------------------------------------------Navigation-----------------------------------------------------><!--#region-->
   <body>
     <header class="nav-header">
-      <nav class="nav-bar">
-        <img src="Logo.svg" class="nav-logo" alt="">
+
+      <!-- Hamburger ALWAYS visible -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-overlay">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="#available-woods">Available Woods</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav>
-    </header>
-    <!--------------------------- #endregion --------------------------------->
+      </div>
 
-<!----------------------------------------------------Hero Section--------------------------------------------------><!--#region-->
+    </header>
+    <!--#endregion-->
+
+<!----------------------------------------------------Hero Section----------------------------------------------><!--#region-->
   <main>
     <section class="hero">
       <div class="hero-content">
@@ -29,7 +37,7 @@
         <p>Handcrafted Woodworks For Every Home.</p>
       </div>
     </section>
-    <!--------------------------- #endregion --------------------------------->
+    <!--#endregion-->
 
 <!--------------------------------------------------------Welcome ---------------------------------------------><!--#region-->
     <div class="section-divider"></div>    
@@ -45,7 +53,7 @@
       </p>
     </section>
     <div class="section-divider"></div>
-    <!--------------------------- #endregion --------------------------------->
+    <!--#endregion-->
 
 <!----------------------------------------------------Image Slides--------------------------------------------------><!--#region-->
     <section class="simple-slider">
@@ -65,7 +73,7 @@
         <span class="dot"></span>
       </div>
     </section>
-    <!--------------------------- #endregion --------------------------------->
+    <!--#endregion-->
 
 <!--------------------------------------------------Available Woods-------------------------------------------------><!--#region-->
     <section id="available-woods" class="available-woods-page">
@@ -138,7 +146,7 @@
 
       </section>
     </section>  
-    <!--------------------------- #endregion --------------------------------->
+    <!--#endregion-->
 
 <!--------------------------------------------------------Footer---------------------------------------------------------><!--#region-->
 <footer>
@@ -151,7 +159,7 @@
 
   <p>© B&K Custom Woodworks — Handcrafted Woodworks For Every Home.</p>
 </footer>
-<!--------------------------- #endregion --------------------------------->
+<!--#endregion-->
 
 <!-------------------------------------------Javascript Slide Functionality------------------------------><!--#region-->
     <script>
@@ -187,7 +195,7 @@
         });
       });
     </script>
-    <!--------------------------- #endregion --------------------------------->
+    <!--#endregion-->
 
 <!--------------------------------------------Javascript Card Fade in------------------------------------><!--#region-->
 <script>
@@ -210,7 +218,28 @@
     appearOnScroll.observe(fader);
   });
 </script>
-<!--------------------------- #endregion --------------------------------->
+<!--#endregion-->
+
+<!-------------------------------------------------Javascript Hamburger Menu------------------------------><!--#region-->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const overlay = document.querySelector('.nav-overlay');
+
+  hamburger.addEventListener('click', () => {
+    overlay.classList.toggle('open');
+    hamburger.classList.toggle('open');   // animate into X
+  });
+
+  // Close menu when clicking any link
+  document.querySelectorAll('.nav-overlay a').forEach(link => {
+    link.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+</script>
+
+<!--#endregion-->
 
   </body>
 </html>
