@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>B&K Custom Woodworks</title>   
-    <link rel="stylesheet" href="main-style.css" />
-  </head>
-<!-----------------------------------------------------Navigation-----------------------------------------------------><!--#region-->
+    <head>
+      <meta charset="UTF-8" />
+      <title>B&K Custom Woodworks</title>   
+      <link rel="stylesheet" href="main-style.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
   <body>
-    <header class="nav-header">
+    
+<!-----------------------------------------------------Navigation-----------------------------------------------------><!--#region-->
+    <!-- Desktop Navigation -->
+    <header class="desktop-header">
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#available-woods">Available Woods</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="#contact-us">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <!-- Hamburger ALWAYS visible -->
+    <!-- Mobile Navigation -->
+    <header class="mobile-header">   
       <button class="hamburger">
         <span></span>
         <span></span>
@@ -21,11 +34,12 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="#available-woods">Available Woods</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact-us">Contact</a></li>
         </ul>
       </div>
-
     </header>
+
+
     <!--#endregion-->
 
 <!----------------------------------------------------Hero Section----------------------------------------------><!--#region-->
@@ -53,26 +67,6 @@
       </p>
     </section>
     <div class="section-divider"></div>
-    <!--#endregion-->
-
-<!----------------------------------------------------Image Slides--------------------------------------------------><!--#region-->
-    <section class="simple-slider">
-      <button class="arrow prev">‹</button>
-      
-      <div class="slides">
-        <img src="product-images/wood-console-table.jpeg" class="slide active">
-        <img src="product-images/set-of-three.jpg" class="slide">
-        <img src="product-images/shop-display.jpg" class="slide">
-      </div>
-
-      <button class="arrow next">›</button>
-      
-      <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </section>
     <!--#endregion-->
 
 <!--------------------------------------------------Available Woods-------------------------------------------------><!--#region-->
@@ -148,54 +142,73 @@
     </section>  
     <!--#endregion-->
 
+<!-----------------------------------------------Contact Us-----------------------------------------------------------><!--#region-->
+<section class="contact-wrapper" id="contact-us">
+  <h2>Contact Us</h2>
+
+  <form class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="How can we help?">
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+    </div>
+
+    <button type="submit" class="contact-submit">Send Message</button>
+  </form>
+</section>
+
+<!-- #endregion -->
+
 <!--------------------------------------------------------Footer---------------------------------------------------------><!--#region-->
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="#available-woods">Available Woods</a>
-    <a href="products.html">Our Work</a>
-    <a href="contact.html">Contact</a>
-  </div>
+      <footer class="site-footer">
 
-  <p>© B&K Custom Woodworks — Handcrafted Woodworks For Every Home.</p>
-</footer>
+        <div class="footer-top">
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#available-woods">Available Woods</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#contact-us">Contact</a></li>
+          </ul>
+        </div>
+
+          <div class="footer-divider"></div>
+
+          <div class="footer-social">
+            <a href="https://facebook.com" class="facebook-link" target="_blank">
+              Facebook
+            </a>
+          </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+
+          <p class="footer-copy">© 2025 B&K Custom Woodworks</p>
+        </div>
+
+      </footer>
 <!--#endregion-->
-
-<!-------------------------------------------Javascript Slide Functionality------------------------------><!--#region-->
-    <script>
-      const slides = document.querySelectorAll(".slide");
-      const dots = document.querySelectorAll(".dot");
-      const prev = document.querySelector(".prev");
-      const next = document.querySelector(".next");
-
-      let index = 0;
-
-      function showSlide(i) {
-        slides.forEach(slide => slide.classList.remove("active"));
-        dots.forEach(dot => dot.classList.remove("active"));
-
-        slides[i].classList.add("active");
-        dots[i].classList.add("active");
-      }
-
-      next.addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-      });
-
-      prev.addEventListener("click", () => {
-        index = (index - 1 + slides.length) % slides.length;
-        showSlide(index);
-      });
-
-      dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-          index = i;
-          showSlide(index);
-        });
-      });
-    </script>
-    <!--#endregion-->
 
 <!--------------------------------------------Javascript Card Fade in------------------------------------><!--#region-->
 <script>
@@ -235,6 +248,50 @@
     link.addEventListener('click', () => {
       overlay.classList.remove('open');
       hamburger.classList.remove('open');
+    });
+  });
+</script>
+
+<!--#endregion-->
+
+<!-------------------------------------------------------Javascript Header Scrolling-----------------------><!--#region-->
+<script>
+  const desktopHeader = document.querySelector('.desktop-header');
+  const heroSection = document.querySelector('.hero');
+
+  window.addEventListener('scroll', () => {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+    if (window.scrollY > heroBottom) {
+      desktopHeader.classList.add('hide-nav');
+    } else {
+      desktopHeader.classList.remove('hide-nav');
+    }
+  });
+</script>
+<!--#endregion-->
+
+<!-----------------------------------------------Javascript Back to top---------------------------------------------><!--#region-->
+
+<button class="back-to-top">⮝</button>
+
+<script>
+  const backToTopBtn = document.querySelector('.back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {   // show button after scrolling down
+      backToTopBtn.style.opacity = '1';
+      backToTopBtn.style.pointerEvents = 'auto';
+    } else {
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.pointerEvents = 'none';
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 </script>
