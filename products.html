@@ -4,34 +4,69 @@
   <meta charset="UTF-8" />
   <title>Our Work – B&K Custom Woodworks</title>
   <link rel="stylesheet" href="main-style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sirivennela&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <!---------------------------------------------------------- Navigation-----------------------------------------------><!--#region-->
-  <header class="nav-header">
-    <button class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <!-- Desktop Navigation -->
+    <header class="desktop-header">
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="index.html#contact-us">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="nav-overlay">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#available-woods">Available Woods</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-  <!--#endregion-->
+    <!-- Mobile Navigation -->
+    <header class="mobile-header">   
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
+      <div class="nav-overlay">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="index.html#contact-us">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+<!-- #endregion -->
 <!------------------------------------------------------------ Hero Section -------------------------------------------><!--#region-->
-    <section class="products-hero">
-      <h1>Our Products</h1>
+  <section class="products-hero">
+    <section class="products-hero-text">
+        <h1>All of our creations are one of a kind, and made to last a lifetime</h1>
     </section>
-    <!--#endregion-->
+  </section>  
+
+<!--#endregion-->
+
+<!--------------------------------------------------------Products Navigation -------------------------------------------><!--#region-->
+
+<div class="products-tabs-container" id="products-tabs">
+  <a href="#cutting-boards" class="products-tab">Cutting Boards</a>
+  <a href="#board-wax" class="products-tab">Board Wax</a>
+  <a href="#wood-types" class="products-tab">Wood Types</a>
+  <span class="products-tab-slider"></span>
+</div>
+
+  <span class="products-tab-slider"></span>
+</div>
+
+<section id="cutting-boards">...</section>
+<section id="board-wax">...</section>
+<section id="wood-types">...</section>
+
+<!--#endregion-->
 
 <!---------------------------------------------------- Products Section --------------------------------------------><!--#region-->
   <section class="products-container">
@@ -44,13 +79,7 @@
       </div>      
 
       <div class="product-info">
-        <h3>Cutting Board</h3>
-
-        <p class="product-price">$99.98</p>
-
-        <p class="product-description">
-          Handmade End Grain Cutting Board – Padauk, Zebra Wood, and Purple Heart.
-        </p>
+        <h3>A Beautiful Cutting Board</h3>
 
         <div class="product-buttons">
           <button>Add to Cart</button>
@@ -67,13 +96,7 @@
       </div>      
 
       <div class="product-info">
-        <h3>Cutting Board</h3>
-
-        <p class="product-price">$99.98</p>
-
-        <p class="product-description">
-          Handmade End Grain Cutting Board – Padauk, Zebra Wood, and Purple Heart.
-        </p>
+        <h3>A Beautiful Cutting Board</h3>
 
         <div class="product-buttons">
           <button>Add to Cart</button>
@@ -91,13 +114,7 @@
       </div>      
 
       <div class="product-info">
-        <h3>Cutting Board</h3>
-
-        <p class="product-price">$99.98</p>
-
-        <p class="product-description">
-          Handmade End Grain Cutting Board – Padauk, Zebra Wood, and Purple Heart.
-        </p>
+        <h3>A Beautiful Cutting Board</h3>
 
         <div class="product-buttons">
           <button>Add to Cart</button>
@@ -106,37 +123,328 @@
       </div>
     </article>
 
-  </section>
+<!------------------------------------------Product 4------------------------------------------->
+    <article class="product-card">
+      <div class="product-image">
+        <div class="product-image-frame">
+          <img src="product-images/under-construction.svg" alt="Cutting Board">
+        </div>
+      </div>      
+
+      <div class="product-info">
+        <h3>A Beautiful Cutting Board</h3>
+
+        <div class="product-buttons">
+          <button>Add to Cart</button>
+          <button class="wishlist">Wishlist</button>
+        </div>
+      </div>
+    </article>
+<!------------------------------------------Product 5---------------------------------------------->
+    <article class="product-card">
+      <div class="product-image">
+        <div class="product-image-frame">
+          <img src="product-images/under-construction.svg" alt="Cutting Board">
+        </div>
+      </div>      
+
+      <div class="product-info">
+        <h3>A Beautiful Cutting Board</h3>
+
+        <div class="product-buttons">
+          <button>Add to Cart</button>
+          <button class="wishlist">Wishlist</button>
+        </div>
+      </div>
+    </article>
+
+<!----------------------------------------------Product 6------------------------------------------------->    
+    <article class="product-card">
+      <div class="product-image">
+        <div class="product-image-frame">
+          <img src="product-images/under-construction.svg" alt="Cutting Board">
+        </div>
+      </div>      
+
+      <div class="product-info">
+        <h3>A Beautiful Cutting Board</h3>
+
+        <div class="product-buttons">
+          <button>Add to Cart</button>
+          <button class="wishlist">Wishlist</button>
+        </div>
+      </div>
+    </article>
+ </section>
 <!--#endregion-->
 
+<!-------------------------------------------Our Recommended Hardwoods--------------------------------> <!--#region-->
+    <section id="available-woods" class="available-woods-page">
+    <h2 class="fade-in">Popular Hardwoods</h2>
+    <p class ="fade in">If you have a specific species or color in mind please let us know.
+      This is list is just some of our favorites!
+      <section class="wood-grid">
+
+        <article class="wood-card fade-in">  <!-- Purple Heart Card -->
+          <img src="available-woods/purpleheart.jpg" alt="purple heart">
+          <div class="wood-info">
+            <h3>Purple Heart</h3>
+            <p>Purple heart is a beautiful tropical hardwood that is native to Central
+              and South America. It has a medium texture with purple and red undertones.
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">   <!-- Bodark Card -->
+          <img src="available-woods/bodark.jpg" alt="bodark">
+          <div class="wood-info">
+            <h3>Bodark</h3>
+            <p> Bodark is a straight grain hardwood native in the south-central region of the
+              United States. It has a fine to medium texture with a bright yellow to orange hue.
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">    <!-- Bloodwood Card -->
+          <img src="available-woods/bloodwood.jpg" alt="bloodwood">
+          <div class="wood-info">
+            <h3>Blood Wood</h3>
+            <p>Blood wood is a striking hardwood that is native to South America.
+              It has a medium to coarse texture with a deep red color that resembles
+              dried blood.
+            </p>
+          </div>  
+        </article>
+        
+        <article class="wood-card fade-in">   <!-- Padauk Card -->
+          <img src="available-woods/Padauk.jpg" alt="padauk">
+          <div class="wood-info">
+            <h3>African Padauk</h3>
+            <p>Padauk is a tropical hardwood native to Africa and Southeast Asia.
+              It has a medium to coarse texture with a vibrant reddish-orange color that
+              tends to darken over time. 
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">   <!-- Zebra Wood Card -->
+          <img src="available-woods/zebrawood.jpg" alt="zebrawood">
+          <div class="wood-info">
+            <h3>Zebra Wood</h3>
+            <p>Zebra wood is an exotic hardwood native to West Africa.
+            It has a medium to coarse texture with a distinctive striped pattern
+            resembling that of a zebra.
+            </p>
+          </div>
+        </article>
+
+        <article class="wood-card fade-in">    <!-- Black Walnut Card -->
+          <img src="available-woods/blackwalnut.jpg" alt="black walnut">
+          <div class="wood-info">
+            <h3>Black Walnut</h3>
+            <p>Black walnut is a hardwood native to North America.
+              It has a fine to medium texture with a rich dark brown color and
+              beautiful grain patterns.
+            </p> 
+          </div>
+        </article>
+
+      </section>
+    </section>  
+    <!--#endregion-->
+
 <!-------------------------------------------------------- Footer -----------------------------------------------------><!--#region-->
-  <footer>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <p>© B&K Custom Woodworks — Handcrafted Woodworks For Every Home.</p>
-  </footer>
-  <!--#endregion-->
+      <footer class="site-footer">
 
-<!-------------------------------------------- Javascript Hamburger Menu -----------------------------------><!--#region-->
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const overlay = document.querySelector('.nav-overlay');
+        <div class="footer-top">
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="#contact-us">Contact</a></li>
+          </ul>
+        </div>
 
-    hamburger.addEventListener('click', () => {
-      overlay.classList.toggle('open');
-      hamburger.classList.toggle('open');
+          <div class="footer-divider"></div>
+
+          <div class="footer-social">
+            <a href="https://facebook.com" class="facebook-link" target="_blank">
+              Facebook
+            </a>
+          </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+
+          <p class="footer-copy">© 2025 B&K Custom Woodworks</p>
+        </div>
+
+      </footer>
+<!--#endregion-->
+
+<!-----------------------------------Javascript Card Fade in------------------------------------><!--#region-->
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.2
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     });
+  }, appearOptions);
 
-    document.querySelectorAll('.nav-overlay a').forEach(link => {
-      link.addEventListener('click', () => {
-        overlay.classList.remove('open');
-        hamburger.classList.remove('open');
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+<!--#endregion-->
+
+<!-----------------------------------Javascript Hamburger Menu------------------------------><!--#region-->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const overlay = document.querySelector('.nav-overlay');
+
+  hamburger.addEventListener('click', () => {
+    overlay.classList.toggle('open');
+    hamburger.classList.toggle('open');   // animate into X
+  });
+
+  // Close menu when clicking any link
+  document.querySelectorAll('.nav-overlay a').forEach(link => {
+    link.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+</script>
+
+<!--#endregion-->
+
+<!-----------------------------------Javascript Header Scrolling-----------------------><!--#region-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const tabsContainer = document.querySelector(".products-tabs-container");
+  const tabs = document.querySelectorAll(".products-tab");
+  const slider = document.querySelector(".products-tab-slider");
+
+  if (!tabsContainer || !tabs.length) return;
+
+  /* -------------------------------
+     Function: Move slider under tab
+     ------------------------------- */
+  function moveSliderToTab(tab) {
+    const tabRect = tab.getBoundingClientRect();
+    const containerRect = tabsContainer.getBoundingClientRect();
+
+    slider.style.width = `${tabRect.width}px`;
+    slider.style.left = `${tabRect.left - containerRect.left}px`;
+  }
+
+  /* -------------------------------
+     Click behavior (smooth scroll)
+     ------------------------------- */
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const target = document.querySelector(tab.getAttribute("href"));
+      if (!target) return;
+
+      // Smooth scroll to the section
+      window.scrollTo({
+        top: target.offsetTop - 70,  // offset for header
+        behavior: "smooth",
       });
+
+      // Move slider
+      moveSliderToTab(tab);
     });
-  </script>
+  });
+
+  /* -----------------------------------------
+     Scroll Spy — Update slider on page scroll
+     ----------------------------------------- */
+  const sectionIds = Array.from(tabs).map(tab => tab.getAttribute("href"));
+  const sections = sectionIds.map(id => document.querySelector(id));
+
+  window.addEventListener("scroll", () => {
+    let currentSectionIndex = 0;
+
+    sections.forEach((section, index) => {
+      if (window.scrollY >= section.offsetTop - 150) {
+        currentSectionIndex = index;
+      }
+    });
+
+    moveSliderToTab(tabs[currentSectionIndex]);
+  });
+
+  /* -------------------
+     Initialize position
+     ------------------- */
+  moveSliderToTab(tabs[0]);
+});
+</script>
+
+<!--#endregion-->
+
+<!---------------------------------Javascript Back to top---------------------------------------------><!--#region-->
+
+<button class="back-to-top">
+  <img src="icons/up-arrow.svg" alt="Back to top">
+</button>
+
+<script>
+  const backToTopBtn = document.querySelector('.back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {   // show button after scrolling down
+      backToTopBtn.style.opacity = '1';
+      backToTopBtn.style.pointerEvents = 'auto';
+    } else {
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.pointerEvents = 'none';
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+<!--#endregion--> 
+
+<!-----------------------------------Javascript Header Scrolling for Shop-----------------------><!--#region-->
+<script>
+const desktopHeader = document.querySelector('.desktop-header');
+const heroSection = document.querySelector('.products-hero');
+
+window.addEventListener('scroll', () => {
+
+  // hide when scrolled past 30% of the products hero height
+  const hidePoint = heroSection.offsetHeight * 0.3;
+
+  if (window.scrollY > hidePoint) {
+    desktopHeader.classList.add('hide-nav');
+  } else {
+    desktopHeader.classList.remove('hide-nav');
+  }
+});
+</script>
 <!--#endregion-->
 
 </body>

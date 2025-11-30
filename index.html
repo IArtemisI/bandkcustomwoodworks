@@ -5,6 +5,10 @@
       <title>B&K Custom Woodworks</title>   
       <link rel="stylesheet" href="main-style.css" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Sirivennela&display=swap" rel="stylesheet">
+
     </head>
   <body>
     
@@ -14,8 +18,7 @@
       <nav class="desktop-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#available-woods">Available Woods</a></li>
-          <li><a href="products.html">Products</a></li>
+          <li><a href="products.html">Shop</a></li>
           <li><a href="#contact-us">Contact</a></li>
         </ul>
       </nav>
@@ -32,8 +35,7 @@
       <div class="nav-overlay">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#available-woods">Available Woods</a></li>
-          <li><a href="products.html">Products</a></li>
+          <li><a href="products.html">Shop</a></li>
           <li><a href="contact-us">Contact</a></li>
         </ul>
       </div>
@@ -67,79 +69,6 @@
       </p>
     </section>
     <div class="section-divider"></div>
-    <!--#endregion-->
-
-<!--------------------------------------Available Woods-------------------------------------------------><!--#region-->
-    <section id="available-woods" class="available-woods-page">
-    <h2 class="fade-in">Available Woods</h2>
-      <section class="wood-grid">
-
-        <article class="wood-card fade-in">  <!-- Purple Heart Card -->
-          <img src="available-woods/purpleheart.jpg" alt="purple heart">
-          <div class="wood-info">
-            <h3>Purple Heart</h3>
-            <p>Purple heart is a beautiful tropical hardwood that is native to Central
-              and South America. It has a medium texture with purple and red undertones.
-            </p>
-          </div>
-        </article>
-
-        <article class="wood-card fade-in">   <!-- Bodark Card -->
-          <img src="available-woods/bodark.jpg" alt="bodark">
-          <div class="wood-info">
-            <h3>Bodark</h3>
-            <p> Bodark is a straight grain hardwood native in the south-central region of the
-              United States. It has a fine to medium texture with a bright yellow to orange hue.
-            </p>
-          </div>
-        </article>
-
-        <article class="wood-card fade-in">    <!-- Bloodwood Card -->
-          <img src="available-woods/bloodwood.jpg" alt="bloodwood">
-          <div class="wood-info">
-            <h3>Blood Wood</h3>
-            <p>Blood wood is a striking hardwood that is native to South America.
-              It has a medium to coarse texture with a deep red color that resembles
-              dried blood.
-            </p>
-          </div>  
-        </article>
-        
-        <article class="wood-card fade-in">   <!-- Padauk Card -->
-          <img src="available-woods/Padauk.jpg" alt="padauk">
-          <div class="wood-info">
-            <h3>African Padauk</h3>
-            <p>Padauk is a tropical hardwood native to Africa and Southeast Asia.
-              It has a medium to coarse texture with a vibrant reddish-orange color that
-              tends to darken over time. 
-            </p>
-          </div>
-        </article>
-
-        <article class="wood-card fade-in">   <!-- Zebra Wood Card -->
-          <img src="available-woods/zebrawood.jpg" alt="zebrawood">
-          <div class="wood-info">
-            <h3>Zebra Wood</h3>
-            <p>Zebra wood is an exotic hardwood native to West Africa.
-            It has a medium to coarse texture with a distinctive striped pattern
-            resembling that of a zebra.
-            </p>
-          </div>
-        </article>
-
-        <article class="wood-card fade-in">    <!-- Black Walnut Card -->
-          <img src="available-woods/blackwalnut.jpg" alt="black walnut">
-          <div class="wood-info">
-            <h3>Black Walnut</h3>
-            <p>Black walnut is a hardwood native to North America.
-              It has a fine to medium texture with a rich dark brown color and
-              beautiful grain patterns.
-            </p> 
-          </div>
-        </article>
-
-      </section>
-    </section>  
     <!--#endregion-->
 
 <!-----------------------------------------Contact Us-----------------------------------------------------------><!--#region-->
@@ -181,8 +110,7 @@
         <div class="footer-top">
           <ul class="footer-nav">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#available-woods">Available Woods</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.html">Shop</a></li>
             <li><a href="#contact-us">Contact</a></li>
           </ul>
         </div>
@@ -254,20 +182,22 @@
 
 <!--#endregion-->
 
-<!-----------------------------------Javascript Header Scrolling-----------------------><!--#region-->
+<!-----------------------------------Javascript Header Scrolling for Home-----------------------><!--#region-->
 <script>
-  const desktopHeader = document.querySelector('.desktop-header');
-  const heroSection = document.querySelector('.hero');
+const desktopHeader = document.querySelector('.desktop-header');
+const heroSection = document.querySelector('.hero');
 
-  window.addEventListener('scroll', () => {
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+window.addEventListener('scroll', () => {
 
-    if (window.scrollY > heroBottom) {
-      desktopHeader.classList.add('hide-nav');
-    } else {
-      desktopHeader.classList.remove('hide-nav');
-    }
-  });
+  // hide when scrolled past 30% of the hero section
+  const hidePoint = heroSection.offsetHeight * 0.6;
+
+  if (window.scrollY > hidePoint) {
+    desktopHeader.classList.add('hide-nav');
+  } else {
+    desktopHeader.classList.remove('hide-nav');
+  }
+});
 </script>
 <!--#endregion-->
 
