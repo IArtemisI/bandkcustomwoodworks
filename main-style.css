@@ -8,7 +8,6 @@
     padding: clamp(10px, 2vw, 20px) clamp(10px, 3vw, 30px);
     z-index: 5000;
     display: none;
-    
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -22,7 +21,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    
     display: flex;
     gap: clamp(20px, 4vw, 60px);
     justify-content: flex-start;
@@ -30,7 +28,8 @@
 
 .desktop-nav a {
     text-decoration: none;
-    font-size: clamp(18px, 2.5vw, 30px);
+    font-weight: 500;
+    font-size: clamp(20px, 4vw, 30px);
     color: #ffffff;
     font-weight: 500;
     letter-spacing: clamp(0.5px, 0.3vw, 1.5px);
@@ -132,9 +131,9 @@
 }
 
 .nav-overlay a {
-    font-size: clamp(28px, 8vw, 40px);
+    font-size: clamp(20px, 4vw, 30px);
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: none;
     letter-spacing: clamp(1px, 0.8vw, 2px);
     transition: opacity 0.25s ease, transform 0.2s ease;
@@ -226,7 +225,6 @@
     font-size: clamp(28px, 6vw, 40px);
     margin-top: clamp(6px, 1.2vw, 12px);
     text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-    font-family: "Petit Formal Script", cursive;
 }
 
 /* ---------------------------------- Mobile-Specific Layout Tweaks ---------------------------------- */
@@ -243,47 +241,141 @@
 }
 /* #endregion */
 
+/*-----------------------Custom Board--------------------*//*#region*/
+
+.custom-boards {
+    width: 100%;
+    padding: clamp(40px, 8vw, 80px) 0;
+
+    /* Full-width soft background */
+    background: radial-gradient(-65deg, rgba(214, 189, 165, 1) 0%, rgba(102, 77, 66, 1) 93%);
+}
+
+.custom-boards-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(15px, 4vw, 40px);
+
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 5vw, 60px);
+}
+
+/* --- TEXT SIDE --- */
+.boards-text {
+    flex: 1;
+}
+
+.boards-text h2 {
+    font-size: clamp(38px, 8vw, 80px);
+    margin: 0 0 clamp(12px, 2vw, 16px);
+    color: #3a1f18;
+    line-height: 1.1;
+}
+
+/* Button */
+.boards-button {
+    display: inline-block;
+    margin-top: clamp(10px, 2vw, 20px);
+
+    padding: clamp(10px, 2.4vw, 14px) clamp(18px, 4vw, 30px);
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+
+    background: linear-gradient(-65deg, rgba(214, 189, 165, 1) 0%, rgba(102, 77, 66, 1) 93%);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.boards-button:hover {
+    transform: translateY(-4px);
+    color: #3a1f18;
+}
+
+/* --- IMAGE SIDE --- */
+.boards-image img {
+    width: 100%;
+    max-width: clamp(240px, 35vw, 420px);
+    border-radius: 14px;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- MOBILE LAYOUT --- */
+@media (max-width: 850px) {
+    .custom-boards-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .boards-image img {
+        max-width: clamp(220px, 60vw, 360px);
+        margin-top: clamp(10px, 3vw, 20px);
+    }
+
+    .boards-button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*#endregion*/
+
 /* ----------------------------------------------Welcome Section--------------------------------------------*//* #region */
 
-.welcome {
-    padding: clamp(20px, 4vw, 60px) clamp(20px, 5vw, 40px);
-    text-align: center;
+.welcome-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(30px, 6vw, 80px);
+    padding: clamp(20px, 6vw, 40px) clamp(20px, 6vw, 40px);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.welcome h2 {
-    font-size: clamp(28px, 6vw, 48px);
-    color: #391915;
-    margin-bottom: clamp(16px, 4vw, 25px);
-    font-weight: 600;
+.welcome-left h2 {
+    font-weight: 400;
+    color: #3a1f18;
+    font-size: clamp(40px, 8vw, 80px); 
+    line-height: 1.5;
+    text-align: left;
 }
 
-.welcome p {
-    margin: clamp(25px, 5vw, 40px) auto;
-    font-size: clamp(20px, 4vw, 28px);
-    max-width: 900px;
+.welcome-right {
+    max-width: 700px;
+}
+
+.welcome-right p {
+    font-size: clamp(18px, 3.5vw, 26px);
     color: #3e2b23;
     line-height: 1.7;
 }
 
-/* Divider */
-.section-divider {
-    width: clamp(60%, 70%, 90%);
-    height: 3px;
-    background: linear-gradient(to right, transparent, #422b28, transparent);
-    margin: clamp(30px, 6vw, 50px) auto;
-    border-radius: 2px;
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    will-change: opacity, transform;
 }
 
-/* ========== MOBILE LAYOUT IMPROVEMENTS ========== */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-@media (max-width: 700px) {
-    .welcome p {
-        line-height: 1.55;  /* slightly tighter for small screens */
-        padding: 0 10px;
+@media (max-width: 850px) {
+    .welcome-split {
+        flex-direction: column;
+        text-align: center;
     }
-    
-    .section-divider {
-        width: 80%;
+
+    .welcome-left h2 {
+        text-align: center;
+        line-height: 1;
     }
 }
 
@@ -293,7 +385,7 @@
 body {
     margin: 0;
     background-color: #ede0d4;
-    font-family: "Flamenco", system-ui;
+    font-family: "Scope One", serif;
 }
 
 * {
@@ -332,7 +424,6 @@ html {
     letter-spacing: 1.5px;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
     position: relative;
-    font-family: "Petit Formal Script", cursive;
 }
 
 .contact-wrapper h2::after {  /* line under contact us */
@@ -442,6 +533,7 @@ html {
     margin-top: 80px;
     text-align: center;
     border-top: 3px solid rgba(255,255,255,0.3);
+    
 }
 
 /* Top Section */
@@ -465,7 +557,7 @@ html {
 
 .footer-nav a {
     text-decoration: none;
-    font-size: clamp(18px, 2.5vw, 30px);
+    font-size: clamp(20px, 4vw, 30px);
     color: #ffffff;
     font-weight: 500;
     transition: opacity 0.25s ease, transform 0.2s ease;
@@ -495,11 +587,11 @@ html {
 }
 
 .facebook-link {
-    font-size: clamp(20px, 4vw, 28px);
-    font-weight: 500;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight:500;
     color: #ffffff;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     transition: 0.25s ease;
     display: inline-block;
     padding: 8px 8px;
@@ -521,8 +613,7 @@ html {
     justify-content: center;
     align-items: center;
     gap: clamp(4px, 2vw, 12px);
-    font-size: clamp(14px, 4vw, 18px);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: clamp(14px, 4vw, 20px);
     margin-bottom: clamp(8px, 2vw, 15px);
 }
 
@@ -539,41 +630,11 @@ html {
 
 .footer-copy {
     font-size: clamp(14px, 4vw, 18px);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
     opacity: 0.75;
     margin: 0;
+    padding-top: 10px;
 }
 
-@media (max-width: 700px) {
-    
-    .footer-nav {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .footer-nav a {
-        font-weight: 400;
-    }
-    
-    .footer-social {
-        margin: 10px 0;
-    }
-    
-    .footer-divider {
-        max-width: 75%;
-        height: 2px;
-        margin: 18px auto;
-    }
-    
-    .footer-legal {
-        flex-direction: column;
-        gap: 6px;
-    }
-    
-    .footer-copy {
-        margin-top: 5px;
-    }
-}
 /* #endregion */
 
 /* --------------------------------------------Product Page Styles------------------------------------------*//* #region */
