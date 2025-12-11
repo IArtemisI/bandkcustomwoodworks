@@ -1,4 +1,4 @@
-/*---------------------------------------------- Navigation Styles -------------------------------------------*//* #region */
+/*------------------------Navigation Styles -------------------------------------------*//* #region */
 
 /* ---------------------------------------------------- Desktop Navigation -------------------------------------------- *//* #region */
 
@@ -170,7 +170,7 @@
 
 /* #endregion for Navigation */
 
-/*-------------------------------------------------- Hero Section-----------------------------------------------*//* #region */
+/*-----------------------Hero Section-----------------------------------------------*//* #region */
 
 .hero {
     height: 100vh;
@@ -241,105 +241,141 @@
 }
 /* #endregion */
 
-/*-----------------------Custom Board--------------------*//*#region*/
+/*-----------------------Custom Board-----------------------------------------------*//*#region*/
 
 .custom-boards {
     width: 100%;
-    padding: clamp(40px, 8vw, 80px) 0;
-
-    /* Full-width soft background */
-    background: radial-gradient(-65deg, rgba(214, 189, 165, 1) 0%, rgba(102, 77, 66, 1) 93%);
+    background: #9b857b;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);  /* softer than before */
+    position: relative;
+    overflow: visible;
+    padding: 20px 0;
 }
 
-.custom-boards-content {
+.custom-boards-inner {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 clamp(15px, 4vw, 40px);
-
     display: flex;
-    align-items: center;
-    gap: clamp(20px, 5vw, 60px);
+    position: relative;
+    padding-left: 200px;
+    padding-right: 150px;
 }
 
-/* --- TEXT SIDE --- */
 .boards-text {
-    flex: 1;
+    display: block;   /* no flex needed here — prevents layout distortion */
 }
 
 .boards-text h2 {
-    font-size: clamp(38px, 8vw, 80px);
-    margin: 0 0 clamp(12px, 2vw, 16px);
-    color: #3a1f18;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    color: #3e2b23;
+    font-size: clamp(40px, 8vw, 70px);
     line-height: 1.1;
 }
 
-/* Button */
+.staggered-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.staggered-title span:nth-child(1) {
+    margin-left: 0px;
+}
+
+.staggered-title span:nth-child(2) {
+    margin-left: 60px;
+}
+
+.staggered-title span:nth-child(3) {
+    margin-left: 120px;
+}
+
+.boards-button-wrapper {
+    margin-left: 180px;   /* perfectly aligns button under "Boards" */
+}
+
 .boards-button {
     display: inline-block;
-    margin-top: clamp(10px, 2vw, 20px);
-
-    padding: clamp(10px, 2.4vw, 14px) clamp(18px, 4vw, 30px);
-    font-size: clamp(16px, 3vw, 22px);
-    font-weight: 700;
-    color: #ffffff;
+    padding: clamp(10px, 2vw, 12px) clamp(16px, 3vw, 20px); /* vertical | horizontal */
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 600;
+    color: #3e2b23;
     text-decoration: none;
-
-    background: linear-gradient(-65deg, rgba(214, 189, 165, 1) 0%, rgba(102, 77, 66, 1) 93%);
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-
-    transition: transform 0.3s ease, color 0.3s ease;
+    
+    
+    background: rgba(255, 255, 255, 0.18);  /* light transparent glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);  /* softer than before */
 }
 
-.boards-button:hover {
-    transform: translateY(-4px);
-    color: #3a1f18;
+.boards-image {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
-/* --- IMAGE SIDE --- */
 .boards-image img {
-    width: 100%;
-    max-width: clamp(240px, 35vw, 420px);
-    border-radius: 14px;
-    object-fit: cover;
-    display: block;
+    width: clamp(450px, 40vw, 650px);
+    height: auto;
+    border-radius: 12px;
 }
 
-/* --- MOBILE LAYOUT --- */
 @media (max-width: 850px) {
-    .custom-boards-content {
+    
+    .custom-boards-inner {
         flex-direction: column;
         text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-
+    
+    .staggered-title span {
+        margin-left: 0;
+    }
+    
+    .boards-button-wrapper {
+        margin-left: 0;   /* center on mobile */
+    }
+    
+    .boards-image {
+        position: relative;
+        right: 0;
+        top: auto;
+        transform: none;
+        margin-top: 20px;
+    }
+    
     .boards-image img {
-        max-width: clamp(220px, 60vw, 360px);
-        margin-top: clamp(10px, 3vw, 20px);
-    }
-
-    .boards-button {
-        margin-left: auto;
-        margin-right: auto;
+        width: clamp(220px, 70vw, 360px);
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
 /*#endregion*/
 
-/* ----------------------------------------------Welcome Section--------------------------------------------*//* #region */
+/* -----------------------Welcome Section--------------------------------------------*//* #region */
 
 .welcome-split {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: clamp(30px, 6vw, 80px);
-    padding: clamp(20px, 6vw, 40px) clamp(20px, 6vw, 40px);
+    padding: clamp(20px, 6vw, 80px) clamp(20px, 6vw, 40px);
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .welcome-left h2 {
     font-weight: 400;
-    color: #3a1f18;
+    color: #3e2b23;
     font-size: clamp(40px, 8vw, 80px); 
     line-height: 1.5;
     text-align: left;
@@ -372,7 +408,7 @@
         flex-direction: column;
         text-align: center;
     }
-
+    
     .welcome-left h2 {
         text-align: center;
         line-height: 1;
@@ -381,7 +417,7 @@
 
 /* #endregion */
 
-/* ----------------------------------------------Structural Styles ------------------------------------------ *//* #region */
+/* -----------------------Structural Styles ------------------------------------------ *//* #region */
 body {
     margin: 0;
     background-color: #ede0d4;
@@ -399,7 +435,7 @@ html {
 
 /* #endregion */
 
-/* ----------------------------------------------- Contact Us ------------------------------------------------*//* #region */
+/* -----------------------Contact Us ------------------------------------------------*//* #region */
 
 .contact-wrapper {
     max-width: 900px;
@@ -525,10 +561,10 @@ html {
 
 /* #endregion */
 
-/* ------------------------------------------------Footer Styles --------------------------------------------- *//* #region */
+/* -----------------------Footer Styles --------------------------------------------- *//* #region */
 .site-footer {
-    background: #391915; 
-    color: #ffffff;
+    background: #9b857b; 
+    color: #391915;
     padding: clamp(35px, 6vw, 60px) clamp(15px, 4vw, 40px) clamp(25px, 5vw, 40px);
     margin-top: 80px;
     text-align: center;
@@ -558,8 +594,8 @@ html {
 .footer-nav a {
     text-decoration: none;
     font-size: clamp(20px, 4vw, 30px);
-    color: #ffffff;
-    font-weight: 500;
+    color: #391915;
+    font-weight: 600;
     transition: opacity 0.25s ease, transform 0.2s ease;
 }
 
@@ -569,14 +605,14 @@ html {
 
 /* Divider */
 .footer-divider {
-    height: 3px;
+    height: 4px;
     max-width: clamp(200px, 70%, 900px);
     margin: clamp(15px, 4vw, 25px) auto;
     background: linear-gradient(
     to right,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0.6),
-    rgba(255,255,255,0)
+    rgba(58, 31, 24, 0),
+    rgba(58, 31, 24, 0.5),
+    rgba(58, 31, 24, 0)
     );
     border-radius: 5px;
 }
@@ -588,8 +624,8 @@ html {
 
 .facebook-link {
     font-size: clamp(20px, 4vw, 30px);
-    font-weight:500;
-    color: #ffffff;
+    font-weight: 600;
+    color: #391915;
     text-decoration: none;
     letter-spacing: 1.5px;
     transition: 0.25s ease;
@@ -614,14 +650,13 @@ html {
     align-items: center;
     gap: clamp(4px, 2vw, 12px);
     font-size: clamp(14px, 4vw, 20px);
+    font-weight: 600;
     margin-bottom: clamp(8px, 2vw, 15px);
 }
 
 .footer-legal a {
-    color: #ffffff;
+    color: #391915;
     text-decoration: none;
-    opacity: 0.85;
-    transition: opacity 0.25s ease;
 }
 
 .footer-legal a:hover {
@@ -630,14 +665,14 @@ html {
 
 .footer-copy {
     font-size: clamp(14px, 4vw, 18px);
-    opacity: 0.75;
     margin: 0;
+    font-weight:  500;
     padding-top: 10px;
 }
 
 /* #endregion */
 
-/* --------------------------------------------Product Page Styles------------------------------------------*//* #region */
+/*-----------------------Product Page Styles------------------------------------------*//* #region */
 
 /*      --------------------- Products Hero--------------------*//* #region */
 
@@ -684,6 +719,7 @@ html {
 /*      --------------------- Product Navigation--------------------*//*#region*/
 
 .products-tabs-container {
+    
     position: sticky;
     top: 0;
     z-index: 6000;
@@ -805,7 +841,7 @@ html {
 /* Price */
 .product-card .price {
     font-size: clamp(14px, 3.2vw, 18px);
-    color: #654d42;
+    color: #391915;
     margin-bottom: clamp(6px, 1.5vw, 10px);
 }
 
@@ -873,45 +909,40 @@ html {
 /*      --------------------Board Wax----------------------------------------- *//*#region*/
 
 .board-wax-block {
-    max-width: 1400px;
-    margin: clamp(40px, 8vw, 80px) auto;
-    padding: clamp(10px, 3vw, 30px);
-    
+    max-width: 100%;
+    margin-top: 80px;
     display: flex;
-    align-items: center;
     gap: clamp(20px, 5vw, 50px);
-    
-    background: rgba(255, 255, 255, 0.18);
+
+    background: rgba(155, 133, 123, 0.4);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    
-    border: 2px solid rgba(57, 25, 21, 0.25);
-    border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    
     transition: transform 0.25s ease;
 }
 
 /* IMAGE SIDE */
 .board-wax-image img {
     width: 100%;
-    max-width: clamp(220px, 30vw, 380px);
+    margin-left: 240px;
+    max-width: clamp(280px, 30vw, 450px);
     height: auto;
-    display: block;
-    border-radius: 14px;
+    display: flex;
+    border-radius: 24px;
 }
 
 /* TEXT SIDE */
 .board-wax-text {
     flex: 1;
-    padding: clamp(10px, 2vw, 20px);
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
 
 .board-wax-text h2 {
-    margin: 0 0 clamp(10px, 2vw, 20px);
+    margin: 0;
     font-size: clamp(32px, 6vw, 60px);
-    color: #474747;
-    font-weight: 700;
+    color: #391915;
+    font-weight: 500;
 }
 
 .board-wax-text p {
@@ -942,12 +973,16 @@ html {
 }
 /* #endregion */
 
+/*-------------------------Custom Board Options--------------------------*//*#region*/
+
+/*#endregion*/
+
 /*      ------------------  Available Woods---------------------------------------------*//* #region */
 
 .available-woods-page h2 {
     text-align: center;
     font-size: clamp(32px, 6vw, 60px);;
-    color: #422b28;
+    color: #3e2b23;
     margin-bottom: clamp(20px, 4vw, 40px);
 }
 
@@ -997,7 +1032,7 @@ html {
 
 .wood-info h3 {
     margin: 0 0 10px;
-    color: #422b28;
+    color: #3e2b23;
     font-size: clamp(20px, 3.8vw, 26px);
     font-weight: 600;
 }
@@ -1045,7 +1080,7 @@ html {
 
 /* #endregion */
 
-/*-----------------------------------------------Back to top----------------------------------------------------*//*#region*/
+/*-----------------------Back to top----------------------------------------------------*//*#region*/
 .back-to-top {
     position: fixed;
     bottom: clamp(15px, 4vw, 30px);
