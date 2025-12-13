@@ -56,9 +56,7 @@
   display: flex;
   align-items: center;
   z-index: 99999;
-
 }
-
 
 .hamburger {
   width: clamp(32px, 8vw, 40px);
@@ -139,7 +137,7 @@
 }
 
 .nav-overlay a {
-  font-size: clamp(20px, 4vw, 30px);
+  font-size: clamp(40px, 8vw, 80px);
   color: #ffffff;
   font-weight: 500;
   text-decoration: none;
@@ -511,12 +509,6 @@ html {
   scroll-padding-top: 60px;
 }
 
-#ready-to-ship,
-#board-wax,
-#custom-boards,
-#wood-types {
-  scroll-margin-top: 90px;
-}
 
 /* #endregion */
 
@@ -1192,7 +1184,7 @@ html {
   pointer-events: none;
   
   transition: opacity 0.4s ease, transform 0.3s ease;
-  z-index: 9999;
+  z-index: 100000;
 }
 
 .back-to-top:hover {
