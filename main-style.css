@@ -442,7 +442,7 @@
 
     .shop-banner-button {
         align-self: center;
-        font-size: clamp(20px, 5vw, 24px);
+        font-size: clamp(16px, 5vw, 24px);
         padding: 12px 24px;
     }
 
