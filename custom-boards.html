@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <title>Our Work – B&K Custom Woodworks</title>
+    <link rel="stylesheet" href="main-style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Flamenco:wght@300;400&family=Scope+One&display=swap"
+    rel="stylesheet"    />
+</head>
+<body>
+
+<!---------------Navigation----------------------------------------------><!--#region-->
+<!-- Desktop Navigation -->
+<header class="desktop-header">
+    <nav class="desktop-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="index.html#contact-us">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Mobile Navigation -->
+<header class="mobile-header">
+    <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<div class="nav-overlay">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="custom-boards.html">Custom</a></li>
+        <li><a href="index.html#contact-us">Contact</a></li>
+    </ul>
+</div>
+<!--#endregion-->
+
+<!---------------Hero Section--------------------------------------------><!--#region-->
+
+<section class="custom-hero-banner">
+    <div class="custom-hero-overlay"></div>
+
+    <div class="custom-hero-title-wrap">
+        <h1>Design Your Custom Board</h1>
+    </div>
+</section>
+
+<!--#endregion-->
+
+<!---------------How It Works--------------------------------------------><!--#region-->
+
+<section class="custom-process fade-in">
+    <div class="custom-process-inner">
+
+        <h2>How It Works</h2>
+
+        <div class="custom-process-grid">
+            <!-- your step cards stay the same -->
+        </div>
+
+    </div>
+</section>
+
+<!--#endregion-->
+
+<!---------------Custom Board Form---------------------------------------------><!--#region-->
+<form class="custom-board-form">
+ <!-----------Customer Info------------>
+
+ <fieldset class="cb-group">
+        <legend class="cb-legend">Contact Information</legend>
+
+        <div class="cb-row">                                                    <!--Name-->
+            <div class="cb-field">
+                <label for="cb-name">Name</label>
+                <input type="text" id="cb-name" name="name" autocomplete="name">
+            </div>
+
+            <div class="cb-field">                                                      <!--Email-->
+                <label for="cb-email">Email</label>
+                <input type="email" id="cb-email" name="email" autocomplete="email">
+            </div>
+        </div>
+
+        <div class="cb-row">                                                         <!--Phone #-->
+            <div class="cb-field">
+                <label for="cb-phone">Phone Number</label>
+                <input type="tel" id="cb-phone" name="phone" autocomplete="tel">
+            </div>
+        </div>
+    </fieldset>
+
+ <!----------- Size ------------>
+   <fieldset class="cb-group">
+        <legend class="cb-legend">Board Dimensions</legend>
+
+        <div class="cb-row">                                                         <!--Length-->
+            <div class="cb-field">
+                <label for="cb-length">Length</label>
+                <select id="cb-length" name="length">
+                    <option value="">Select</option>
+                    <option>16 in</option>
+                    <option>17 in</option>
+                    <option>18 in</option>
+                    <option>19 in</option>
+                    <option>20 in</option>
+                    <option>21 in</option>
+                    <option>22 in</option>
+                </select>
+            </div>
+
+            <div class="cb-field">                                                    <!--Width-->
+                <label for="cb-width">Width</label>
+                <select id="cb-width" name="width">
+                    <option value="">Select</option>
+                    <option>19 in</option>
+                    <option>20 in</option>
+                    <option>21 in</option>
+                    <option>22 in</option>
+                    <option>23 in</option>
+                    <option>24 in</option>
+                </select>
+            </div>
+
+            <div class="cb-field">                                                    <!--Thickness-->
+                <label for="cb-thickness">Thickness</label>
+                <select id="cb-thickness" name="thickness">
+                    <option value="">Select</option>
+                    <option>1 in</option>
+                    <option>1.5 in</option>
+                    <option>2 in</option>
+                    <option>2.5 in</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+<!----------- Materials ------------>
+
+    <fieldset class="cb-group">
+        <legend class="cb-legend">Materials & Design</legend>
+
+        <div class="cb-row">                                                    <!--Wood Types-->
+            <div class="cb-field">
+                <label for="cb-woods">Wood Types</label>
+                <select id="cb-woods" name="woods[]" multiple>
+                    <option>Purple Heart</option>
+                    <option>Bodark</option>
+                    <option>Bloodwood</option>
+                    <option>African Padauk</option>
+                    <option>Zebra Wood</option>
+                    <option>Black Walnut</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="cb-row">                                                    <!--Patterns-->
+            <div class="cb-field">
+                <label for="cb-pattern">Pattern</label>
+                <select id="cb-pattern" name="pattern">
+                    <option value="">Select</option>
+                    <option>Checkerboard</option>
+                    <option>Basketweave</option>
+                    <option>Chevron</option>
+                    <option>Parquet</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+
+<!----------- Extras ------------>
+
+    <fieldset class="cb-group">
+        <legend class="cb-legend">Features</legend>
+
+        <div class="cb-row">                                                    <!--Juice Groove-->
+            <div class="cb-field">
+                <label for="cb-groove">Juice Groove</label>
+                <select id="cb-groove" name="juice_groove">
+                    <option value="">Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="cb-field">                                                    <!--Feet-->
+                <label for="cb-feet">Feet</label>
+                <select id="cb-feet" name="feet">
+                    <option value="">Select</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="cb-field">                                                    <!--Handles-->
+                <label for="cb-handles">Handles</label>
+                <select id="cb-handles" name="handles">
+                    <option value="">Select</option>
+                    <option>Notched</option>
+                    <option>Slotted</option>
+                    <option>Hardware</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="cb-group">                                                  <!--Engraving-->
+        <legend class="cb-legend">Engraving</legend>
+
+        <div class="cb-row">
+            <div class="cb-field">
+                <label for="cb-engraving">Engraving Details (optional)</label>
+                <textarea
+                    id="cb-engraving"
+                    name="engraving"
+                    placeholder="Names, dates, logos, placement notes..."
+                ></textarea>
+            </div>
+        </div>
+    </fieldset>
+
+<!----------- Button ------------>
+
+    <button type="submit" class="cb-submit">
+        Submit Custom Board Request
+    </button>
+
+</form>
+<!--#endregion-->
+
+<!---------------Footer--------------------------------------------------><!--#region-->
+<footer class="site-footer">
+    <div class="footer-top">
+        <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="index.html#contact-us">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-social">
+        <a href="https://facebook.com" class="facebook-link" target="_blank">
+            Facebook
+        </a>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+        <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+
+        <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
+    </div>
+</footer>
+<!--#endregion-->
+
+<!---------------Scripts------------------------------------------------------><!--#region-->
+
+    <!-- Fade-in Animation --><!--#region-->
+<script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+        threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+</script>
+    <!--#endregion-->
+
+    <!-- Hamburger Menu --><!--#region-->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const overlay = document.querySelector(".nav-overlay");
+
+        if (!hamburger || !overlay) return;
+
+        hamburger.addEventListener("click", () => {
+            overlay.classList.toggle("open");
+            hamburger.classList.toggle("open");
+        });
+
+        document.querySelectorAll(".nav-overlay a").forEach(link => {
+            link.addEventListener("click", () => {
+                overlay.classList.remove("open");
+                hamburger.classList.remove("open");
+            });
+        });
+    });
+</script>
+    <!--#endregion-->
+
+ <!--Home Nav Scrolling for Custom--><!--#region-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const desktopHeader = document.querySelector(".desktop-header");
+            const mobileHeader = document.querySelector(".mobile-header");
+            const heroSection = document.querySelector(".custom-hero-banner ");
+            const overlay = document.querySelector(".custom-hero-overlay");
+            
+            if (!heroSection) return;
+            
+            function handleScroll() {
+                const hidePoint = heroSection.offsetHeight * 0.3;
+                const shouldHide = window.scrollY > hidePoint;
+                const menuOpen = overlay?.classList.contains("open");
+                
+                if (shouldHide && !menuOpen) {
+                    desktopHeader?.classList.add("hide-nav");
+                    mobileHeader?.classList.add("hide-nav");
+                } else {
+                    desktopHeader?.classList.remove("hide-nav");
+                    mobileHeader?.classList.remove("hide-nav");
+                }
+            }
+            
+            window.addEventListener("scroll", handleScroll, { passive: true });
+            handleScroll(); // run once on load
+        });
+    </script>
+    <!--#endregion-->
+<!--#endregion-->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
