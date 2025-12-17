@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8" />
     <title>Our Work – B&K Custom Woodworks</title>
     <link rel="stylesheet" href="main-style.css" />
@@ -14,312 +14,524 @@
 <body>
 
 <!---------------Navigation----------------------------------------------><!--#region-->
-<!-- Desktop Navigation -->
-<header class="desktop-header">
-    <nav class="desktop-nav">
+    
+    <!-- Desktop Navigation -->
+    <header class="desktop-header">
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="custom-boards.html">Custom</a></li>
+                <li><a href="index.html#contact-us">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <header class="mobile-header">
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    
+    <div class="nav-overlay">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="custom-boards.html">Custom</a></li>
             <li><a href="index.html#contact-us">Contact</a></li>
         </ul>
-    </nav>
-</header>
-
-<!-- Mobile Navigation -->
-<header class="mobile-header">
-    <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-</header>
-
-<div class="nav-overlay">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Shop</a></li>
-        <li><a href="custom-boards.html">Custom</a></li>
-        <li><a href="index.html#contact-us">Contact</a></li>
-    </ul>
-</div>
-<!--#endregion-->
+    </div>
+    <!--#endregion-->
 
 <!---------------Hero Section--------------------------------------------><!--#region-->
-
-<section class="custom-hero-banner">
-    <div class="custom-hero-overlay"></div>
-
-    <div class="custom-hero-title-wrap">
-        <h1>Design Your Custom Board</h1>
-    </div>
-</section>
-
-<!--#endregion-->
-
-<!---------------How It Works--------------------------------------------><!--#region-->
-
-<section class="custom-process fade-in">
-    <div class="custom-process-inner">
-
-        <h2>How It Works</h2>
-
-        <div class="custom-process-grid">
-            <!-- your step cards stay the same -->
+    
+    <section class="custom-hero-banner">
+        <div class="custom-hero-overlay"></div>
+        
+        <div class="custom-hero-title-wrap">
+            <h1>Design Your Custom Board</h1>
         </div>
+    </section>
+    
+    <!--#endregion-->
 
-    </div>
-</section>
+<!--Step Navigation --><!--#region-->
+    <main class="cb-builder">
+        
+        <nav class="cb-steps" aria-label="Custom board steps">
+            <button class="cb-step active" data-step="1">Contact Info</button>
+            <button class="cb-step" data-step="2">Board Size</button>
+            <button class="cb-step" data-step="3">Wood Types</button>
+            <button class="cb-step" data-step="4">Pattern</button>
+            <button class="cb-step" data-step="5">Features</button>
+            <button class="cb-step" data-step="6">Engraving</button>
+        </nav>
+        <!--#endregion-->
 
-<!--#endregion-->
+<!-- Step 1 Contact Info--><!--#region-->
+        
+        <!-- Builder Content -->
+        <form class="cb-form">
+            
+            <section class="cb-panel active" data-step="1">   
+                <header>
+                    <h2>Step 1</h2>
+                    <p>How can we contact you?</p>
+                </header>
+                
+                <div class="cb-fields cb-grid">
+                    <label>
+                        Name
+                        <input type="text" name="name" placeholder="Your name">
+                    </label>
+                    
+                    <label>
+                        Email
+                        <input type="email" name="email" placeholder="you@example.com">
+                    </label>
+                    
+                    <label>
+                        Phone Number
+                        <input type="tel" name="phone" placeholder="000-000-0000">
+                    </label>
+                </div>
+            </section>
+            <!--#endregion-->
 
-<!---------------Custom Board Form---------------------------------------------><!--#region-->
-<form class="custom-board-form">
- <!-----------Customer Info------------>
+<!-- Step 2 Board Size --><!--#region-->
+            <section class="cb-panel" data-step="2">     
+                <header>
+                    <h2>Step 2</h2>
+                    <p>Select the dimensions that fit your kitchen.</p>
+                </header>
+                
+                <div class="cb-fields cb-grid">
+                    <label>
+                        Length
+                        <select name="length">
+                            <option>16 in</option>
+                            <option>17 in</option>
+                            <option>18 in</option>
+                            <option>19 in</option>
+                            <option>20 in</option>
+                            <option>21 in</option>
+                            <option>22 in</option>
+                        </select>
+                    </label>
+                    
+                    <label>
+                        Width
+                        <select name="width">
+                            <option>19 in</option>
+                            <option>20 in</option>
+                            <option>21 in</option>
+                            <option>22 in</option>
+                            <option>23 in</option>
+                            <option>24 in</option>
+                        </select>
+                    </label>
+                    
+                    <label>
+                        Thickness
+                        <select name="thickness">
+                            <option>1 in</option>
+                            <option>1.5 in</option>
+                            <option>2 in</option>
+                            <option>2.5 in</option>
+                        </select>
+                    </label>
+                </div>
+            </section>
+            <!--#endregion-->
 
- <fieldset class="cb-group">
-        <legend class="cb-legend">Contact Information</legend>
+<!-- Step 3 Wood Types--><!--#region-->
+            <section class="cb-panel" data-step="3">  
+                <header>
+                    <h2>Step 3</h2>
+                    <p>Choose one or more hardwoods.</p>
+                </header>
+                
+                <fieldset class="cb-checkbox-grid">
+                    <legend class="visually-hidden">Wood Types</legend>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="purple-heart">
+                        <img src="wood-types/purpleheart.jpg" alt="Purple Heart wood grain">
+                        <span>Purple Heart</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="bodark">
+                        <img src="wood-types/bodark.jpg" alt="Bodark wood grain">
+                        <span>Bodark</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="bloodwood">
+                        <img src="wood-types/bloodwood.jpg" alt="Bloodwood wood grain">
+                        <span>Bloodwood</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="padauk">
+                        <img src="wood-types/padauk.jpg" alt="African Padauk wood grain">
+                        <span>African Padauk</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="zebrawood">
+                        <img src="wood-types/zebrawood.jpg" alt="Zebrawood grain">
+                        <span>Zebrawood</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="walnut">
+                        <img src="wood-types/blackwalnut.jpg" alt="Black Walnut grain">
+                        <span>Black Walnut</span>
+                    </label>
 
-        <div class="cb-row">                                                    <!--Name-->
-            <div class="cb-field">
-                <label for="cb-name">Name</label>
-                <input type="text" id="cb-name" name="name" autocomplete="name">
+                    <div class="cb-other-option">
+                    <label class="cb-other-option-label">
+                        <input type="checkbox" name="other_option_enabled">
+                        <span>Have a special type of wood in mind?</span>
+                    </label>
+                    <input  type="text" name="other_option" placeholder="Your ideas here" class="cb-other-input">
+                    </div>
+
+                </fieldset>
+
+            </section>
+            <!--#endregion-->
+
+<!-- Step 4 Patterns--><!--#region-->
+            
+            <section class="cb-panel" data-step="4">               
+                <header>
+                    <h2>Pattern</h2>
+                    <p>Select a design style.</p>
+                </header>
+                
+                <fieldset class="cb-checkbox-grid">
+                    <legend class="visually-hidden">Patterns</legend>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="checkerboard">
+                        <img src="patterns/checkerboard.png" alt="Checkerboard Pattern">
+                        <span>Checkerboard</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="staircase">
+                        <img src="patterns/staircase.png" alt="Staircase Pattern">
+                        <span>Steps</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="chevron">
+                        <img src="patterns/chevron.png" alt="Chevron Pattern">
+                        <span>Chevron</span>
+                    </label>
+                    
+                    <label class="cb-checkbox-option">
+                        <input type="checkbox" name="check[]" value="stripes">
+                        <img src="patterns/stripes.png" alt="Stripe Pattern">
+                        <span>Striped</span>
+                    </label>
+
+                    <div class="cb-other-option">
+                    <label class="cb-other-option-label">
+                        <input type="checkbox" name="other_option_enabled">
+                        <span>Have a design in mind?</span>
+                    </label>
+                    <input  type="text" name="other_option" placeholder="Your ideas here" class="cb-other-input">
+                    </div>
+            </section>
+            <!--#endregion-->
+
+<!-- Step 5 Features--><!--#region-->
+            <section class="cb-panel" data-step="5">          
+                <header>
+                    <h2>Features</h2>
+                    <p>Add functional details.</p>
+                </header>
+
+                <label class="cb-feature">
+                    <span class="cb-feature-title">Juice Groove</span>
+
+                    <div class="cb-feature-row">
+                        <img src="Features/juice-groove.png" alt="Juice groove example" class="cb-feature-img">
+
+                        <select name="juice-groove">
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                </label>
+                    
+
+                <label class="cb-feature">
+                    <span class="cb-feature-title">Feet</span>
+                    <div class="cb-feature-row">
+                        <img src="Features/feet.jpg" alt="Feet example" class="cb-feature-img">
+                        <select name="Feet">
+                            <option>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                </label>
+
+                <label class="cb-feature">
+                    <span class="cb-feature-title">Handles</span>
+                    <div class="cb-feature-row">
+                        <img src="Features/finger-grooves.jpg" alt="handles example" class="cb-feature-img">
+                        <select name="Handles">
+                            <option>Notched</option>
+                            <option>Slotted</option>
+                            <option>Hardware</option>
+                        </select>
+                    </div>
+                </label>
+            </section>
+            <!--#endregion-->
+
+<!--Step 6 Engravings--><!--#region-->
+            <section class="cb-panel" data-step="6">        
+                <header>
+                    <h2>Engraving</h2>
+                    <p>Add a personal touch.</p>
+                </header>
+                
+                <div class="cb-fields">
+                    <label>
+                        Engraving Details
+                        <textarea
+                        name="engraving"
+                        rows="5"
+                        placeholder="Names, dates, symbols, or notes..."
+                        ></textarea>
+                    </label>
+                </div>
+            </section>
+            <!--#endregion-->
+
+<!--Buttons--><!--#region-->
+            <div class="cb-nav">                          
+                <button type="button" class="cb-back" disabled>
+                    Back
+                </button>
+                
+                <button type="button" class="cb-next">
+                    Next
+                </button>
             </div>
+            
+        </form>
+    </main>
+    <!--#endregion-->
 
-            <div class="cb-field">                                                      <!--Email-->
-                <label for="cb-email">Email</label>
-                <input type="email" id="cb-email" name="email" autocomplete="email">
-            </div>
+
+ <!---------------Footer--------------------------------------------------><!--#region-->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="custom-boards.html">Custom</a></li>
+                <li><a href="index.html#contact-us">Contact</a></li>
+            </ul>
         </div>
-
-        <div class="cb-row">                                                         <!--Phone #-->
-            <div class="cb-field">
-                <label for="cb-phone">Phone Number</label>
-                <input type="tel" id="cb-phone" name="phone" autocomplete="tel">
-            </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-social">
+            <a href="https://facebook.com" class="facebook-link" target="_blank">
+                Facebook
+            </a>
         </div>
-    </fieldset>
-
- <!----------- Size ------------>
-   <fieldset class="cb-group">
-        <legend class="cb-legend">Board Dimensions</legend>
-
-        <div class="cb-row">                                                         <!--Length-->
-            <div class="cb-field">
-                <label for="cb-length">Length</label>
-                <select id="cb-length" name="length">
-                    <option value="">Select</option>
-                    <option>16 in</option>
-                    <option>17 in</option>
-                    <option>18 in</option>
-                    <option>19 in</option>
-                    <option>20 in</option>
-                    <option>21 in</option>
-                    <option>22 in</option>
-                </select>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <span>•</span>
+                <a href="terms.html">Terms & Conditions</a>
             </div>
-
-            <div class="cb-field">                                                    <!--Width-->
-                <label for="cb-width">Width</label>
-                <select id="cb-width" name="width">
-                    <option value="">Select</option>
-                    <option>19 in</option>
-                    <option>20 in</option>
-                    <option>21 in</option>
-                    <option>22 in</option>
-                    <option>23 in</option>
-                    <option>24 in</option>
-                </select>
-            </div>
-
-            <div class="cb-field">                                                    <!--Thickness-->
-                <label for="cb-thickness">Thickness</label>
-                <select id="cb-thickness" name="thickness">
-                    <option value="">Select</option>
-                    <option>1 in</option>
-                    <option>1.5 in</option>
-                    <option>2 in</option>
-                    <option>2.5 in</option>
-                </select>
-            </div>
+            
+            <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
         </div>
-    </fieldset>
-<!----------- Materials ------------>
-
-    <fieldset class="cb-group">
-        <legend class="cb-legend">Materials & Design</legend>
-
-        <div class="cb-row">                                                    <!--Wood Types-->
-            <div class="cb-field">
-                <label for="cb-woods">Wood Types</label>
-                <select id="cb-woods" name="woods[]" multiple>
-                    <option>Purple Heart</option>
-                    <option>Bodark</option>
-                    <option>Bloodwood</option>
-                    <option>African Padauk</option>
-                    <option>Zebra Wood</option>
-                    <option>Black Walnut</option>
-                    <option>Other</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="cb-row">                                                    <!--Patterns-->
-            <div class="cb-field">
-                <label for="cb-pattern">Pattern</label>
-                <select id="cb-pattern" name="pattern">
-                    <option value="">Select</option>
-                    <option>Checkerboard</option>
-                    <option>Basketweave</option>
-                    <option>Chevron</option>
-                    <option>Parquet</option>
-                    <option>Other</option>
-                </select>
-            </div>
-        </div>
-    </fieldset>
-
-<!----------- Extras ------------>
-
-    <fieldset class="cb-group">
-        <legend class="cb-legend">Features</legend>
-
-        <div class="cb-row">                                                    <!--Juice Groove-->
-            <div class="cb-field">
-                <label for="cb-groove">Juice Groove</label>
-                <select id="cb-groove" name="juice_groove">
-                    <option value="">Select</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-
-            <div class="cb-field">                                                    <!--Feet-->
-                <label for="cb-feet">Feet</label>
-                <select id="cb-feet" name="feet">
-                    <option value="">Select</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select>
-            </div>
-
-            <div class="cb-field">                                                    <!--Handles-->
-                <label for="cb-handles">Handles</label>
-                <select id="cb-handles" name="handles">
-                    <option value="">Select</option>
-                    <option>Notched</option>
-                    <option>Slotted</option>
-                    <option>Hardware</option>
-                </select>
-            </div>
-        </div>
-    </fieldset>
-
-    <fieldset class="cb-group">                                                  <!--Engraving-->
-        <legend class="cb-legend">Engraving</legend>
-
-        <div class="cb-row">
-            <div class="cb-field">
-                <label for="cb-engraving">Engraving Details (optional)</label>
-                <textarea
-                    id="cb-engraving"
-                    name="engraving"
-                    placeholder="Names, dates, logos, placement notes..."
-                ></textarea>
-            </div>
-        </div>
-    </fieldset>
-
-<!----------- Button ------------>
-
-    <button type="submit" class="cb-submit">
-        Submit Custom Board Request
-    </button>
-
-</form>
-<!--#endregion-->
-
-<!---------------Footer--------------------------------------------------><!--#region-->
-<footer class="site-footer">
-    <div class="footer-top">
-        <ul class="footer-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Shop</a></li>
-            <li><a href="custom-boards.html">Custom</a></li>
-            <li><a href="index.html#contact-us">Contact</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-divider"></div>
-
-    <div class="footer-social">
-        <a href="https://facebook.com" class="facebook-link" target="_blank">
-            Facebook
-        </a>
-    </div>
-
-    <div class="footer-divider"></div>
-
-    <div class="footer-bottom">
-        <div class="footer-legal">
-            <a href="privacy.html">Privacy Policy</a>
-            <span>•</span>
-            <a href="terms.html">Terms & Conditions</a>
-        </div>
-
-        <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
-    </div>
-</footer>
-<!--#endregion-->
+    </footer>
+    <!--#endregion-->
 
 <!---------------Scripts------------------------------------------------------><!--#region-->
-
+    
     <!-- Fade-in Animation --><!--#region-->
-<script>
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-        threshold: 0.2
-    };
-
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        
+        const appearOptions = {
+            threshold: 0.2
+        };
+        
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
         });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
-</script>
+    </script>
     <!--#endregion-->
-
+    
     <!-- Hamburger Menu --><!--#region-->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const hamburger = document.querySelector(".hamburger");
-        const overlay = document.querySelector(".nav-overlay");
-
-        if (!hamburger || !overlay) return;
-
-        hamburger.addEventListener("click", () => {
-            overlay.classList.toggle("open");
-            hamburger.classList.toggle("open");
-        });
-
-        document.querySelectorAll(".nav-overlay a").forEach(link => {
-            link.addEventListener("click", () => {
-                overlay.classList.remove("open");
-                hamburger.classList.remove("open");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const overlay = document.querySelector(".nav-overlay");
+            
+            if (!hamburger || !overlay) return;
+            
+            hamburger.addEventListener("click", () => {
+                overlay.classList.toggle("open");
+                hamburger.classList.toggle("open");
+            });
+            
+            document.querySelectorAll(".nav-overlay a").forEach(link => {
+                link.addEventListener("click", () => {
+                    overlay.classList.remove("open");
+                    hamburger.classList.remove("open");
+                });
             });
         });
-    });
-</script>
+    </script>
     <!--#endregion-->
-
- <!--Home Nav Scrolling for Custom--><!--#region-->
+    
+    <!-- Custom Board Form --><!--#region-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const steps = document.querySelectorAll(".cb-step");
+            const panels = document.querySelectorAll(".cb-panel");
+            
+            let currentStep = 1;
+            
+            function showStep(step) {
+                currentStep = step;
+                
+                // Update step buttons
+                steps.forEach(btn => {
+                    btn.classList.toggle(
+                    "active",
+                    Number(btn.dataset.step) === step
+                    );
+                });
+                
+                // Update panels
+                panels.forEach(panel => {
+                    panel.classList.toggle(
+                    "active",
+                    Number(panel.dataset.step) === step
+                    );
+                });
+            }
+            
+            // Clickable step tabs
+            steps.forEach(stepBtn => {
+                stepBtn.addEventListener("click", () => {
+                    const step = Number(stepBtn.dataset.step);
+                    showStep(step);
+                });
+            });
+            
+            // Optional: expose for future buttons
+            window.cbNextStep = () => {
+                if (currentStep < panels.length) {
+                    showStep(currentStep + 1);
+                }
+            };
+            
+            window.cbPrevStep = () => {
+                if (currentStep > 1) {
+                    showStep(currentStep - 1);
+                }
+            };
+        });
+    </script>
+    <!--#endregion-->
+    
+    <!-- Custom Board Next & Back Button --><!--#region-->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const steps = document.querySelectorAll(".cb-step");
+            const panels = document.querySelectorAll(".cb-panel");
+            const nextBtn = document.querySelector(".cb-next");
+            const backBtn = document.querySelector(".cb-back");
+            
+            let currentStep = 1;
+            const totalSteps = panels.length;
+            
+            function showStep(step) {
+                currentStep = step;
+                
+                // Update step tabs
+                steps.forEach(btn => {
+                    btn.classList.toggle(
+                    "active",
+                    Number(btn.dataset.step) === step
+                    );
+                });
+                
+                // Update panels
+                panels.forEach(panel => {
+                    panel.classList.toggle(
+                    "active",
+                    Number(panel.dataset.step) === step
+                    );
+                });
+                
+                // Button states
+                backBtn.disabled = step === 1;
+                nextBtn.textContent = step === totalSteps ? "Submit" : "Next";
+            }
+            
+            // Tab clicks
+            steps.forEach(stepBtn => {
+                stepBtn.addEventListener("click", () => {
+                    showStep(Number(stepBtn.dataset.step));
+                });
+            });
+            
+            // Next / Back buttons
+            nextBtn.addEventListener("click", () => {
+                if (currentStep < totalSteps) {
+                    showStep(currentStep + 1);
+                } else {
+                    // placeholder for submit logic
+                    alert("Form ready to submit!");
+                }
+            });
+            
+            backBtn.addEventListener("click", () => {
+                if (currentStep > 1) {
+                    showStep(currentStep - 1);
+                }
+            });
+            
+            // Init
+            showStep(1);
+        });
+    </script>
+    
+    <!--#endregion-->
+    
+    <!--Home Nav Scrolling for Custom--><!--#region-->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const desktopHeader = document.querySelector(".desktop-header");
@@ -348,7 +560,8 @@
         });
     </script>
     <!--#endregion-->
-<!--#endregion-->
+    
+    <!--#endregion-->
 
 
 </body>
