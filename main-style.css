@@ -195,7 +195,7 @@
     height: 100svh;
     /* mobile safe height */
     min-height: 100vh;
-    background-image: url("product-images/fixed-qualityimage-board.jpg");
+    background-image: url("Photos/structural/home-hero.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -751,7 +751,7 @@
     height: clamp(40vh, 55vh, 65vh);
     min-height: clamp(240px, 40vw, 380px);
     
-    background-image: url("product-images/stockboard.webp");
+    background-image: url("Photos/structural/products-hero.webp");
     background-size: cover;
     background-position: center;
     
@@ -923,7 +923,7 @@
     font-size: clamp(14px, 3.2vw, 18px);
     
     color: #fff;
-    background: linear-gradient(-65deg,
+    background: linear-gradient(-120deg,
     rgba(214, 189, 165, 1) 0%,
     rgba(102, 77, 66, 1) 93%);
     cursor: pointer;
@@ -1040,7 +1040,6 @@
     
     .board-wax-image img {
         margin-left: 0;
-        /* 🔥 THIS fixes the offset */
         margin-right: 0;
         margin-bottom: clamp(10px, 3vw, 20px);
         max-width: 92vw;
@@ -1054,107 +1053,6 @@
 
 /* #endregion */
 
-/*---------------Wood Types-------------------------------*//* #region */
-
-.wood-types-page h2 {
-    text-align: center;
-    font-size: clamp(32px, 6vw, 60px);
-    color: #3e2b23;
-    margin-bottom: clamp(20px, 4vw, 40px);
-}
-
-.wood-grid {
-    max-width: 1200px;
-    margin: 0 auto clamp(40px, 6vw, 80px);
-    padding: 0 clamp(10px, 4vw, 20px);
-    
-    display: flex;
-    flex-direction: column;
-    gap: clamp(15px, 4vw, 25px);
-}
-
-/* Card container */
-.wood-card {
-    display: flex;
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(6px);
-    border-radius: 12px;
-    overflow: hidden;
-    border-style: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.wood-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
-}
-
-/* Image */
-.wood-card img {
-    width: 40%;
-    height: clamp(150px, 20vw, 200px);
-    object-fit: cover;
-}
-
-/* Text content */
-.wood-info {
-    padding: clamp(14px, 3vw, 24px);
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.wood-info h3 {
-    margin: 0 0 10px;
-    color: #3e2b23;
-    font-size: clamp(20px, 3.8vw, 26px);
-    font-weight: 600;
-}
-
-.wood-info p {
-    margin: 0;
-    color: #3e2b23;
-    line-height: 1.6;
-    font-size: clamp(16px, 3.5vw, 20px);
-}
-
-/* ---- Fade-in Animation ---- */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ---- Mobile Optimization ---- */
-
-@media (max-width: 700px) {
-    .wood-card {
-        flex-direction: column;
-        transform: scale(1.03);
-        border-radius: 16px;
-    }
-    
-    .wood-card img {
-        width: 100%;
-        height: clamp(220px, 45vw, 320px);
-    }
-    
-    .wood-info {
-        width: 100%;
-    }
-}
-
-/* #endregion */
-
 /* #endregion */
 
 /*---------------Custom Boards Page----------------------*//*#region*/
@@ -1163,10 +1061,10 @@
 .custom-hero-banner {
     position: relative;
     width: 100%;
-    height: clamp(32vh, 38vh, 45vh);
-    min-height: 260px;
+    height: clamp(20vh, 38vh, 30vh);
+    min-height: 240px;
     
-    background-image: url("product-images/wood-panels.png");
+    background-image: url("Photos/structural/custom-board-hero.png");
     background-size: cover;
     background-position: center;
     
@@ -1230,42 +1128,37 @@
 /*#endregion*/
 
 /*---------------Custom Board Form---------*//*#region*/
-:root {
-    --cb-brown: #391915;
-    --cb-brown-soft: rgba(57, 25, 21, 0.6);
-    --cb-bg-glass: rgba(255, 255, 255, 0.45);
-    --cb-border: rgba(57, 25, 21, 0.25);
-}
-
-.cb-builder {
+.custom-board-form {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 20px;
-    background: var(--cb-bg-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    
-    border: 2px solid var(--cb-border);
-    border-radius: 20px;
-    
     padding: clamp(30px, 6vw, 60px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    
+    background: rgba(155, 133, 123, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    
+    transition: transform 0.25s ease;
 }
 
-/* ---------- Step Tabs Navigation ---------- *//*#region*/
-.cb-steps {
+.custom-board-form input:focus-visible,
+.custom-board-form select:focus-visible,
+.custom-board-form textarea:focus-visible {
+    outline: none;
+    border-color: #391915;
+    box-shadow: 0 0 12px rgba(57, 25, 21, 0.2);
+}
+
+/* ---------- Tabs --------- *//*#region*/
+.custom-board-tabs {
     display: flex;
     justify-content: center;
     gap: clamp(8px, 2vw, 18px);
-    overflow-x: auto;
-    
-    padding-bottom: 14px;
-    margin-bottom: 40px;
-    
-    border-bottom: 2px solid var(--cb-border);
 }
 
-.cb-step {
+.custom-board-tab {
     font-family: "Scope One", serif;
     font-size: 20px;
     letter-spacing: 1px;
@@ -1273,168 +1166,146 @@
     
     padding: 10px 14px;
     border-radius: 30px;
-    
+    border: none;
     background: rgba(255, 255, 255, 0.6);
-    border: 1px solid var(--cb-border);
-    
-    color: var(--cb-brown-soft);
     cursor: pointer;
-    
     transition: all 0.25s ease;
 }
 
-.cb-step:hover {
-    color: var(--cb-brown);
-    transform: translateY(-2px);
-}
-
-.cb-step.active {
+.custom-board-tab.active {
     background: linear-gradient(
-    -65deg,
+    -100deg,
     rgba(214, 189, 165, 0.9),
     rgba(102, 77, 66, 0.9)
     );
     color: white;
-    border-color: transparent;
+    border-color: none;
 }
 
-@media (max-width: 600px) {
-    .cb-steps {
-        overflow-x: auto;
-        scrollbar-width: none;
-    }
-    
-    .cb-steps::-webkit-scrollbar {
+@media (max-width: 700px) {
+    .custom-board-tabs {
         display: none;
-    }
-    
-    .cb-step {
-        white-space: nowrap;
-        flex-shrink: 0;
     }
 }
 /*#endregion*/
 
-/* ---------- Panels ---------- *//*#region*/
-.cb-panel {
+/* ---------- Slides ---------- *//*#region*/
+.custom-board-slide {
     display: none;
 }
 
-.cb-panel.active {
+.custom-board-slide.active {
     display: block;
 }
 
-.cb-panel header {
+.custom-board-slide header {
     margin-bottom: 30px;
 }
 
-.cb-panel h2 {
+.custom-board-slide h2 {
     font-size: clamp(28px, 6vw, 42px);
-    color: var(--cb-brown);
     margin-bottom: 6px;
+    color: #391915;
 }
 
-.cb-panel p {
-    font-size: clamp(20px, 3.5vw, 24px);
-    color: var(--cb-brown-soft);
-    max-width: 600px;
-}
 /*#endregion*/
 
-/* ---------- Fields ---------- *//*#region*/
-.cb-fields {
+/* ---------- Custom Contact Info---------- *//*#region*/
+.custom-board-contact {
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: text;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.cb-fields label {
-    display: flex;
-    flex-direction: column;
+.custom-board-contact-title {
+    font-size: 24px;
     font-weight: 600;
-    font-size: 16px;
-    color: var(--cb-brown);
-    gap: 6px;
+    color: #391915;
+    letter-spacing: 0.5px;
 }
 
-/* Inputs */
-.cb-fields input,
-.cb-fields select,
-.cb-fields textarea {
+.custom-board-contact input {
+    width: 100%;
     padding: 14px 16px;
     font-size: 16px;
+    font-family: inherit;
     
-    border-radius: 14px;
-    border: 2px solid var(--cb-border);
+    border: 2px solid rgba(57, 25, 21, 0.25);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(6px);
-    
-    color: var(--cb-brown);
-    transition: 0.25s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cb-fields input:focus,
-.cb-fields select:focus,
-.cb-fields textarea:focus {
-    outline: none;
-    border-color: var(--cb-brown);
-    box-shadow: 0 0 12px rgba(57, 25, 21, 0.2);
+@media (max-width: 700px) {
+    .custom-board-contact {
+        padding: 16px;
+    }
+    
+    .custom-board-contact-title {
+        font-size: 17px;
+    }
 }
 /*#endregion*/
 
-/* ---------- Next/Back ---------- *//*#region*/
-.cb-nav {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 2px solid var(--cb-border);
-    
+/*-----------Size-------------*//*#region*/
+.custom-board-size {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.cb-nav button {
-    padding: 14px 26px;
-    border-radius: 30px;
+.custom-board-size-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #391915;
+    letter-spacing: 0.5px;
+}
+
+.custom-board-size select {
+    width: 100%;
+    padding: 14px 16px;
     font-size: 16px;
-    font-weight: 700;
+    font-family: inherit;
     cursor: pointer;
     
-    transition: 0.25s ease;
+    border: 2px solid rgba(57, 25, 21, 0.25);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cb-back {
-    background: transparent;
-    color: var(--cb-brown-soft);
-    border: 2px solid var(--cb-border);
-}
-
-.cb-back:hover:not(:disabled) {
-    color: var(--cb-brown);
-    border-color: var(--cb-brown);
-}
-
-.cb-next {
-    background: linear-gradient(
-    -65deg,
-    rgba(214, 189, 165, 1),
-    rgba(102, 77, 66, 1)
-    );
-    color: #fff;
-    border: none;
-}
-
-.cb-next:hover {
-    transform: translateY(-3px);
+@media (max-width: 700px) {
+    .custom-board-size {
+        padding: 16px;
+    }
+    
+    .custom-board-size-title {
+        font-size: 17px;
+    }
 }
 /*#endregion*/
 
-/*  ----------Checkbox Grid ----------*//*#region*/
+/*----------Wood/Patterns/Features---------*//*#region*/
 .cb-checkbox-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
     margin-top: 20px;
     border: none;
 }
@@ -1445,42 +1316,37 @@
     pointer-events: none;
 }
 
-/* Card container */
 .cb-checkbox-option {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
-    padding: 12px;
-    border-radius: 16px;
+    padding: 16px;
     cursor: pointer;
     
-    background: rgba(255, 255, 255, 0.7);
-    border: 2px solid rgba(57, 25, 21, 0.25);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     
     transition: transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
 }
 
-/* Image */
 .cb-checkbox-option img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
-/* Label text */
 .cb-checkbox-option span {
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     color: #391915;
 }
 
-/* Hover */
 .cb-checkbox-option:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
@@ -1491,7 +1357,6 @@
     box-shadow: 0 0 0 2px rgba(34, 96, 255, 0.25);
 }
 
-/* Checkmark */
 .cb-checkbox-option:has(input:checked)::before {
     opacity: 1;
     transform: scale(1);
@@ -1509,7 +1374,7 @@
     
     background: #2260ff;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     
     display: flex;
@@ -1521,12 +1386,9 @@
     transition: 0.25s ease;
 }
 
-/*---- Other Option----*/
 .cb-other-option {
     margin-top: 30px;
-    padding-top: 20px;
-    border-top: 2px dashed rgba(57, 25, 21, 0.25);
-    
+    padding-top: 20px;   
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -1537,7 +1399,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     color: #391915;
     cursor: pointer;
@@ -1545,100 +1407,136 @@
 
 .cb-other-input {
     padding: 12px 14px;
-    border-radius: 12px;
+    font-size: 20px;    
     border: 2px solid rgba(57, 25, 21, 0.25);
-    font-size: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     
-    background: rgba(255, 255, 255, 0.75);
     transition: 0.2s ease;
-}
-
-/* Disabled until checked */
-.cb-other-option input[type="checkbox"]:not(:checked)
-~ .cb-other-input{
-    opacity: 0.5;
-    pointer-events: none;
 }
 
 /*#endregion*/
 
-/*----------Features-------------*//*#region*/
-.cb-feature {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  grid-template-rows: auto auto;
-  gap: 14px 22px;
-  align-items: center;
-
-  padding: 18px;
-  border-radius: 16px;
-
-  background: rgba(255, 255, 255, 0.65);
-  border: 2px solid rgba(57, 25, 21, 0.2);
-
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+/*----------Engraving-------------*//*#region*/
+.custom-board-engraving {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px;
+    margin-bottom: 18px;
+    cursor: text;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-
-.cb-feature-title {
-  grid-column: 1 / -1;
-  font-size: 18px;
-  font-weight: 600;
-  color: #391915;
+.custom-board-engraving-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #391915;
+    letter-spacing: 0.5px;
 }
 
-.cb-feature-row {
-    display: contents;
-}
-
-.cb-feature-img {
-  width: 120px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid rgba(57, 25, 21, 0.25);
-}
-
-.cb-feature select {
-  width: 100%;
-  padding: 14px 16px;
-  font-size: 16px;
-  font-family: inherit;
-
-  border-radius: 12px;
-  border: 2px solid rgba(57, 25, 21, 0.25);
-  background: rgba(255, 255, 255, 0.85);
-
-  color: #391915;
-  cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cb-feature select:focus {
-  outline: none;
-  border-color: #391915;
-  box-shadow: 0 0 0 3px rgba(57, 25, 21, 0.15);
-}
-
-/* Hover polish */
-.cb-feature:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-}
-
-/* ===== Mobile ===== */
-@media (max-width: 700px) {
-  .cb-feature {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .cb-feature-img {
+.custom-board-engraving textarea{
     width: 100%;
-    height: 160px;
-  }
+    padding: 14px 16px;
+    font-size: 18px;
+    font-family: inherit;
+    
+    border: 2px solid rgba(57, 25, 21, 0.25);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+@media (max-width: 700px) {
+    .custom-board-engraving {
+        padding: 16px;
+    }
+    
+    .custom-board-engraving-title {
+        font-size: 17px;
+    }
+}
+/*#endregion*/
+
+/* ---------- Next/Back ---------- *//*#region*/
+.custom-board-button {
+    margin-top: 40px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(57, 25, 21, 0.25);
+}
+
+.custom-board-button button {
+    padding: 14px 28px;
+    min-width: 120px;
+    font-size: 18px;
+    letter-spacing: .8px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    
+    transition: transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.custom-board-back {
+    background: transparent;
+    color: #391915;
+    
+    border: 2px solid rgba(57, 25, 21, 0.35);
+}
+
+.custom-board-back:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.custom-board-next {
+    background: linear-gradient(
+    -120deg,
+    rgba(214, 189, 165, 1),
+    rgba(102, 77, 66, 1)
+    );
+    color: #ffffff;
+    border: none;
+}
+
+.custom-board-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Disabled state */
+.custom-board-button button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+    .custom-board-button {
+        gap: 16px;
+    }
+    
+    .custom-board-button button {
+        min-height: 52px;
+        font-size: 18px;
+        flex: 1;
+        min-width: 0;
+    }
+}
 /*#endregion*/
 
 /*#endregion*/
@@ -1832,37 +1730,3 @@ html {
 
 /* #endregion */
 
-
-
-
-
-/*---------------NOT IN USE - Custom Intro----------------*//*#region*/
-/*
-.custom-intro {
-padding: clamp(10px, 10vw, 20px) 10px;
-}
-
-.custom-intro-inner {
-max-width: 1400px;
-margin: 0 auto;
-text-align: center;
-
-padding: clamp(20px, 6vw, 20px);
-
-background: rgba(255, 255, 255, 0.35);
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-
-border-radius: 20px;
-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.32);
-}
-
-.custom-intro-inner h2 {
-font-size: clamp(26px, 5vw, 42px);
-color: #391915;
-font-weight: 500;
-line-height: 1.4;
-margin: 0;
-}
-*/
-/*#endregion*/

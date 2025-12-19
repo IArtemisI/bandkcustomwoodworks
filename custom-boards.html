@@ -59,58 +59,51 @@
     <!--#endregion-->
 
 <!--Step Navigation --><!--#region-->
-    <main class="cb-builder">
+    <main class="custom-board-form">
         
-        <nav class="cb-steps" aria-label="Custom board steps">
-            <button class="cb-step active" data-step="1">Contact Info</button>
-            <button class="cb-step" data-step="2">Board Size</button>
-            <button class="cb-step" data-step="3">Wood Types</button>
-            <button class="cb-step" data-step="4">Pattern</button>
-            <button class="cb-step" data-step="5">Features</button>
-            <button class="cb-step" data-step="6">Engraving</button>
+        <nav class="custom-board-tabs" aria-label="Custom board tabs">
+            <button class="custom-board-tab active" data-step="1">Contact Info</button>
+            <button class="custom-board-tab" data-step="2">Board Size</button>
+            <button class="custom-board-tab" data-step="3">Wood Types</button>
+            <button class="custom-board-tab" data-step="4">Pattern</button>
+            <button class="custom-board-tab" data-step="5">Features</button>
+            <button class="custom-board-tab" data-step="6">Engraving</button>
         </nav>
         <!--#endregion-->
 
 <!-- Step 1 Contact Info--><!--#region-->
-        
-        <!-- Builder Content -->
-        <form class="cb-form">
-            
-            <section class="cb-panel active" data-step="1">   
+        <form>
+            <section class="custom-board-slide active" data-step="1">   
                 <header>
-                    <h2>Step 1</h2>
-                    <p>How can we contact you?</p>
+                    <h2>How can we contact you?</h2>
                 </header>
                 
-                <div class="cb-fields cb-grid">
-                    <label>
-                        Name
+                <label class="custom-board-contact">
+                    <span class="custom-board-contact-title">Name</span>
                         <input type="text" name="name" placeholder="Your name">
-                    </label>
+                </label>
                     
-                    <label>
-                        Email
+                <label class="custom-board-contact">
+                    <span class="custom-board-contact-title">Email</span>
                         <input type="email" name="email" placeholder="you@example.com">
-                    </label>
+                </label>
                     
-                    <label>
-                        Phone Number
+                <label class="custom-board-contact">
+                    <span class="custom-board-contact-title">Phone Number</span>
                         <input type="tel" name="phone" placeholder="000-000-0000">
-                    </label>
-                </div>
+                </label>
             </section>
-            <!--#endregion-->
+
+<!--#endregion-->
 
 <!-- Step 2 Board Size --><!--#region-->
-            <section class="cb-panel" data-step="2">     
+            <section class="custom-board-slide" data-step="2">     
                 <header>
-                    <h2>Step 2</h2>
-                    <p>Select the dimensions that fit your kitchen.</p>
+                    <h2>Choose the perfect size</h2>
                 </header>
                 
-                <div class="cb-fields cb-grid">
-                    <label>
-                        Length
+                <label class="custom-board-size">
+                    <span class="custom-board-size-title">Length</span>
                         <select name="length">
                             <option>16 in</option>
                             <option>17 in</option>
@@ -122,8 +115,8 @@
                         </select>
                     </label>
                     
-                    <label>
-                        Width
+                <label class="custom-board-size">
+                    <span class="custom-board-size-title">Width</span>
                         <select name="width">
                             <option>19 in</option>
                             <option>20 in</option>
@@ -134,24 +127,22 @@
                         </select>
                     </label>
                     
-                    <label>
-                        Thickness
-                        <select name="thickness">
+                <label class="custom-board-size">
+                    <span class="custom-board-size-title">Height</span>
+                        <select name="height">
                             <option>1 in</option>
                             <option>1.5 in</option>
                             <option>2 in</option>
                             <option>2.5 in</option>
                         </select>
                     </label>
-                </div>
             </section>
             <!--#endregion-->
 
 <!-- Step 3 Wood Types--><!--#region-->
-            <section class="cb-panel" data-step="3">  
+            <section class="custom-board-slide" data-step="3">  
                 <header>
-                    <h2>Step 3</h2>
-                    <p>Choose one or more hardwoods.</p>
+                    <h2>Choose one or more hardwoods</h2>
                 </header>
                 
                 <fieldset class="cb-checkbox-grid">
@@ -159,43 +150,42 @@
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="purple-heart">
-                        <img src="wood-types/purpleheart.jpg" alt="Purple Heart wood grain">
+                        <img src="photos/wood-types/purpleheart.jpg" alt="Purple Heart wood grain">
                         <span>Purple Heart</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="bodark">
-                        <img src="wood-types/bodark.jpg" alt="Bodark wood grain">
+                        <img src="photos/wood-types/bodark.jpg" alt="Bodark wood grain">
                         <span>Bodark</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="bloodwood">
-                        <img src="wood-types/bloodwood.jpg" alt="Bloodwood wood grain">
+                        <img src="photos/wood-types/bloodwood.jpg" alt="Bloodwood wood grain">
                         <span>Bloodwood</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="padauk">
-                        <img src="wood-types/padauk.jpg" alt="African Padauk wood grain">
+                        <img src="photos/wood-types/padauk.jpg" alt="African Padauk wood grain">
                         <span>African Padauk</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="zebrawood">
-                        <img src="wood-types/zebrawood.jpg" alt="Zebrawood grain">
+                        <img src="photos/wood-types/zebrawood.jpg" alt="Zebrawood grain">
                         <span>Zebrawood</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="walnut">
-                        <img src="wood-types/blackwalnut.jpg" alt="Black Walnut grain">
+                        <img src="photos/wood-types/blackwalnut.jpg" alt="Black Walnut grain">
                         <span>Black Walnut</span>
                     </label>
 
                     <div class="cb-other-option">
                     <label class="cb-other-option-label">
-                        <input type="checkbox" name="other_option_enabled">
                         <span>Have a special type of wood in mind?</span>
                     </label>
                     <input  type="text" name="other_option" placeholder="Your ideas here" class="cb-other-input">
@@ -208,10 +198,9 @@
 
 <!-- Step 4 Patterns--><!--#region-->
             
-            <section class="cb-panel" data-step="4">               
+            <section class="custom-board-slide" data-step="4">               
                 <header>
-                    <h2>Pattern</h2>
-                    <p>Select a design style.</p>
+                    <h2>Select a design style.</h2>
                 </header>
                 
                 <fieldset class="cb-checkbox-grid">
@@ -219,31 +208,30 @@
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="checkerboard">
-                        <img src="patterns/checkerboard.png" alt="Checkerboard Pattern">
+                        <img src="photos/patterns/checkerboard.png" alt="Checkerboard Pattern">
                         <span>Checkerboard</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="staircase">
-                        <img src="patterns/staircase.png" alt="Staircase Pattern">
+                        <img src="photos/patterns/staircase.png" alt="Staircase Pattern">
                         <span>Steps</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="chevron">
-                        <img src="patterns/chevron.png" alt="Chevron Pattern">
+                        <img src="photos/patterns/chevron.png" alt="Chevron Pattern">
                         <span>Chevron</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
                         <input type="checkbox" name="check[]" value="stripes">
-                        <img src="patterns/stripes.png" alt="Stripe Pattern">
+                        <img src="photos/patterns/stripes.png" alt="Stripe Pattern">
                         <span>Striped</span>
                     </label>
 
                     <div class="cb-other-option">
                     <label class="cb-other-option-label">
-                        <input type="checkbox" name="other_option_enabled">
                         <span>Have a design in mind?</span>
                     </label>
                     <input  type="text" name="other_option" placeholder="Your ideas here" class="cb-other-input">
@@ -252,82 +240,62 @@
             <!--#endregion-->
 
 <!-- Step 5 Features--><!--#region-->
-            <section class="cb-panel" data-step="5">          
-                <header>
-                    <h2>Features</h2>
-                    <p>Add functional details.</p>
-                </header>
+<section class="custom-board-slide" data-step="5">
+    <header>
+        <h2>Select your desired features</h2>
+    </header>
 
-                <label class="cb-feature">
-                    <span class="cb-feature-title">Juice Groove</span>
+    <fieldset class="cb-checkbox-grid">
+        <legend class="visually-hidden">Board Features</legend>
 
-                    <div class="cb-feature-row">
-                        <img src="Features/juice-groove.png" alt="Juice groove example" class="cb-feature-img">
+        <!-- Juice Groove -->
+        <label class="cb-checkbox-option">
+            <input type="checkbox" name="features[]" value="juice-groove">
+            <img src="photos/board-features/juice-groove.png" alt="Juice groove example">
+            <span>Juice Groove</span>
+        </label>
 
-                        <select name="juice-groove">
-                            <option>No</option>
-                            <option>Yes</option>
-                        </select>
-                    </div>
-                </label>
-                    
+        <!-- Feet -->
+ <label class="cb-checkbox-option">
+            <input type="checkbox" name="features[]" value="feet">
+            <img src="photos/board-features/feet.jpg" alt="Rubber feet example">
+            <span>Feet</span>
+        </label>
 
-                <label class="cb-feature">
-                    <span class="cb-feature-title">Feet</span>
-                    <div class="cb-feature-row">
-                        <img src="Features/feet.jpg" alt="Feet example" class="cb-feature-img">
-                        <select name="Feet">
-                            <option>No</option>
-                            <option>Yes</option>
-                        </select>
-                    </div>
-                </label>
+        <!-- Handles -->
+        <label class="cb-checkbox-option">
+            <input type="checkbox" name="features[]" value="handles">
+            <img src="photos/board-features/finger-grooves.jpg" alt="Handle options example">
+            <span>Handles</span>
+        </label>
 
-                <label class="cb-feature">
-                    <span class="cb-feature-title">Handles</span>
-                    <div class="cb-feature-row">
-                        <img src="Features/finger-grooves.jpg" alt="handles example" class="cb-feature-img">
-                        <select name="Handles">
-                            <option>Notched</option>
-                            <option>Slotted</option>
-                            <option>Hardware</option>
-                        </select>
-                    </div>
-                </label>
-            </section>
+    </fieldset>
+</section>
             <!--#endregion-->
 
 <!--Step 6 Engravings--><!--#region-->
-            <section class="cb-panel" data-step="6">        
+            <section class="custom-board-slide" data-step="6">        
                 <header>
-                    <h2>Engraving</h2>
-                    <p>Add a personal touch.</p>
+                    <h2>Custom engraving</h2>
                 </header>
                 
-                <div class="cb-fields">
-                    <label>
-                        Engraving Details
-                        <textarea
-                        name="engraving"
-                        rows="5"
-                        placeholder="Names, dates, symbols, or notes..."
-                        ></textarea>
-                    </label>
-                </div>
+                <label class="custom-board-engraving">
+                    <span class="custom-board-engraving-title">Engraving</span>
+                    <textarea name="engraving" rows="5" placeholder="Names, dates, logos, symbols..."></textarea>
+                </label>
             </section>
             <!--#endregion-->
 
 <!--Buttons--><!--#region-->
-            <div class="cb-nav">                          
-                <button type="button" class="cb-back" disabled>
+            <div class="custom-board-button">                          
+                <button type="button" class="custom-board-back" disabled>
                     Back
                 </button>
                 
-                <button type="button" class="cb-next">
+                <button type="button" class="custom-board-next">
                     Next
                 </button>
             </div>
-            
         </form>
     </main>
     <!--#endregion-->
@@ -416,8 +384,8 @@
     <!-- Custom Board Form --><!--#region-->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const steps = document.querySelectorAll(".cb-step");
-            const panels = document.querySelectorAll(".cb-panel");
+            const steps = document.querySelectorAll(".custom-board-tab");
+            const panels = document.querySelectorAll(".custom-board-slide");
             
             let currentStep = 1;
             
@@ -469,10 +437,10 @@
     
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const steps = document.querySelectorAll(".cb-step");
-            const panels = document.querySelectorAll(".cb-panel");
-            const nextBtn = document.querySelector(".cb-next");
-            const backBtn = document.querySelector(".cb-back");
+            const steps = document.querySelectorAll(".custom-board-tab");
+            const panels = document.querySelectorAll(".custom-board-slide");
+            const nextBtn = document.querySelector(".custom-board-next");
+            const backBtn = document.querySelector(".custom-board-back");
             
             let currentStep = 1;
             const totalSteps = panels.length;
