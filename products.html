@@ -46,22 +46,16 @@
 <!-- #endregion -->
 
 <!---------------Products Hero Section ----------------------------------><!--#region-->
-<section class="products-hero">
-</section>  
+<section class="products-hero"></section>  
+
+<section class="products-hero-text">
+    <h3>Browse our selection of available products</h3>
+</section>
 
 <!--#endregion-->
 
-<!---------------Products Navigation ------------------------------------><!--#region-->
+<!---------------Products Listed For Sale ----------------------------------><!--#region-->
 
-<div class="products-tabs-container" id="products-tabs">
-    <a href="#ready-to-ship" class="products-tab">Ready To Ship</a>
-    <a href="#board-wax" class="products-tab">Board Wax</a>
-    <span class="products-tab-slider"></span>
-</div>
-
-<!--#endregion-->
-
-<!---------------Ready to Ship Section ----------------------------------><!--#region-->
 <section id="ready-to-ship" class="product-grid">
     <!------------------------------------------Product 1------------------------------------------->
     
@@ -69,7 +63,6 @@
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$199</p>
-        <button class="button">Add to Cart</button>
     </div>
     <!------------------------------------------Product 2---------------------------------------------->
     
@@ -77,35 +70,30 @@
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$249</p>
-        <button class="button">Add to Cart</button>
     </div>
     <!----------------------------------------------Product 3------------------------------------------------->    
     <div class="product-card">
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$199</p>
-        <button class="button">Add to Cart</button>
     </div>
     <!------------------------------------------Product 4------------------------------------------->
     <div class="product-card">
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$199</p>
-        <button class="button">Add to Cart</button>
     </div>
     <!------------------------------------------Product 5---------------------------------------------->
     <div class="product-card">
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$199</p>
-        <button class="button">Add to Cart</button>
     </div>
     <!----------------------------------------------Product 6------------------------------------------------->    
     <div class="product-card">
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$199</p>
-        <button class="button">Add to Cart</button>
     </div>
     
     <!------------------------------------------Product 7------------------------------------------------->
@@ -113,14 +101,12 @@
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$199</p>
-        <button class="button">Add to Cart</button>
     </div>
     <!----------------------------------------------Product 7------------------------------------------------->    
     <div class="product-card">
         <img src="Photos/icons/under-construction.svg" alt="Product Name">
         <h3>Product Name</h3>
         <p class="price">$199</p>
-        <button class="button">Add to Cart</button>
     </div>
     
 </section>
@@ -225,70 +211,6 @@
                 hamburger.classList.remove("open");
             });
         });
-    });
-</script>
-
-<!--#endregion-->
-
-    <!--Products Nav Scrolling--><!--#region-->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        
-        const tabsContainer = document.querySelector(".products-tabs-container");
-        const tabs = document.querySelectorAll(".products-tab");
-        const slider = document.querySelector(".products-tab-slider");
-        
-        if (!tabsContainer || !tabs.length || !slider) return;
-        
-        /* ----------------------------------
-        Move slider under a tab
-        ---------------------------------- */
-        function moveSliderToTab(tab) {
-            const tabRect = tab.getBoundingClientRect();
-            const containerRect = tabsContainer.getBoundingClientRect();
-            
-            slider.style.width = `${tabRect.width}px`;
-            slider.style.left = `${tabRect.left - containerRect.left}px`;
-        }
-        
-        /* ----------------------------------
-        CLICK: only move slider
-        (browser handles scrolling)
-        ---------------------------------- */
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                moveSliderToTab(tab);
-            });
-        });
-        
-        /* ----------------------------------
-        SCROLL SPY: update slider on scroll
-        ---------------------------------- */
-        const sections = Array.from(tabs).map(tab =>
-        document.querySelector(tab.getAttribute("href"))
-        );
-        
-        window.addEventListener("scroll", () => {
-            let activeIndex = 0;
-            
-            sections.forEach((section, index) => {
-                if (!section) return;
-                
-                const sectionTop = section.getBoundingClientRect().top;
-                
-                if (sectionTop <= 120) {
-                    activeIndex = index;
-                }
-            });
-            
-            moveSliderToTab(tabs[activeIndex]);
-        });
-        
-        /* ----------------------------------
-        Initialize slider position
-        ---------------------------------- */
-        moveSliderToTab(tabs[0]);
-        
     });
 </script>
 

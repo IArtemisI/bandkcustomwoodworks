@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Privacy Policy – B&K Custom Woodworks</title>
+    <link rel="stylesheet" href="main-style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Flamenco:wght@300;400&family=Scope+One&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!---------------Navigation----------------------------------------------><!--#region-->
+<!-- Desktop Navigation -->
+<header class="desktop-header">
+    <nav class="desktop-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="#contact-us">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Mobile Navigation -->
+<header class="mobile-header">
+    <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<div class="nav-overlay">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="custom-boards.html">Custom</a></li>
+        <li><a href="#contact-us">Contact</a></li>
+    </ul>
+</div>
+<!--#endregion-->
+
+<!---------------Heading----------------------------------------------><!--#region-->
+<main>
+
+    <!-- Page Header -->
+    <section class="info-hero-banner">
+        <div class="info-hero-overlay"></div>
+        <div class="info-hero-title-wrap">
+            <h1>Privacy Policy</h1>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <section class="info-wrapper fade-in-section">
+        <h2>Your Privacy Matters</h2>
+
+        <p>
+            B&K Custom Woodworks values your privacy. This policy explains what
+            information we collect, how it is used, and how it is protected when
+            you visit our website or contact us.
+        </p>
+
+        <h3>1. Information We Collect</h3>
+        <p>
+            We may collect personal information you voluntarily provide, such as
+            your name, email address, and message details when you contact us or
+            request a custom order.
+        </p>
+
+        <h3>2. How We Use Your Information</h3>
+        <p>
+            The information you provide is used solely to:
+        </p>
+        <ul>
+            <li>Respond to inquiries</li>
+            <li>Communicate about orders or custom projects</li>
+            <li>Provide customer support</li>
+        </ul>
+
+        <p>
+            We do not sell, rent, or trade your personal information.
+        </p>
+
+        <h3>3. Cookies & Analytics</h3>
+        <p>
+            Our website may use basic cookies or analytics tools to understand
+            how visitors use the site. This information is anonymous and helps
+            us improve performance and usability.
+        </p>
+
+        <h3>4. Third-Party Services</h3>
+        <p>
+            We may use trusted third-party services (such as hosting providers)
+            to operate our website. These services are only given access to
+            information necessary to perform their functions.
+        </p>
+
+        <h3>5. Data Security</h3>
+        <p>
+            We take reasonable measures to protect your personal information.
+            However, no method of transmission over the internet is 100% secure.
+        </p>
+
+        <h3>6. Your Choices</h3>
+        <p>
+            You may request to review, update, or delete your personal information
+            by contacting us directly.
+        </p>
+
+        <h3>7. Changes to This Policy</h3>
+        <p>
+            This Privacy Policy may be updated from time to time. Any changes will
+            be posted on this page.
+        </p>
+
+        <p>
+            If you have any questions about this policy, please reach out through
+            our contact form.
+        </p>
+    </section>
+
+</main>
+
+<!---------------Footer--------------------------------------------------><!--#region-->
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="custom-boards.html">Custom</a></li>
+                <li><a href="index.html#contact-us">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-social">
+            <a href="https://facebook.com" class="facebook-link" target="_blank">
+                Facebook
+            </a>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <span>•</span>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+            
+            <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
+        </div>
+    </footer>
+    <!--#endregion-->
+
+<!---------------Scripts------------------------------------------------------><!--#region-->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const overlay = document.querySelector(".nav-overlay");
+
+    hamburger?.addEventListener("click", () => {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-overlay a").forEach(link => {
+        link.addEventListener("click", () => {
+            overlay.classList.remove("open");
+            hamburger.classList.remove("open");
+        });
+    });
+});
+</script>
+
+<script>
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.2 }
+);
+
+document.querySelectorAll(".fade-in-section").forEach(section => {
+    observer.observe(section);
+});
+</script>
+
+<!--#endregion-->
+
+</body>
+</html>

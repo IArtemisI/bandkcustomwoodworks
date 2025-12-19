@@ -3,15 +3,14 @@
 
 /*---------------Navigation Styles------------------------*//* #region */
 
-/*---------------Desktop Navigation ----------------------*/
-/* #region */
-
+/*---------------Desktop Navigation ----------------------*//* #region */
 .desktop-header {
     position: fixed;
     width: 100%;
-    padding: clamp(10px, 2vw, 20px) clamp(10px, 3vw, 30px);
+    padding: clamp(10px, 2vw, 10px) clamp(10px, 3vw, 20px);
     z-index: 5000;
     display: none;
+    background-color: #ede0d4;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -23,20 +22,20 @@
 
 .desktop-nav ul {
     margin: 0;
-    padding: 0;
+    padding-right: 30px;
     list-style: none;
     display: flex;
     gap: clamp(20px, 4vw, 60px);
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 .desktop-nav a {
-    text-decoration: none;
-    font-weight: 500;
     font-size: clamp(20px, 4vw, 30px);
-    color: #ffffff;
-    font-weight: 500;
-    letter-spacing: clamp(0.5px, 0.3vw, 1.5px);
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: #391915;
+    font-weight: 400;
+    text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -47,8 +46,7 @@
 
 /* #endregion */
 
-/*---------------Hamburger (Mobile) ----------------------*/
-/* #region */
+/*---------------Hamburger (Mobile) ----------------------*//* #region */
 
 .mobile-header {
     position: fixed;
@@ -159,8 +157,7 @@
 
 /* #endregion */
 
-/*---------------Responsive Navigation -------------------*/
-/* #region */
+/*---------------Responsive Navigation -------------------*//* #region */
 
 /* Default: mobile only */
 .desktop-header {
@@ -242,9 +239,15 @@
 
 /* Tagline */
 .hero p {
-    font-size: clamp(28px, 6vw, 40px);
-    margin-top: clamp(6px, 1.2vw, 12px);
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    margin-top: clamp(10px, 1.2vw, 18px);
+    font-size: clamp(32px, 6vw, 50px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.00;
+    font-weight: 400;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* ---------------------------------- Mobile-Specific Layout Tweaks ---------------------------------- */
@@ -276,11 +279,14 @@
 }
 
 .welcome-left h2 {
-    font-weight: 400;
-    color: #3e2b23;
     font-size: clamp(40px, 8vw, 80px);
-    line-height: 1.5;
     text-align: left;
+    letter-spacing: 0.05em;
+    color: #3e2b23;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.00;
+    font-weight: 400;
 }
 
 .welcome-right {
@@ -524,9 +530,13 @@
 
 .custom-board-inner h2 {
     font-size: clamp(40px, 8vw, 70px);
-    color: #391915;
-    font-weight: 500;
     margin-bottom: clamp(10px, 3vw, 20px);
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #391915;
+    text-transform: uppercase;
+    line-height: 1.00;
+    font-weight: 400;
 }
 
 .custom-board-intro {
@@ -561,8 +571,12 @@
 
 .custom-option h3 {
     font-size: clamp(24px, 4vw, 28px);
-    margin-bottom: 10px;
+    margin-bottom: clamp(10px, 3vw, 20px);
+    text-align: center;
+    letter-spacing: 0.05em;
     color: #391915;
+    text-transform: uppercase;
+    line-height: 1.00;
     font-weight: 600;
 }
 
@@ -631,12 +645,14 @@
 .contact-wrapper h2 {
     text-align: center;
     color: #391915;
-    font-size: clamp(40px, 8vw, 80px);
-    font-weight: 500;
+    font-size: clamp(40px, 8vw, 70px);
     margin-bottom: clamp(25px, 6vw, 50px);
     letter-spacing: 1.5px;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
     position: relative;
+    text-transform: uppercase;
+    line-height: 1.00;
+    font-weight: 400;
 }
 
 .contact-wrapper h2::after {
@@ -745,112 +761,57 @@
 /*---------------Product Page---------------------*//* #region */
 
 /*---------------Products Hero----------------------------*//* #region */
-
-.products-hero {
-    width: 100%;
-    height: clamp(40vh, 55vh, 65vh);
-    min-height: clamp(240px, 40vw, 380px);
-    
-    background-image: url("Photos/structural/products-hero.webp");
+.products-hero { 
+    min-height: 50vh;
+    background-image: url("Photos/structural/products-hero.jpg");
     background-size: cover;
     background-position: center;
-    
     position: relative;
     
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    
-    padding-bottom: clamp(20px, 6vw, 40px);
+    align-items: center;
+    padding: clamp(10px, 4vw, 40px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
 }
 
 .products-hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: -1;
+
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0)
+    );
 }
 
-/* ------------------------- MOBILE OPTIMIZATION ------------------------- */
+.products-hero-text {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+.products-hero-text h3 {
+    font-size: clamp(40px, 8vw, 50px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 50px;
+    color: #391915;
+    line-height: 1.00;
+    font-weight: 400;
+    text-shadow:
+    2px 4px 12px rgba(0, 0, 0, 0.3);
+}
 
 @media (max-width: 600px) {
-    .products-hero {
-        align-items: flex-end;
-        padding-bottom: clamp(16px, 5vw, 30px);
-    }
+.products-hero {
+    align-items: flex-end;
+    padding-bottom: clamp(16px, 5vw, 30px);
+    max-height: 380px;
 }
-
-/* #endregion */
-
-/*---------------Product Navigation-----------------------*//*#region*/
-
-.products-tabs-container {
-    position: sticky;
-    top: 0;
-    z-index: 6000;
-    
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-    background: #ffffff;
-    height: clamp(50px, 10vw, 70px);
-    width: 100%;
-    
-    padding: 0 clamp(10px, 3vw, 20px);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
-}
-
-/* Individual tab */
-.products-tab {
-    flex: 1;
-    text-align: center;
-    
-    font-size: clamp(14px, 4.5vw, 28px);
-    font-weight: 400;
-    
-    color: #391915;
-    text-decoration: none;
-    
-    padding: clamp(10px, 3vw, 20px) 0;
-    position: relative;
-    
-    transition: transform 0.3s ease, color 0.2s ease;
-}
-
-.products-tab:hover {
-    color: #391915;
-    transform: translateY(-3px);
-}
-
-/* Sliding underline bar */
-.products-tab-slider {
-    position: absolute;
-    bottom: 0;
-    
-    height: clamp(3px, 0.8vw, 5px);
-    width: 0;
-    background: #391915;
-    transition: left 0.3s ease, width 0.3s ease;
-}
-
-@media (max-width: 650px) {
-    .products-tabs-container {
-        height: clamp(50px, 12vw, 60px);
-        justify-content: space-between;
-        padding: 0 clamp(8px, 4vw, 16px);
-    }
-    
-    .products-tab {
-        padding: clamp(8px, 2.5vw, 14px) 0;
-        font-size: clamp(14px, 5.2vw, 20px);
-    }
-    
-    .products-tab:hover {
-        transform: none;
-        /* Avoid accidental jump on tap devices */
-    }
 }
 
 /* #endregion */
@@ -864,8 +825,7 @@
     display: grid;
     
     gap: clamp(20px, 4vw, 35px);
-    grid-template-columns: repeat(auto-fit,
-    minmax(clamp(200px, 40vw, 300px), 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(clamp(300px, 40vw, 400px), 1fr));
 }
 
 /* Individual product card */
@@ -873,15 +833,10 @@
     overflow: hidden;
     text-align: center;
     padding-bottom: clamp(10px, 2vw, 20px);
-    
     background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    
-    border: 2px solid rgba(57, 25, 21, 0.25);
-    border-radius: 18px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -893,48 +848,28 @@
 /* Product image */
 .product-card img {
     width: 100%;
-    height: clamp(160px, 22vw, 240px);
+    height: clamp(260px, 22vw, 340px);
     object-fit: cover;
     display: block;
 }
 
 /* Product title */
 .product-card h3 {
-    margin: clamp(10px, 2vw, 15px) 0 clamp(5px, 1vw, 8px);
-    font-size: clamp(16px, 3.6vw, 20px);
+    font-size: clamp(20px, 4vw, 30px);
+    text-transform: uppercase;
+    margin-top: 10px;
     color: #391915;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 /* Price */
 .product-card .price {
-    font-size: clamp(14px, 3.2vw, 18px);
+    font-size: clamp(20px, 8vw, 25px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     color: #391915;
-    margin-bottom: clamp(6px, 1.5vw, 10px);
-}
-
-/* Add to cart / Learn more button */
-.button {
-    padding: clamp(0.4em, 1vw, 0.6em) clamp(1em, 3vw, 1.4em);
-    border-radius: 30px;
-    border: none;
-    
-    font-weight: 700;
-    font-size: clamp(14px, 3.2vw, 18px);
-    
-    color: #fff;
-    background: linear-gradient(-120deg,
-    rgba(214, 189, 165, 1) 0%,
-    rgba(102, 77, 66, 1) 93%);
-    cursor: pointer;
-    
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transition: 0.3s;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    color: #391915;
+    font-weight: 400;
+    margin: clamp(6px, 1.5vw, 10px);
 }
 
 @media (max-width: 700px) {
@@ -1014,10 +949,13 @@
 }
 
 .board-wax-text h2 {
+    font-size: clamp(32px, 6vw, 50px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     margin: 0;
-    font-size: clamp(32px, 6vw, 60px);
     color: #391915;
-    font-weight: 500;
+    line-height: 1.00;
+    font-weight: 400;
 }
 
 .board-wax-text p {
@@ -1059,18 +997,17 @@
 
 /*---------------Custom Boards Hero---------------*//*#region*/
 .custom-hero-banner {
-    position: relative;
-    width: 100%;
-    height: clamp(20vh, 38vh, 30vh);
-    min-height: 240px;
-    
+    min-height: 50vh;
     background-image: url("Photos/structural/custom-board-hero.png");
     background-size: cover;
     background-position: center;
+    position: relative;
     
     display: flex;
-    align-items: flex-end;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+    justify-content: flex-start;
+    align-items:last baseline;
+    padding: clamp(10px, 4vw, 40px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
 }
 
 .custom-hero-overlay {
@@ -1087,7 +1024,6 @@
 .custom-hero-title-wrap {
     position: relative;
     z-index: 1;
-    
     padding:
     clamp(30px, 6vw, 30px)
     clamp(20px, 6vw, 120px);
@@ -1101,7 +1037,6 @@
     color: #ffffff;
     line-height: 1.00;
     font-weight: 400;
-    
     text-shadow:
     2px 4px 12px rgba(0, 0, 0, 0.9);
 }
@@ -1541,6 +1476,156 @@
 
 /*#endregion*/
 
+/*#endregion*/
+
+ /*---------------Informational Pages -----------------------------*//*#region*/
+
+/* ---------- Page Header ---------- */
+.info-hero-banner {
+    position: relative;
+    width: 100%;
+    height: clamp(18vh, 28vh, 26vh);
+    min-height: 220px;
+
+    background-color: #9b857b;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+}
+
+.info-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.25)
+    );
+    z-index: 0;
+}
+
+.info-hero-title-wrap {
+    position: relative;
+    z-index: 1;
+    padding: clamp(30px, 6vw, 60px) clamp(20px, 6vw, 120px);
+}
+
+.info-hero-title-wrap h1 {
+    font-size: clamp(38px, 8vw, 70px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.00;
+    font-weight: 400;
+    
+    text-shadow:
+    2px 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- Content Wrapper ---------- */
+
+.info-wrapper {
+    max-width: 900px;
+    margin: clamp(40px, 10vw, 120px) auto;
+    padding: clamp(24px, 6vw, 48px) clamp(18px, 5vw, 40px);
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 2px solid rgba(57, 25, 21, 0.25);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Section title */
+.info-wrapper h2 {
+    text-align: center;
+    font-size: clamp(36px, 7vw, 56px);
+    color: #391915;
+    font-weight: 500;
+    margin-bottom: clamp(20px, 5vw, 40px);
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+.info-wrapper h2::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 4px;
+    margin: 14px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #391915,
+        transparent
+    );
+}
+
+/* Sub-section headers */
+.info-wrapper h3 {
+    font-size: clamp(20px, 4vw, 26px);
+    color: #391915;
+    font-weight: 600;
+    margin-top: clamp(24px, 6vw, 40px);
+    margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.info-wrapper p {
+    font-size: clamp(16px, 3.5vw, 20px);
+    line-height: 1.7;
+    color: #3e2b23;
+    margin-bottom: 14px;
+}
+
+/* Lists */
+.info-wrapper ul {
+    margin: 12px 0 20px 20px;
+    padding-left: 10px;
+}
+
+.info-wrapper li {
+    font-size: clamp(16px, 3.5vw, 20px);
+    line-height: 1.6;
+    color: #3e2b23;
+    margin-bottom: 8px;
+}
+
+/* ---------- Mobile Tweaks ---------- */
+
+@media (max-width: 700px) {
+    .info-hero-banner {
+        height: clamp(22vh, 32vh, 36vh);
+        justify-content: center;
+    }
+
+    .info-hero-title-wrap {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .info-hero-title-wrap h1 {
+        font-size: clamp(34px, 10vw, 50px);
+        letter-spacing: 1.5px;
+    }
+
+    .info-wrapper {
+        margin: 40px 0;
+        width: 100%;
+        border-radius: 16px;
+    }
+}
+
+/*#endregion*/
+
 /*---------------Back to top Button-------------------------------*//*#region*/
 .back-to-top {
     position: fixed;
@@ -1620,12 +1705,13 @@
 }
 
 .footer-nav a {
-    text-decoration: none;
     font-size: clamp(20px, 4vw, 30px);
+    text-transform: uppercase;
+    margin-top: 10px;
     color: #391915;
-    
-    font-weight: 600;
-    transition: opacity 0.25s ease, transform 0.2s ease;
+    font-weight: 400;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .footer-nav a:hover {
