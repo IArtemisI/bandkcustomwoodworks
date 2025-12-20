@@ -192,7 +192,7 @@
     height: 100svh;
     /* mobile safe height */
     min-height: 100vh;
-    background-image: url("Photos/structural/home-hero.jpg");
+    background-image: url("Photos/structural/home-hero.webp");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -240,7 +240,7 @@
 /* Tagline */
 .hero p {
     margin-top: clamp(10px, 1.2vw, 18px);
-    font-size: clamp(32px, 6vw, 50px);
+    font-size: clamp(28px, 4vw, 40px);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin: 0;
@@ -346,19 +346,33 @@
 /* #endregion */
 
 /*---------------Shop Banner------------------------------*//*#region*/
-
 .shop-banner {
     width: 100%;
-    background: #9b857b;
     position: relative;
     padding: 40px 0;
     overflow: visible;
     
-    box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 30px 40px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background: rgba(155, 133, 123, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-top: 2px solid rgba(57, 25, 21, 0.25);
+    border-bottom: 2px solid rgba(57, 25, 21, 0.25);
 }
 
+.shop-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    box-shadow:
+    inset 0 80px 120px rgba(0, 0, 0, 0.25),
+    inset 0 -80px 120px rgba(0, 0, 0, 0.25),
+    inset 0 0 180px rgba(0, 0, 0, 0.15);
+    
+    pointer-events: none;
+    z-index: 1;
+}
 /* ---------- Inner Layout ---------- */
 
 .shop-banner-inner {
@@ -397,13 +411,13 @@
     font-weight: 600;
     color: #391915;
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background:  #9b857b;
+    border: none;
     border-radius: 24px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3),
     rgba(50, 50, 93, 0.25) 0px 15px 36px -12px inset;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 2;
 }
 
 .shop-banner-button:hover {
@@ -489,7 +503,6 @@
 /*#endregion*/
 
 /*---------------Custom Board  Home Banner----------*//*#region*/
-
 .custom-board-options {
     position: relative;
     margin-top: 150px;
@@ -598,8 +611,6 @@
     background: #9b857b;
     border: none;
     border-radius: 24px;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3),
     rgba(50, 50, 93, 0.3) 0px 15px 36px -12px inset;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -763,7 +774,7 @@
 /*---------------Products Hero----------------------------*//* #region */
 .products-hero { 
     min-height: 50vh;
-    background-image: url("Photos/structural/products-hero.jpg");
+    background-image: url("Photos/structural/products-hero.webp");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -998,7 +1009,7 @@
 /*---------------Custom Boards Hero---------------*//*#region*/
 .custom-hero-banner {
     min-height: 40vh;
-    background-image: url("Photos/structural/custom-board-hero.png");
+    background-image: url("Photos/structural/custom-board-hero.webp");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1433,7 +1444,7 @@
 }
 /*#endregion*/
 
-/* ---------- Review & Submit (Step 7) ---------- */
+/* ---------- Review & Submit (Step 7) ---------- *//*#region*/
 
 .cb-review {
     display: flex;
@@ -1475,9 +1486,7 @@
     opacity: 0.85;
 }
 
-
 /* ---------- Final Notes Textbox ---------- */
-
 .review-textbox {
     display: flex;
     flex-direction: column;
@@ -1526,22 +1535,16 @@
     margin-top: 20px;
 
     padding: 16px 36px;
-    font-size: clamp(18px, 3.5vw, 22px);
+    font-size: clamp(20px, 2.5vw, 26px);
     font-weight: 600;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
 
     border-radius: 32px;
     border: none;
     cursor: pointer;
 
     color: #ffffff;
-    background: linear-gradient(
-        -120deg,
-        rgba(214, 189, 165, 1),
-        rgba(102, 77, 66, 1)
-    );
-
+    background: #9b857b;
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -1596,7 +1599,6 @@
 .custom-board-back {
     background: transparent;
     color: #391915;
-    
     border: 2px solid rgba(57, 25, 21, 0.35);
 }
 
@@ -1606,11 +1608,7 @@
 }
 
 .custom-board-next {
-    background: linear-gradient(
-    -120deg,
-    rgba(214, 189, 165, 1),
-    rgba(102, 77, 66, 1)
-    );
+    background:  #9b857b;
     color: #ffffff;
     border: none;
 }
