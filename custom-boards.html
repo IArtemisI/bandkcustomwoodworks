@@ -58,18 +58,22 @@
     
     <!--#endregion-->
 
-<!--Step Navigation --><!--#region-->
+<!--Tab Navigation --><!--#region-->
     <main class="custom-board-form">
         
         <nav class="custom-board-tabs" aria-label="Custom board tabs">
-            <button class="custom-board-tab active" data-step="1">Contact Info</button>
-            <button class="custom-board-tab" data-step="2">Board Size</button>
-            <button class="custom-board-tab" data-step="3">Wood Types</button>
-            <button class="custom-board-tab" data-step="4">Pattern</button>
-            <button class="custom-board-tab" data-step="5">Features</button>
-            <button class="custom-board-tab" data-step="6">Engraving</button>
+            <button class="custom-board-tab" data-step="1">Step 1</button>
+            <button class="custom-board-tab" data-step="2">Step 2</button>
+            <button class="custom-board-tab" data-step="3">Step 3</button>
+            <button class="custom-board-tab" data-step="4">Step 4</button>
+            <button class="custom-board-tab" data-step="5">Step 5</button>
+            <button class="custom-board-tab" data-step="6">Step 6</button>
+            <button class="custom-board-tab" data-step="7">Step 7</button>
+
+            <span class="custom-board-underline"></span>
         </nav>
-        <!--#endregion-->
+
+<!--#endregion-->
 
 <!-- Step 1 Contact Info--><!--#region-->
         <form>
@@ -149,37 +153,37 @@
                     <legend class="visually-hidden">Wood Types</legend>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="purple-heart">
+                        <input type="checkbox" name="woods[]" value="purple-heart">
                         <img src="Photos/wood-types/purpleheart.jpg" alt="Purple Heart wood grain">
                         <span>Purple Heart</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="bodark">
+                        <input type="checkbox" name="woods[]" value="bodark">
                         <img src="Photos/wood-types/bodark.jpg" alt="Bodark wood grain">
                         <span>Bodark</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="bloodwood">
+                        <input type="checkbox" name="woods[]" value="bloodwood">
                         <img src="Photos/wood-types/bloodwood.jpg" alt="Bloodwood wood grain">
                         <span>Bloodwood</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="padauk">
+                        <input type="checkbox" name="woods[]" value="padauk">
                         <img src="Photos/wood-types/padauk.jpg" alt="African Padauk wood grain">
                         <span>African Padauk</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="zebrawood">
+                        <input type="checkbox" name="woods[]" value="zebrawood">
                         <img src="Photos/wood-types/zebrawood.jpg" alt="Zebrawood grain">
                         <span>Zebrawood</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="walnut">
+                        <input type="checkbox" name="woods[]" value="walnut">
                         <img src="Photos/wood-types/blackwalnut.jpg" alt="Black Walnut grain">
                         <span>Black Walnut</span>
                     </label>
@@ -188,7 +192,7 @@
                     <label class="cb-other-option-label">
                         <span>Have a special type of wood in mind?</span>
                     </label>
-                    <input  type="text" name="other_option" placeholder="Your ideas here" class="cb-other-input">
+                    <input type="text" name="other_wood" placeholder="Your ideas here" class="cb-other-input">
                     </div>
 
                 </fieldset>
@@ -207,25 +211,25 @@
                     <legend class="visually-hidden">Patterns</legend>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="checkerboard">
+                        <input type="checkbox" name="patterns[]" value="checkerboard">
                         <img src="Photos/patterns/checkerboard.png" alt="Checkerboard Pattern">
                         <span>Checkerboard</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="staircase">
+                        <input type="checkbox" name="patterns[]" value="staircase">
                         <img src="Photos/patterns/staircase.png" alt="Staircase Pattern">
                         <span>Steps</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="chevron">
+                        <input type="checkbox" name="patterns[]" value="chevron">
                         <img src="Photos/patterns/chevron.png" alt="Chevron Pattern">
                         <span>Chevron</span>
                     </label>
                     
                     <label class="cb-checkbox-option">
-                        <input type="checkbox" name="check[]" value="stripes">
+                        <input type="checkbox" name="patterns[]" value="stripes">
                         <img src="Photos/patterns/stripes.png" alt="Stripe Pattern">
                         <span>Striped</span>
                     </label>
@@ -234,7 +238,7 @@
                     <label class="cb-other-option-label">
                         <span>Have a design in mind?</span>
                     </label>
-                    <input  type="text" name="other_option" placeholder="Your ideas here" class="cb-other-input">
+                    <input type="text" name="other_pattern" placeholder="Your ideas here" class="cb-other-input">
                     </div>
             </section>
             <!--#endregion-->
@@ -286,6 +290,62 @@
             </section>
             <!--#endregion-->
 
+<!--Step 7 Review--><!--#region-->
+
+<section class="custom-board-slide" data-step="7">
+    <header>
+        <h2>Review & Submit</h2>
+    </header>
+
+    <div class="cb-review">
+
+        <div class="cb-review-section">
+            <h3>Contact Info</h3>
+            <p id="review-contact"></p>
+        </div>
+
+        <div class="cb-review-section">
+            <h3>Board Size</h3>
+            <p id="review-size"></p>
+        </div>
+
+        <div class="cb-review-section">
+            <h3>Wood Selection</h3>
+            <div id="review-woods"></div>
+        </div>
+
+        <div class="cb-review-section">
+            <h3>Pattern</h3>
+            <div id="review-pattern"></div>
+        </div>
+
+        <div class="cb-review-section">
+            <h3>Features</h3>
+            <p id="review-features"></p>
+        </div>
+
+        <div class="cb-review-section">
+            <h3>Engraving</h3>
+            <p id="review-engraving"></p>
+        </div>
+
+        <label class="review-textbox">
+            <span class="review-textbox-title">
+                Anything else we should know?
+            </span>
+            <textarea name="final_notes" rows="4"
+                placeholder="Special requests, deadlines, inspiration, etc."></textarea>
+        </label>
+
+        <button type="submit" class="custom-board-submit">
+            Send Custom Request
+        </button>
+
+    </div>
+</section>
+
+<!--#endregion-->
+
 <!--Buttons--><!--#region-->
             <div class="custom-board-button">                          
                 <button type="button" class="custom-board-back" disabled>
@@ -336,28 +396,6 @@
 
 <!---------------Scripts------------------------------------------------------><!--#region-->
     
-    <!-- Fade-in Animation --><!--#region-->
-    <script>
-        const faders = document.querySelectorAll('.fade-in');
-        
-        const appearOptions = {
-            threshold: 0.2
-        };
-        
-        const appearOnScroll = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            });
-        }, appearOptions);
-        
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-    </script>
-    <!--#endregion-->
-    
     <!-- Hamburger Menu --><!--#region-->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -382,153 +420,223 @@
     <!--#endregion-->
     
     <!-- Custom Board Form --><!--#region-->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const steps = document.querySelectorAll(".custom-board-tab");
-            const panels = document.querySelectorAll(".custom-board-slide");
-            
-            let currentStep = 1;
-            
-            function showStep(step) {
-                currentStep = step;
-                
-                // Update step buttons
-                steps.forEach(btn => {
-                    btn.classList.toggle(
-                    "active",
-                    Number(btn.dataset.step) === step
-                    );
-                });
-                
-                // Update panels
-                panels.forEach(panel => {
-                    panel.classList.toggle(
-                    "active",
-                    Number(panel.dataset.step) === step
-                    );
-                });
-            }
-            
-            // Clickable step tabs
-            steps.forEach(stepBtn => {
-                stepBtn.addEventListener("click", () => {
-                    const step = Number(stepBtn.dataset.step);
-                    showStep(step);
-                });
-            });
-            
-            // Optional: expose for future buttons
-            window.cbNextStep = () => {
-                if (currentStep < panels.length) {
-                    showStep(currentStep + 1);
-                }
-            };
-            
-            window.cbPrevStep = () => {
-                if (currentStep > 1) {
-                    showStep(currentStep - 1);
-                }
-            };
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".custom-board-tab");
+    const slides = document.querySelectorAll(".custom-board-slide");
+    const nextBtn = document.querySelector(".custom-board-next");
+    const backBtn = document.querySelector(".custom-board-back");
+    const underline = document.querySelector(".custom-board-underline");
+    const form = document.querySelector(".custom-board-form form");
+
+    if (!tabs.length || !slides.length) return;
+
+    let currentStep = 1;
+    const totalSteps = slides.length;
+
+    /* ---------------- Prevent native form submit (Enter key) ---------------- */
+    if (form) {
+        form.addEventListener("submit", e => e.preventDefault());
+    }
+
+    /* ---------------- Underline movement ---------------- */
+    function moveUnderline() {
+        const activeTab = document.querySelector(".custom-board-tab.active");
+        if (!activeTab || !underline) return;
+
+        const tabRect = activeTab.getBoundingClientRect();
+        const navRect = activeTab.parentElement.getBoundingClientRect();
+
+        underline.style.width = `${tabRect.width}px`;
+        underline.style.transform =
+            `translateX(${tabRect.left - navRect.left}px)`;
+    }
+
+    /* ---------------- Review population ---------------- */
+    function populateReview() {
+        const getValue = name =>
+            document.querySelector(`[name="${name}"]`)?.value || "—";
+
+        // Contact
+        document.getElementById("review-contact").textContent =
+            `${getValue("name")} • ${getValue("email")} • ${getValue("phone")}`;
+
+        // Size
+        document.getElementById("review-size").textContent =
+            `${getValue("length")} × ${getValue("width")} × ${getValue("height")}`;
+
+        /* ---------- Woods ---------- */
+        const woodsContainer = document.getElementById("review-woods");
+        woodsContainer.innerHTML = "";
+
+        const woodsChecked = [...document.querySelectorAll('[name="woods[]"]:checked')]
+            .map(i => i.closest("label")?.querySelector("span")?.textContent);
+
+        const otherWood = document.querySelector('[name="other_wood"]')?.value?.trim();
+
+        if (woodsChecked.length) {
+            const p = document.createElement("p");
+            p.textContent = woodsChecked.join(", ");
+            woodsContainer.appendChild(p);
+        }
+
+        if (otherWood) {
+            const p = document.createElement("p");
+            p.classList.add("review-other");
+            p.textContent = `Custom request: ${otherWood}`;
+            woodsContainer.appendChild(p);
+        }
+
+        if (!woodsChecked.length && !otherWood) {
+            woodsContainer.textContent = "—";
+        }
+
+        /* ---------- Patterns ---------- */
+        const patternsContainer = document.getElementById("review-pattern");
+        patternsContainer.innerHTML = "";
+
+        const patternsChecked = [...document.querySelectorAll('[name="patterns[]"]:checked')]
+            .map(i => i.closest("label")?.querySelector("span")?.textContent);
+
+        const otherPattern = document.querySelector('[name="other_pattern"]')?.value?.trim();
+
+        if (patternsChecked.length) {
+            const p = document.createElement("p");
+            p.textContent = patternsChecked.join(", ");
+            patternsContainer.appendChild(p);
+        }
+
+        if (otherPattern) {
+            const p = document.createElement("p");
+            p.classList.add("review-other");
+            p.textContent = `Custom request: ${otherPattern}`;
+            patternsContainer.appendChild(p);
+        }
+
+        if (!patternsChecked.length && !otherPattern) {
+            patternsContainer.textContent = "—";
+        }
+
+        /* ---------- Features ---------- */
+        const features = [...document.querySelectorAll('[name="features[]"]:checked')]
+            .map(i => i.closest("label")?.querySelector("span")?.textContent)
+            .join(", ") || "—";
+
+        document.getElementById("review-features").textContent = features;
+
+        // Engraving
+        document.getElementById("review-engraving").textContent =
+            getValue("engraving");
+    }
+
+    /* ---------------- Step switching ---------------- */
+    function showStep(step) {
+        currentStep = step;
+
+        tabs.forEach(tab => {
+            tab.classList.toggle("active", Number(tab.dataset.step) === step);
         });
-    </script>
+
+        slides.forEach(slide => {
+            slide.classList.toggle("active", Number(slide.dataset.step) === step);
+        });
+
+        moveUnderline();
+
+        if (step === totalSteps) {
+            populateReview();
+        }
+
+        // Button states
+        if (backBtn) backBtn.disabled = step === 1;
+
+        if (nextBtn) {
+            nextBtn.textContent = "Next";
+            nextBtn.disabled = step === totalSteps;
+        }
+    }
+
+    /* ---------------- Tab clicks ---------------- */
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            showStep(Number(tab.dataset.step));
+        });
+    });
+
+    /* ---------------- Next / Back buttons ---------------- */
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            if (currentStep < totalSteps) {
+                showStep(currentStep + 1);
+            }
+        });
+    }
+
+    if (backBtn) {
+        backBtn.addEventListener("click", () => {
+            if (currentStep > 1) {
+                showStep(currentStep - 1);
+            }
+        });
+    }
+
+    /* ---------------- Init ---------------- */
+    showStep(1);
+    window.addEventListener("resize", moveUnderline);
+});
+</script>
+<!--#endregion-->
+    
+    <!--Disappearing Nav Scrolling for Custom--><!--#region-->
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const desktopHeader = document.querySelector(".desktop-header");
+    const mobileHeader = document.querySelector(".mobile-header");
+    const hero = document.querySelector(".custom-hero-banner");
+
+    if (!hero) return;
+
+    function handleScroll() {
+        const trigger = hero.offsetHeight * 0.3;
+        const hide = window.scrollY > trigger;
+
+        desktopHeader?.classList.toggle("hide-nav", hide);
+        mobileHeader?.classList.toggle("hide-nav", hide);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+});
+</script>
     <!--#endregion-->
     
-    <!-- Custom Board Next & Back Button --><!--#region-->
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const steps = document.querySelectorAll(".custom-board-tab");
-            const panels = document.querySelectorAll(".custom-board-slide");
-            const nextBtn = document.querySelector(".custom-board-next");
-            const backBtn = document.querySelector(".custom-board-back");
-            
-            let currentStep = 1;
-            const totalSteps = panels.length;
-            
-            function showStep(step) {
-                currentStep = step;
-                
-                // Update step tabs
-                steps.forEach(btn => {
-                    btn.classList.toggle(
-                    "active",
-                    Number(btn.dataset.step) === step
-                    );
-                });
-                
-                // Update panels
-                panels.forEach(panel => {
-                    panel.classList.toggle(
-                    "active",
-                    Number(panel.dataset.step) === step
-                    );
-                });
-                
-                // Button states
-                backBtn.disabled = step === 1;
-                nextBtn.textContent = step === totalSteps ? "Submit" : "Next";
-            }
-            
-            // Tab clicks
-            steps.forEach(stepBtn => {
-                stepBtn.addEventListener("click", () => {
-                    showStep(Number(stepBtn.dataset.step));
-                });
-            });
-            
-            // Next / Back buttons
-            nextBtn.addEventListener("click", () => {
-                if (currentStep < totalSteps) {
-                    showStep(currentStep + 1);
-                } else {
-                    // placeholder for submit logic
-                    alert("Form ready to submit!");
-                }
-            });
-            
-            backBtn.addEventListener("click", () => {
-                if (currentStep > 1) {
-                    showStep(currentStep - 1);
-                }
-            });
-            
-            // Init
-            showStep(1);
+    <!--Javascript Back to top--><!--#region-->
+
+<button class="back-to-top">
+    <img src="Photos/icons/up-arrow.svg" alt="Back to top" />
+</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const backToTopBtn = document.querySelector(".back-to-top");
+        if (!backToTopBtn) return;
+        
+        function updateBackToTop() {
+            const show = window.scrollY > 400;
+            backToTopBtn.style.opacity = show ? "1" : "0";
+            backToTopBtn.style.pointerEvents = show ? "auto" : "none";
+        }
+        
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
+        updateBackToTop(); // run once on load
+        
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
-    </script>
-    
+    });
+</script>
     <!--#endregion-->
-    
-    <!--Home Nav Scrolling for Custom--><!--#region-->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const desktopHeader = document.querySelector(".desktop-header");
-            const mobileHeader = document.querySelector(".mobile-header");
-            const heroSection = document.querySelector(".custom-hero-banner ");
-            const overlay = document.querySelector(".custom-hero-overlay");
-            
-            if (!heroSection) return;
-            
-            function handleScroll() {
-                const hidePoint = heroSection.offsetHeight * 0.3;
-                const shouldHide = window.scrollY > hidePoint;
-                const menuOpen = overlay?.classList.contains("open");
-                
-                if (shouldHide && !menuOpen) {
-                    desktopHeader?.classList.add("hide-nav");
-                    mobileHeader?.classList.add("hide-nav");
-                } else {
-                    desktopHeader?.classList.remove("hide-nav");
-                    mobileHeader?.classList.remove("hide-nav");
-                }
-            }
-            
-            window.addEventListener("scroll", handleScroll, { passive: true });
-            handleScroll(); // run once on load
-        });
-    </script>
-    <!--#endregion-->
-    
+
     <!--#endregion-->
 
 

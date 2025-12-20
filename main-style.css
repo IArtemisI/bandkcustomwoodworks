@@ -577,7 +577,7 @@
     color: #391915;
     text-transform: uppercase;
     line-height: 1.00;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .custom-option p {
@@ -795,10 +795,10 @@
 }
 
 .products-hero-text h3 {
-    font-size: clamp(40px, 8vw, 50px);
-    letter-spacing: 0.05em;
+    font-size: clamp(30px, 6vw, 60px);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin: 50px;
+    margin: 20px;
     color: #391915;
     line-height: 1.00;
     font-weight: 400;
@@ -997,12 +997,11 @@
 
 /*---------------Custom Boards Hero---------------*//*#region*/
 .custom-hero-banner {
-    min-height: 50vh;
+    min-height: 40vh;
     background-image: url("Photos/structural/custom-board-hero.png");
     background-size: cover;
     background-position: center;
     position: relative;
-    
     display: flex;
     justify-content: flex-start;
     align-items:last baseline;
@@ -1045,18 +1044,18 @@
 
 @media (max-width: 700px) {
     .custom-hero-banner {
-        height: clamp(30vh, 34vh, 40vh);
+        height: clamp(20vh, 34vh, 30vh);
         justify-content: center;
         align-items: flex-end;
     }
     
     .custom-hero-title-wrap {
-        padding: 40px 20px;
+        padding: 10px 10px;
         text-align: center;
     }
     
     .custom-hero-title-wrap h1 {
-        font-size: clamp(36px, 10vw, 52px);
+        font-size: clamp(30px, 10vw, 40px);
         letter-spacing: 1.5px;
     }
 }
@@ -1089,39 +1088,67 @@
 /* ---------- Tabs --------- *//*#region*/
 .custom-board-tabs {
     display: flex;
+    position: relative;
     justify-content: center;
-    gap: clamp(8px, 2vw, 18px);
+    gap: clamp(16px, 4vw, 36px);
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(57, 25, 21, 0.2);
+}
+
+.custom-board-underline {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    height: 3px;
+    width: 0;
+
+    background: #391915;
+    border-radius: 2px;
+
+    transition:
+        transform 0.35s ease,
+        width 0.35s ease;
 }
 
 .custom-board-tab {
     font-family: "Scope One", serif;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 24px);
     letter-spacing: 1px;
     text-transform: uppercase;
-    
-    padding: 10px 14px;
-    border-radius: 30px;
+
+    padding: 12px 4px 16px;
+    background: none;
     border: none;
-    background: rgba(255, 255, 255, 0.6);
+
+     color: rgba(57, 25, 21, 0.5); 
     cursor: pointer;
-    transition: all 0.25s ease;
+
+    position: relative;
+    transition: color 0.25s ease;
 }
 
 .custom-board-tab.active {
-    background: linear-gradient(
-    -100deg,
-    rgba(214, 189, 165, 0.9),
-    rgba(102, 77, 66, 0.9)
-    );
-    color: white;
-    border-color: none;
+    color: #391915; 
+    font-weight: 500;
+}
+
+/* Hover */
+.custom-board-tab:hover {
+    color: #391915;
 }
 
 @media (max-width: 700px) {
     .custom-board-tabs {
-        display: none;
+        gap: 12px;
+    }
+
+    .custom-board-tab {
+        font-size: 13px;
+        padding-bottom: 10px;
     }
 }
+
 /*#endregion*/
 
 /* ---------- Slides ---------- *//*#region*/
@@ -1139,8 +1166,14 @@
 
 .custom-board-slide h2 {
     font-size: clamp(28px, 6vw, 42px);
-    margin-bottom: 6px;
+    margin-top: 50px;
+    margin-bottom: 4px;
     color: #391915;
+    
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 /*#endregion*/
@@ -1396,6 +1429,142 @@
     
     .custom-board-engraving-title {
         font-size: 17px;
+    }
+}
+/*#endregion*/
+
+/* ---------- Review & Submit (Step 7) ---------- */
+
+.cb-review {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Individual review blocks */
+.cb-review-section {
+    padding: 18px 20px;
+
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 18px;
+
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.cb-review-section h3 {
+    margin: 0 0 6px;
+    font-size: clamp(18px, 3.5vw, 22px);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    color: #391915;
+    font-weight: 600;
+}
+
+.cb-review-section p {
+    margin: 0;
+    font-size: clamp(16px, 3.5vw, 20px);
+    line-height: 1.5;
+    color: #3e2b23;
+}
+
+.review-other {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+
+/* ---------- Final Notes Textbox ---------- */
+
+.review-textbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-textbox-title {
+    font-size: clamp(18px, 3.5vw, 22px);
+    font-weight: 600;
+    color: #391915;
+    letter-spacing: 0.5px;
+}
+
+.review-textbox textarea {
+    width: 100%;
+    padding: 14px 16px;
+
+    font-size: clamp(16px, 3.5vw, 18px);
+    font-family: inherit;
+
+    border: 2px solid rgba(57, 25, 21, 0.25);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+
+    resize: vertical;
+    min-height: 110px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-textbox textarea:focus {
+    outline: none;
+    border-color: #391915;
+    box-shadow: 0 0 12px rgba(57, 25, 21, 0.25);
+}
+
+/* ---------- Submit Button ---------- */
+
+.custom-board-submit {
+    align-self: center;
+    margin-top: 20px;
+
+    padding: 16px 36px;
+    font-size: clamp(18px, 3.5vw, 22px);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    border-radius: 32px;
+    border: none;
+    cursor: pointer;
+
+    color: #ffffff;
+    background: linear-gradient(
+        -120deg,
+        rgba(214, 189, 165, 1),
+        rgba(102, 77, 66, 1)
+    );
+
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-board-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Mobile Tweaks ---------- */
+
+@media (max-width: 700px) {
+    .cb-review {
+        gap: 20px;
+    }
+
+    .cb-review-section {
+        padding: 16px;
+    }
+
+    .custom-board-submit {
+        width: 100%;
+        text-align: center;
     }
 }
 /*#endregion*/
@@ -1709,7 +1878,7 @@
     text-transform: uppercase;
     margin-top: 10px;
     color: #391915;
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -1735,16 +1904,17 @@
     margin-top: 0px;
 }
 
-.facebook-link {
-    font-size: clamp(20px, 4vw, 30px);
-    font-weight: 600;
+.facebook-link {        /*Facebook Typography*/
+    font-size: clamp(20px, 4vw, 25px);
+    font-weight: 500;
     color: #391915;
     text-decoration: none;
-    letter-spacing: 1.5px;
-    transition: 0.25s ease;
+    letter-spacing: 2px;
     display: inline-block;
     padding: 8px 8px;
     border-radius: 8px;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .facebook-link:hover {
@@ -1763,24 +1933,35 @@
     align-items: center;
     gap: clamp(4px, 2vw, 12px);
     font-size: clamp(14px, 4vw, 20px);
-    font-weight: 600;
+    font-weight: 500;
+    color: #391915;
+    text-decoration: none;
+    letter-spacing: 1.5px;
     margin-bottom: clamp(8px, 2vw, 15px);
 }
 
-.footer-legal a {
+.footer-legal a {        /*Privacy & Terms Typography*/
     color: #391915;
     text-decoration: none;
+    border-radius: 8px;
+    text-transform: uppercase;
 }
 
 .footer-legal a:hover {
     transform: translateY(-2px);
 }
 
-.footer-copy {
-    font-size: clamp(14px, 4vw, 18px);
-    margin: 0;
+.footer-copy {           /*Copyright Typography*/
+    font-size: clamp(16px, 4vw, 20px);
     font-weight: 500;
-    padding-top: 10px;
+    color: #391915;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    padding: 8px 8px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 /* #endregion */
