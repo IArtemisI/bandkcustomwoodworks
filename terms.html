@@ -13,13 +13,16 @@
         rel="stylesheet"
     />
 </head>
-
 <body>
 
-<!-- ================= Navigation ================= -->
-
+<!---------------Navigation----------------------------------------------><!--#region-->
+<!-- Desktop Navigation -->
 <header class="desktop-header">
     <nav class="desktop-nav">
+        <a href="index.html" class="nav-brand">
+            B&amp;K Custom Woodworks
+        </a>
+
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
@@ -29,13 +32,15 @@
     </nav>
 </header>
 
-<header class="mobile-header">
+<!-- Mobile Navigation -->
+<header class="mobile-header">   
     <button class="hamburger">
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
     </button>
-</header>
+</header>  
 
 <div class="nav-overlay">
     <ul>
@@ -46,19 +51,20 @@
     </ul>
 </div>
 
-<!-- ================= Main Content ================= -->
+<!-- #endregion -->
 
+<!---------------Heading----------------------------------------------><!--#region-->
 <main>
 
-    <!-- Page Header -->
     <section class="custom-hero-banner">
         <div class="custom-hero-overlay"></div>
         <div class="custom-hero-title-wrap">
             <h1>Terms & Conditions</h1>
         </div>
     </section>
+<!--#endregion-->
 
-    <!-- Terms Content -->
+<!---------------Content----------------------------------------------><!--#region-->
     <section class="contact-wrapper fade-in-section">
         <h2>Terms of Service</h2>
 
@@ -111,8 +117,9 @@
     </section>
 
 </main>
+<!--#endregion-->
 
-<!-- ================= Footer ================= -->
+<!---------------Footer--------------------------------------------------><!--#region-->
 
 <footer class="site-footer">
     <div class="footer-top">
@@ -148,8 +155,9 @@
         <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
     </div>
 </footer>
+<!--#endregion-->
 
-<!-- ================= Scripts ================= -->
+<!---------------Scripts------------------------------------------------------><!--#region-->
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -187,6 +195,7 @@ document.querySelectorAll(".fade-in-section").forEach(section => {
     observer.observe(section);
 });
 </script>
+<!--#endregion-->
 
 </body>
 </html>
