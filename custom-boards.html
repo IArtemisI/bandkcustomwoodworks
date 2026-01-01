@@ -80,8 +80,24 @@
 
 <!--#endregion-->
 
+<!--Form --><!--#region-->
+        <form
+            name="custom-request"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="thanks.html"
+            enctype="multipart/form-data"    
+            > 
+            <input type="hidden" name="form-name" value="custom-request" />
+
+            <p style="display:none;">
+                <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+            </p>
+    <!--#endregion-->
+
 <!-- Step 1 Contact Info--><!--#region-->
-        <form>
+
             <section class="custom-board-slide active" data-step="1">   
                 <header>
                     <h2>How can we contact you?</h2>
@@ -283,17 +299,35 @@
             <!--#endregion-->
 
 <!--Step 6 Engravings--><!--#region-->
-            <section class="custom-board-slide" data-step="6">        
-                <header>
-                    <h2>Custom engraving</h2>
-                </header>
-                
-                <label class="custom-board-engraving">
-                    <span class="custom-board-engraving-title">Engraving</span>
-                    <textarea name="engraving" rows="5" placeholder="Names, dates, logos, symbols..."></textarea>
-                </label>
-            </section>
-            <!--#endregion-->
+<section class="custom-board-slide" data-step="6">
+    <header>
+        <h2>Custom engraving (Optional)</h2>
+    </header>
+
+    <!-- Engraving text box -->
+    <label class="custom-board-engraving">
+        <span class="custom-board-engraving-title">What would you like?</span>
+        <textarea
+            name="engraving"
+            rows="5"
+            placeholder="Names, dates, logos, symbols..."
+        ></textarea>
+    </label>
+
+    <!-- Upload -->
+    <label class="custom-board-engraving">
+        <span class="custom-board-engraving-title">Upload an image or file (optional)</span>
+            <input
+                type="file"
+                name="engraving_file"
+                accept="image/*,.pdf"
+                multiple
+                id="engraving_files"
+            />
+        <div class="cb-file-names" id="cb-file-names" aria-live="polite"></div>
+    </label>
+</section>
+<!--#endregion-->
 
 <!--Step 7 Review--><!--#region-->
 
@@ -438,9 +472,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentStep = 1;
     const totalSteps = slides.length;
 
-    /* ---------------- Prevent native form submit (Enter key) ---------------- */
+/* -------- Prevent Enter from submitting on steps 1–6 (but allow Step 7 submit) -------- */
     if (form) {
-        form.addEventListener("submit", e => e.preventDefault());
+    form.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
+
+        const isTextarea = e.target && e.target.tagName === "TEXTAREA";
+        if (isTextarea) return; // allow Enter inside textareas
+
+        // If not on the final step, Enter should not submit the form
+        if (currentStep !== totalSteps) {
+        e.preventDefault();
+        }
+    });
     }
 
     /* ---------------- Underline movement ---------------- */
@@ -581,6 +625,19 @@ document.addEventListener("DOMContentLoaded", () => {
             if (currentStep > 1) {
                 showStep(currentStep - 1);
             }
+        });
+    }
+    
+      /* ---------- Step 6: show selected file names ---------- */
+    const fileInput = document.getElementById("engraving_files");
+    const fileNamesEl = document.getElementById("cb-file-names");
+
+    if (fileInput && fileNamesEl) {
+        fileInput.addEventListener("change", () => {
+            const files = Array.from(fileInput.files || []);
+            fileNamesEl.textContent = files.length
+                ? files.map(f => f.name).join(", ")
+                : "";
         });
     }
 

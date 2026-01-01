@@ -1680,49 +1680,115 @@
 
 /*#endregion*/
 
-/*----------Engraving-------------*//*#region*/
+/*---------- Engraving ----------*//*#region*/
 .custom-board-engraving {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px 10px;
-    margin-bottom: 18px;
-    cursor: text;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    margin-bottom: 22px;
 }
 
+/* Title text */
 .custom-board-engraving-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     color: #391915;
     letter-spacing: 0.5px;
 }
 
-.custom-board-engraving textarea{
+/* Textarea */
+.custom-board-engraving textarea {
     width: 100%;
     padding: 14px 16px;
+
     font-size: 18px;
     font-family: inherit;
-    
+    resize: vertical;
+
     border: 2px solid rgba(57, 25, 21, 0.25);
     background: rgba(255, 255, 255, 0.6);
     border-radius: 18px;
+
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    
+
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.custom-board-engraving textarea:focus {
+    outline: none;
+    border-color: #391915;
+    box-shadow: 0 0 10px rgba(116, 38, 38, 0.18);
+}
+
+/* File input container */
+.custom-board-engraving input[type="file"] {
+    width: 100%;
+    padding: 12px 14px;
+
+    font-size: 16px;
+    font-family: inherit;
+
+    border: 2px solid rgba(57, 25, 21, 0.25);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    cursor: pointer;
+}
+
+.custom-board-engraving input[type="file"]::file-selector-button {
+    margin-right: 14px;
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #9b857b;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cb-file-names {
+    font-size: 18px;
+    color: rgba(57, 25, 21, 1);
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+.cb-file-names:empty {
+    display: none;
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 700px) {
-    .custom-board-engraving {
-        padding: 16px;
-    }
-    
     .custom-board-engraving-title {
         font-size: 17px;
     }
+
+    .custom-board-engraving textarea {
+        font-size: 16px;
+    }
+
+    .custom-board-engraving input[type="file"] {
+        font-size: 14px;
+    }
+
+    .custom-board-engraving input[type="file"]::file-selector-button {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
 }
+
 /*#endregion*/
 
 /* ---------- Review & Submit (Step 7) ---------- *//*#region*/
