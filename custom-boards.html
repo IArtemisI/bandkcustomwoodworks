@@ -324,6 +324,7 @@
                 multiple
                 id="engraving_files"
             />
+            <input type="hidden" name="engraving_files_names" id="engraving_files_names" value="">
         <div class="cb-file-names" id="cb-file-names" aria-live="polite"></div>
     </label>
 </section>
@@ -629,17 +630,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
       /* ---------- Step 6: show selected file names ---------- */
-    const fileInput = document.getElementById("engraving_files");
-    const fileNamesEl = document.getElementById("cb-file-names");
+const fileInput = document.getElementById("engraving_files");
+const fileNamesEl = document.getElementById("cb-file-names");
+const fileNamesHidden = document.getElementById("engraving_files_names");
 
-    if (fileInput && fileNamesEl) {
-        fileInput.addEventListener("change", () => {
-            const files = Array.from(fileInput.files || []);
-            fileNamesEl.textContent = files.length
-                ? files.map(f => f.name).join(", ")
-                : "";
-        });
-    }
+if (fileInput) {
+    fileInput.addEventListener("change", () => {
+        const files = Array.from(fileInput.files || []);
+        const names = files.map(f => f.name).join(", ");
+
+        // Visible filenames (optional UI display)
+        if (fileNamesEl) {
+            fileNamesEl.textContent = names;
+        }
+
+        // Hidden field for Netlify/email
+        if (fileNamesHidden) {
+            fileNamesHidden.value = names;
+        }
+    });
+}
 
     /* ---------------- Init ---------------- */
     showStep(1);
