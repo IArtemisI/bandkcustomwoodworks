@@ -34,7 +34,6 @@
         <span></span>
         <span></span>
         <span></span>
-        <span></span>
     </button>
 </header>  
 
@@ -253,7 +252,7 @@
                 ]
             },
 
-                "product-009": {     <!--Board Wax-->
+                "product-009": {  
                 title: "Board Wax",
                 price: "$9.99",
                 image: "Photos/structural/board-wax-image.webp",
@@ -301,13 +300,30 @@
             
             // Update specs list
             if (specsEl) {
-                specsEl.innerHTML = "";
-                product.specs.forEach(spec => {
-                    const li = document.createElement("li");
-                    li.textContent = spec;
-                    specsEl.appendChild(li);
-                });
+            specsEl.innerHTML = "";
+
+            product.specs.forEach(spec => {
+            const li = document.createElement("li");
+
+            // If spec looks like "Size: 18x12", split and bold the label
+            const parts = spec.split(":");
+            if (parts.length >= 2) {
+            const label = parts.shift().trim() + ":";
+            const value = parts.join(":").trim();
+
+            const strong = document.createElement("strong");
+            strong.textContent = label + " ";
+
+            li.appendChild(strong);
+            li.appendChild(document.createTextNode(value));
+            } else {
+            // If no ":" just print it normally
+            li.textContent = spec;
             }
+
+            specsEl.appendChild(li);
+        });
+        }
             
             // Update breadcrumb product name (hero banner)
             if (crumbEl) crumbEl.textContent = product.title;

@@ -528,15 +528,19 @@ rel="stylesheet"    />
         - Scrolls to just above the Step 1–7 navigation
         ========================================================= */
         function scrollToTabs() {
-            if (!tabsNav) return;
-            
-            const yOffset = -150; // little breathing room above tabs
-            const y = tabsNav.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            
-            window.scrollTo({
-                top: y,
-                behavior: "smooth"
-            });
+        if (!tabsNav) return;
+
+        // Desktop gets the bigger offset you like
+        // Mobile gets a smaller offset so it doesn't overshoot
+        const isMobile = window.matchMedia("(max-width: 700px)").matches;
+        const yOffset = isMobile ? -70 : -150;
+
+        const y = tabsNav.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({
+            top: y,
+            behavior: "smooth"
+        });
         }
         
         /* =========================================================

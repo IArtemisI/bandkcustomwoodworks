@@ -40,7 +40,7 @@
 
 .desktop-nav ul {
     margin: 0;
-    padding-right: 30px;
+    padding-right: clamp(10px, 3vw, 30px);
     list-style: none;
     display: flex;
     gap: clamp(20px, 4vw, 60px);
@@ -399,8 +399,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding-left: 200px;
-    padding-right: 150px;
+    padding-left: clamp(20px, 8vw, 200px);
+    padding-right: clamp(20px, 8vw, 150px);
 }
 
 .shop-banner-text {
@@ -534,7 +534,7 @@
 /* IMAGE SIDE */
 .board-wax-image img {
     width: 100%;
-    margin-left: 200px;
+    margin-left: clamp(0px, 8vw, 200px);
     max-width: clamp(280px, 30vw, 500px);
     height: auto;
     display: flex;
@@ -817,7 +817,6 @@
 /* Input and Text Area */
 .form-group textarea {
     padding: clamp(10px, 2.2vw, 14px) clamp(14px, 3vw, 16px);
-    border: 2px solid rgba(216, 181, 106, 0.55);
     border-radius: 12px;
     border-style: none;
     background: rgba(255, 255, 255, 0.55);
@@ -915,7 +914,7 @@
     margin: 40px;
 }
 
-.products-hero-text h3 {
+.products-hero-text h1 {
     font-size: clamp(30px, 6vw, 60px);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -940,13 +939,32 @@
 /*---------------Products Listed For Sale-----------------*//*#region*/
 
 .product-grid {
+    width: 100%;
+}
+
+/* Products list wrapper (the UL becomes the grid) */
+.product-grid-list {
     width: 95%;
     max-width: 1400px;
     margin: clamp(20px, 5vw, 40px) auto;
+
     display: grid;
-    
     gap: clamp(20px, 4vw, 35px);
-    grid-template-columns: repeat(auto-fit,minmax(clamp(300px, 40vw, 400px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 40vw, 400px), 1fr));
+
+    list-style: none;
+    padding: 0;
+}
+
+/* Remove default li spacing */
+.product-grid-list li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Section wrapper can just be full width now */
+.product-grid {
+    width: 100%;
 }
 
 /* Individual product card */
@@ -963,11 +981,12 @@
     text-decoration: none;   
     color: inherit;          
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     position: relative;
 }
 
 .product-card:active {
-    transform: translateY(-2px) scale(0.99);
+    transform: translateY(-2px) scale(0.98);
 }
 
 .product-card:hover {
@@ -997,11 +1016,14 @@
     margin-top: 10px;
     color: #391915;
     font-weight: 400;
+    min-height: 2.4em;      /* reserves space for up to ~2 lines */
+    line-height: 1.2;
+    margin: 10px 0 0;
 }
 
 /* Price */
 .product-card .price {
-    font-size: clamp(20px, 8vw, 25px);
+    font-size: clamp(16px, 2.2vw, 22px);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #391915;
@@ -1010,46 +1032,49 @@
 }
 
 @media (max-width: 700px) {
-    .product-grid {
+
+    /* Grid: 2 square cards per row */
+    .product-grid-list {
         width: 92%;
         margin: 20px auto;
-        gap: 20px;
-        grid-template-columns: 1fr;
-        /* one column on phones */
+        gap: clamp(14px, 3vw, 20px);
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .product-card {
-        padding-bottom: 16px;
-        border-radius: 16px;
-        transform: scale(1.02);
-        /* subtle enlargement for mobile */
-    }
-    
+
+.product-card {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* change this */
+    padding-bottom: 12px;
+}
+
+    /* Image fills the top portion */
     .product-card img {
-        height: clamp(200px,
-        55vw,
-        280px);
-        /* taller image for better visual impact */
+        width: 100%;
+        height: 65%;                /* image gets most of the square */
+        object-fit: cover;
     }
-    
+
+    /* Text stays compact at the bottom */
     .product-card h3 {
         margin-top: 10px;
-        font-size: clamp(18px, 5vw, 22px);
+        font-size: clamp(14px, 3.6vw, 18px);
+        line-height: 1.15;
     }
-    
+
     .product-card .price {
-        font-size: clamp(16px, 4.2vw, 20px);
-    }
-    
-    .button {
-        width: 85%;
-        /* bigger tap target */
-        margin: 10px auto 0;
-        padding: 0.7em 1.6em;
-        font-size: clamp(15px, 4.5vw, 18px);
-        border-radius: 28px;
+        margin-top: 1px;
+        font-size: clamp(14px, 3.3vw, 18px);
     }
 }
+
+@media (max-width: 420px) {     /*Tiny phones*/
+    .product-grid-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /*#endregion*/
 
@@ -1126,11 +1151,21 @@
 
 }
 
-/* Mobile stack */
 @media (max-width: 700px) {
     .product-details-hero-inner {
         flex-direction: column;
         align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 14px;
+    }
+
+    .product-details-breadcrumbs {
+        font-size: clamp(16px, 4.5vw, 20px);
+        line-height: 1.2;
+    }
+
+    .product-details-backlink {
+        font-size: clamp(16px, 4.5vw, 20px);
     }
 }
 /*#endregion*/
@@ -1160,7 +1195,8 @@
 
 .product-detail-main-img {
     width: 100%;
-    height: auto;
+    height: clamp(260px, 35vw, 520px); /* keeps it from getting too huge */
+    object-fit: cover;                 /* fills the space nicely */
     display: block;
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 18px 36px -18px;
@@ -1274,9 +1310,11 @@
 
 @media (max-width: 900px) {
     .product-detail-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 12px;
     }
-    
+
     .product-thumb img {
         height: 78px;
     }
@@ -1336,7 +1374,7 @@
 
 @media (max-width: 700px) {
     .custom-hero-banner {
-        height: clamp(20vh, 34vh, 30vh);
+        min-height: 20vh;
         justify-content: center;
         align-items: flex-end;
     }
@@ -2337,6 +2375,7 @@ body {
     margin: 0;
     background-color: #ede0d4;
     font-family: "Scope One", serif;
+
 }
 
 * {
