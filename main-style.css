@@ -1139,7 +1139,7 @@
 .product-detail {
     width: 95%;
     max-width: 1200px;
-    margin: 40px auto 400px;
+    margin: 40px auto 20px;
 }
 
 .product-detail-card {
@@ -1375,6 +1375,26 @@
     outline: none;
     border-color: #391915;
     box-shadow: 0 0 12px rgba(57, 25, 21, 0.2);
+}
+
+/*----------Submit Error--------*/
+
+.cb-error {
+    border-color: #b3261e !important;
+    box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.20) !important;
+}
+
+.cb-error:focus {
+    outline: none;
+    border-color: #b3261e !important;
+    box-shadow: 0 0 0 4px rgba(179, 38, 30, 0.25) !important;
+}
+
+/* Optional little message text */
+.cb-error-msg {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #b3261e;
 }
 
 /* ---------- Tabs --------- *//*#region*/
