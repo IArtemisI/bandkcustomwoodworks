@@ -29,24 +29,31 @@
    </header>
    
    <!-- Mobile Navigation -->
-   <header class="mobile-header">   
-      <button class="hamburger">
+   <header class="mobile-header">
+      <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
          <span></span>
          <span></span>
          <span></span>
       </button>
-   </header>  
+   </header>
    
-   <div class="nav-overlay">
+   <nav class="nav-overlay">
       <ul>
          <li><a href="index.html">Home</a></li>
          <li><a href="products.html">Shop</a></li>
          <li><a href="custom-boards.html">Custom</a></li>
          <li><a href="index.html#contact-us">Contact</a></li>
       </ul>
-   </div>
+   </nav>
+
+      <!-- Back To Top Button -->
+   <button class="back-to-top">
+      <img src="Photos/icons/up-arrow.svg" alt="Back to top">
+   </button>
    
-   <!--#endregion-->
+   <!-- #endregion -->
    
    <!---------------Product Breadcrumbs Hero ----------------------------------><!--#region-->
    
@@ -109,7 +116,6 @@
                   <li><strong>Woods:</strong> Maple, Walnut</li>
                </ul>
                
-               
                <div class="product-detail-actions">
                   <button class="product-detail-buy" type="button" disabled>
                      Out of Stock
@@ -129,212 +135,263 @@
    </main>
    <!--#endregion-->
    
-   <!---------------Scripts------------------------------------------------------><!--#region-->
-   
-   <!--Hamburger Menu--><!--#region-->
-   <script>
-      document.addEventListener("DOMContentLoaded", () => {
-         const hamburger = document.querySelector(".hamburger");
-         const overlay = document.querySelector(".nav-overlay");
+   <!---------------Footer--------------------------------------------------><!--#region-->
+   <footer class="site-footer">
+      <div class="footer-top">
+         <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="index.html#contact-us">Contact</a></li>
+         </ul>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-social">
+         <a href="https://www.facebook.com/groups/273420570637837" class="facebook-link" target="_blank">
+            Facebook
+         </a>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+         <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms & Conditions</a>
+         </div>
+         
+         <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
+      </div>
+   </footer>
+<!--#endregion-->
+
+<!---------------Scripts------------------------------------------------------><!--#region-->
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+
+      const $ = (sel, root = document) => root.querySelector(sel);
+      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+      
+      /* =========================================================
+      Global UI: Hamburger + Back-to-top + Hide/Show Nav
+      ========================================================= */
+      const hamburger = $(".hamburger");
+      const overlay = $(".nav-overlay");
+      const desktopHeader = $(".desktop-header");
+      const mobileHeader = $(".mobile-header");
+      const hero = $(".product-details-hero");
+      const backToTopBtn = $(".back-to-top");
+      
+      const isMenuOpen = () => overlay?.classList.contains("open");
+      
+      const openMenu = () => {
          if (!hamburger || !overlay) return;
+         overlay.classList.add("open");
+         hamburger.classList.add("open");
+         hamburger.setAttribute("aria-expanded", "true");
+      };
+      
+      const closeMenu = () => {
+         if (!hamburger || !overlay) return;
+         overlay.classList.remove("open");
+         hamburger.classList.remove("open");
+         hamburger.setAttribute("aria-expanded", "false");
+      };
+      
+      const toggleMenu = () => (isMenuOpen() ? closeMenu() : openMenu());
+      
+      if (hamburger && overlay) {
+         hamburger.addEventListener("click", toggleMenu);
          
-         hamburger.addEventListener("click", () => {
-            overlay.classList.toggle("open");
-            hamburger.classList.toggle("open");
-         });
+         $$(".nav-overlay a").forEach((a) => a.addEventListener("click", closeMenu));
          
-         document.querySelectorAll(".nav-overlay a").forEach(link => {
-            link.addEventListener("click", () => {
-               overlay.classList.remove("open");
-               hamburger.classList.remove("open");
-            });
+         document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && isMenuOpen()) closeMenu();
          });
+      }
+      
+      // Back to top
+      backToTopBtn?.addEventListener("click", () => {
+         window.scrollTo({ top: 0, behavior: "smooth" });
       });
-   </script>
-   <!--#endregion-->
-   
-   <!--Product Links--><!--#region-->
-   <script>
+      
+      let ticking = false;
+      
+      const updateGlobalUI = () => {
+         ticking = false;
+         
+         // Back-to-top button
+         if (backToTopBtn) {
+            const show = window.scrollY > 400;
+            backToTopBtn.style.opacity = show ? "1" : "0";
+            backToTopBtn.style.pointerEvents = show ? "auto" : "none";
+         }
+         
+         // Hide/show headers based on hero scroll
+         if (!hero) return;
+
+         if (isMenuOpen()) {
+            desktopHeader?.classList.remove("hide-nav");
+            mobileHeader?.classList.remove("hide-nav");
+            return;
+         }
+         
+         const trigger = hero.offsetHeight * 0.35; 
+         const hide = window.scrollY > trigger;
+         
+         desktopHeader?.classList.toggle("hide-nav", hide);
+         mobileHeader?.classList.toggle("hide-nav", hide);
+      };
+      
+      const onScroll = () => {
+         if (ticking) return;
+         ticking = true;
+         requestAnimationFrame(updateGlobalUI);
+      };
+      
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", () => requestAnimationFrame(updateGlobalUI), { passive: true });
+      updateGlobalUI();
+      
+      /* =========================================================
+      Product Details: read ?id=product-xxx and populate page
+      ========================================================= */
       const PRODUCTS = {
          "product-001": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
          "product-002": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
          "product-003": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
          "product-004": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
          "product-005": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
          "product-006": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
          "product-007": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
          "product-008": {
             title: "Cutting Board",
             price: "$199",
             image: "Photos/icons/under-construction.webp",
-            description:
-            "Handcrafted end-grain cutting board built for daily use and long-term durability.",
-            specs: [
-            'Size: L x W x H',
-            "Woods: -- ",
-            ]
+            description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
+            specs: ["Size: L x W x H", "Woods: --"]
          },
-         
-         "product-009": {  
+         "product-009": {
             title: "Board Wax",
             price: "$9.99",
             image: "Photos/structural/board-wax-image.webp",
-            description:
-            "Made with food grade bees wax, mineral oil, and vitamin e oil.",
-            specs: [
-            'Size: 8 oz',
-            ]
-         },
+            description: "Made with food grade bees wax, mineral oil, and vitamin e oil.",
+            specs: ["Size: 8 oz"]
+         }
       };
       
       const params = new URLSearchParams(window.location.search);
       const productId = params.get("id");
-      const product = PRODUCTS[productId];
+      const product = productId ? PRODUCTS[productId] : null;
       
-      // Elements on the page
-      const titleEl = document.getElementById("productTitle");
-      const priceEl = document.getElementById("productPrice");
-      const descEl = document.getElementById("productDesc");
-      const imgEl = document.getElementById("productImage");
-      const specsEl = document.getElementById("productSpecs");
-      const crumbEl = document.getElementById("breadcrumbProduct");
+      const cardEl = $(".product-detail-card");
+      const titleEl = $("#productTitle");
+      const priceEl = $("#productPrice");
+      const descEl = $("#productDesc");
+      const imgEl = $("#productImage");
+      const specsEl = $("#productSpecs");
+      const crumbEl = $("#breadcrumbProduct");
+      
+      const renderNotFound = () => {
+         if (cardEl) {
+            cardEl.innerHTML = `
+         <h2>Product not found</h2>
+         <p>This item may no longer be available, or the link is incorrect.</p>
+         <a href="products.html" class="shop-banner-button">Back to Shop</a>
+         `;
+         }
+         if (crumbEl) crumbEl.textContent = "Product Not Found";
+         document.title = `Product Not Found – B&K Custom Woodworks`;
+      };
       
       if (!product) {
-         // If product ID is missing or wrong, show a friendly message
-         document.querySelector(".product-detail-card").innerHTML = `
-            <h2>Product not found</h2>
-            <p>This item may no longer be available.</p>
-            <a href="products.html" class="shop-banner-button">Back to Shop</a>
-            `;
-         
-         // Also update breadcrumb if it exists
-         if (crumbEl) crumbEl.textContent = "Product Not Found";
-      } else {
-         // Update product text
-         if (titleEl) titleEl.textContent = product.title;
-         if (priceEl) priceEl.textContent = product.price;
-         if (descEl) descEl.textContent = product.description;
-         
-         // Update image
-         if (imgEl) {
-            imgEl.src = product.image;
-            imgEl.alt = product.title;
-         }
-         
-         // Update specs list
-         if (specsEl) {
-            specsEl.innerHTML = "";
-            
-            product.specs.forEach(spec => {
-               const li = document.createElement("li");
-               
-               // If spec looks like "Size: 18x12", split and bold the label
-               const parts = spec.split(":");
-               if (parts.length >= 2) {
-                  const label = parts.shift().trim() + ":";
-                  const value = parts.join(":").trim();
-                  
-                  const strong = document.createElement("strong");
-                  strong.textContent = label + " ";
-                  
-                  li.appendChild(strong);
-                  li.appendChild(document.createTextNode(value));
-               } else {
-                  // If no ":" just print it normally
-                  li.textContent = spec;
-               }
-               
-               specsEl.appendChild(li);
-            });
-         }
-         
-         // Update breadcrumb product name (hero banner)
-         if (crumbEl) crumbEl.textContent = product.title;
-         
-         // Optional: update the browser tab title too
-         document.title = `${product.title} – B&K Custom Woodworks`;
+         renderNotFound();
+         return;
       }
-   </script>
-   <!--#endregion-->
-   
-   <!--#endregion-->
-   
+
+      if (titleEl) titleEl.textContent = product.title;
+      if (priceEl) priceEl.textContent = product.price;
+      if (descEl) descEl.textContent = product.description;
+      
+      if (imgEl) {
+         imgEl.src = product.image;
+         imgEl.alt = product.title;
+      }
+      
+      if (specsEl) {
+         specsEl.innerHTML = "";
+         
+         product.specs.forEach((spec) => {
+            const li = document.createElement("li");
+            const idx = spec.indexOf(":");
+            
+            if (idx !== -1) {
+               const label = spec.slice(0, idx + 1);
+               const value = spec.slice(idx + 1).trim();
+               
+               const strong = document.createElement("strong");
+               strong.textContent = label + " ";
+               
+               li.appendChild(strong);
+               li.appendChild(document.createTextNode(value));
+            } else {
+               li.textContent = spec;
+            }
+            
+            specsEl.appendChild(li);
+         });
+      }
+      
+      if (crumbEl) crumbEl.textContent = product.title;
+      document.title = `${product.title} – B&K Custom Woodworks`;
+   });
+</script>
+<!--#endregion-->
+
 </body>
 </html>

@@ -1,955 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Our Work – B&K Custom Woodworks</title>
-<link rel="stylesheet" href="main-style.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Flamenco:wght@300;400&family=Scope+One&display=swap"
-rel="stylesheet"    />
+   <meta charset="UTF-8" />
+   <title>Our Work – B&K Custom Woodworks</title>
+   <link rel="stylesheet" href="main-style.css" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+   href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Flamenco:wght@300;400&family=Scope+One&display=swap"
+   rel="stylesheet"    />
 </head>
 <body>
-
-<!--Navigation--><!--#region-->
-<!-- Desktop Navigation -->
-<header class="desktop-header">
-    <nav class="desktop-nav">
-        <a href="index.html" class="nav-brand">
+   
+   <!--Navigation--><!--#region-->
+   <!-- Desktop Navigation -->
+   <header class="desktop-header">
+      <nav class="desktop-nav">
+         <a href="index.html" class="nav-brand">
             B&amp;K Custom Woodworks
-        </a>
-        
-        <ul>
+         </a>
+         
+         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="custom-boards.html">Custom</a></li>
             <li><a href="index.html#contact-us">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+         </ul>
+      </nav>
+   </header>
+   
+   <!-- Mobile Navigation -->
+   <header class="mobile-header">
+      <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+         <span></span>
+         <span></span>
+         <span></span>
+      </button>
+   </header>
+   
+   <nav class="nav-overlay">
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="products.html">Shop</a></li>
+         <li><a href="custom-boards.html">Custom</a></li>
+         <li><a href="index.html#contact-us">Contact</a></li>
+      </ul>
+   </nav>
 
-<!-- Mobile Navigation -->
-<header class="mobile-header">   
-    <button class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-</header>  
-
-<div class="nav-overlay">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Shop</a></li>
-        <li><a href="custom-boards.html">Custom</a></li>
-        <li><a href="index.html#contact-us">Contact</a></li>
-    </ul>
-</div>
-
-<!-- #endregion -->
-
-<!--Hero Section---><!--#region-->
-
-<section class="custom-hero-banner">
-    <div class="custom-hero-overlay"></div>
-    
-    <div class="custom-hero-title-wrap">
-        <h1>Design Your Custom Board</h1>
-    </div>
-</section>
-
-<!--#endregion-->
-
-<!--Tab Navigation --><!--#region-->
-<main class="custom-board-form">
-    
-    <nav class="custom-board-tabs" aria-label="Custom board tabs">
-        <button class="custom-board-tab" data-step="1">Step 1</button>
-        <button class="custom-board-tab" data-step="2">Step 2</button>
-        <button class="custom-board-tab" data-step="3">Step 3</button>
-        <button class="custom-board-tab" data-step="4">Step 4</button>
-        <button class="custom-board-tab" data-step="5">Step 5</button>
-        <button class="custom-board-tab" data-step="6">Step 6</button>
-        <button class="custom-board-tab" data-step="7">Step 7</button>
-        
-        <span class="custom-board-underline"></span>
-    </nav>
-    
-    <!--#endregion-->
-
-<!--Form --><!--#region-->
-    <form
-    name="custom-request"
-    method="POST"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-    action="thanks.html"
-    enctype="multipart/form-data"    
-    > 
-    <input type="hidden" name="form-name" value="custom-request" />
-    
-    <p style="display:none;">
-        <label>Do not fill this out if you are human: <input name="bot-field" /></label>
-    </p>
-    <!--#endregion-->
-
-<!-- Step 1 Contact Info--><!--#region-->
-    
-    <section class="custom-board-slide active" data-step="1">   
-        <header>
+      <!-- Back To Top Button -->
+   <button class="back-to-top">
+      <img src="Photos/icons/up-arrow.svg" alt="Back to top">
+   </button>
+   
+   <!-- #endregion -->
+   
+   <!--Hero Section---><!--#region-->
+   
+   <section class="custom-hero-banner">
+      <div class="custom-hero-overlay"></div>
+      
+      <div class="custom-hero-title-wrap">
+         <h1>Design Your Custom Board</h1>
+      </div>
+   </section>
+   
+   <!--#endregion-->
+   
+   <!--Tab Navigation --><!--#region-->
+   <main class="custom-board-form">
+      
+      <nav class="custom-board-tabs" aria-label="Custom board tabs">
+         <button class="custom-board-tab" data-step="1">Step 1</button>
+         <button class="custom-board-tab" data-step="2">Step 2</button>
+         <button class="custom-board-tab" data-step="3">Step 3</button>
+         <button class="custom-board-tab" data-step="4">Step 4</button>
+         <button class="custom-board-tab" data-step="5">Step 5</button>
+         <button class="custom-board-tab" data-step="6">Step 6</button>
+         <button class="custom-board-tab" data-step="7">Step 7</button>
+         
+         <span class="custom-board-underline"></span>
+      </nav>
+      
+      <!--#endregion-->
+   
+   <!--Form --><!--#region-->
+      <form
+      name="custom-request"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action="thanks.html"
+      enctype="multipart/form-data"    
+      > 
+      <input type="hidden" name="form-name" value="custom-request" />
+      
+      <p style="display:none;">
+         <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+      </p>
+      <!--#endregion-->
+   
+   <!-- Step 1 Contact Info--><!--#region-->
+      
+      <section class="custom-board-slide active" data-step="1">   
+         <header>
             <h2>How can we contact you?</h2>
-        </header>
-        
-        <label class="custom-board-contact">
+         </header>
+         
+         <label class="custom-board-contact">
             <span class="custom-board-contact-title">Name</span>
             <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                required
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
             />
-        </label>
-        
-        <label class="custom-board-contact">
+         </label>
+         
+         <label class="custom-board-contact">
             <span class="custom-board-contact-title">Email</span>
             <input
-                type="email"
-                name="email"
-                placeholder="you@example.com"
-                required
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
             />
-        </label>
-        
-        <label class="custom-board-contact">
+         </label>
+         
+         <label class="custom-board-contact">
             <span class="custom-board-contact-title">Phone Number</span>
             <input
             type="tel"
             name="phone"
             placeholder="000-000-0000"
             required
-            inputmode="numeric"
-            autocomplete="tel"
-            maxlength="12"
-            pattern="^\d{3}-\d{3}-\d{4}$"
-            title="000-000-0000"
+            inputmode="tel"
+            autocomplete="tel-national"
+            maxlength="18"
+            pattern="^(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+            title="000-000-0000 or 1-000-000-0000"
             />
-        </label>
-
-            <p class="cb-error-msg" id="contact-error" style="display:none;">
-                Please enter your name, a valid email, and a 10-digit phone number.
-            </p>
-
-    </section>
-
-<!--#endregion-->
-
-<!-- Step 2 Board Size --><!--#region-->
-    <section class="custom-board-slide" data-step="2">     
-        <header>
+         </label>
+         
+         <p class="cb-error-msg" id="contact-error" style="display:none;">
+            Please enter your name, a valid email, and a 10-digit phone number.
+         </p>
+         
+      </section>
+      
+      <!--#endregion-->
+   
+   <!-- Step 2 Board Size --><!--#region-->
+      <section class="custom-board-slide" data-step="2">
+         <header>
             <h2>Choose the perfect size</h2>
-        </header>
-        
-        <label class="custom-board-size">
-            <span class="custom-board-size-title">Length</span>
-            <select name="length">
-                <option>16 in</option>
-                <option>17 in</option>
-                <option>18 in</option>
-                <option>19 in</option>
-                <option>20 in</option>
-                <option>21 in</option>
-                <option>22 in</option>
-            </select>
-        </label>
-        
-        <label class="custom-board-size">
-            <span class="custom-board-size-title">Width</span>
-            <select name="width">
-                <option>19 in</option>
-                <option>20 in</option>
-                <option>21 in</option>
-                <option>22 in</option>
-                <option>23 in</option>
-                <option>24 in</option>
-            </select>
-        </label>
-        
-        <label class="custom-board-size">
-            <span class="custom-board-size-title">Height</span>
-            <select name="height">
-                <option>1 in</option>
-                <option>1.5 in</option>
-                <option>2 in</option>
-                <option>2.5 in</option>
-            </select>
-        </label>
-    </section>
-    <!--#endregion-->
-
-<!-- Step 3 Wood Types--><!--#region-->
-    <section class="custom-board-slide" data-step="3">  
-        <header>
+         </header>
+         
+         <div class="custom-board-size-layout">
+            <div class="custom-board-size-fields">
+               <label class="custom-board-size">
+                  <span class="custom-board-size-title">Length</span>
+                  <select name="length">
+                     <option>16 in</option>
+                     <option>17 in</option>
+                     <option>18 in</option>
+                     <option>19 in</option>
+                     <option>20 in</option>
+                     <option>21 in</option>
+                     <option>22 in</option>
+                  </select>
+               </label>
+               
+               <label class="custom-board-size">
+                  <span class="custom-board-size-title">Width</span>
+                  <select name="width">
+                     <option>19 in</option>
+                     <option>20 in</option>
+                     <option>21 in</option>
+                     <option>22 in</option>
+                     <option>23 in</option>
+                     <option>24 in</option>
+                  </select>
+               </label>
+               
+               <label class="custom-board-size">
+                  <span class="custom-board-size-title">Height</span>
+                  <select name="height">
+                     <option>1 in</option>
+                     <option>1.5 in</option>
+                     <option>2 in</option>
+                     <option>2.5 in</option>
+                  </select>
+               </label>
+            </div>
+            
+            <!-- Right side (image) 4:5 ratio 1000x1250 -->
+            <aside class="custom-board-size-image" aria-label="Board size preview">
+               <img src="Photos/structural/size-preview.webp" alt="Example cutting board size reference" />
+            </aside>
+         </div>
+      </section>
+      <!--#endregion-->
+   
+   <!-- Step 3 Wood Types--><!--#region-->
+      <section class="custom-board-slide" data-step="3">  
+         <header>
             <h2>Choose one or more hardwoods</h2>
-        </header>
-        
-        <fieldset class="cb-checkbox-grid">
+         </header>
+         
+         <fieldset class="cb-checkbox-grid">
             <legend class="visually-hidden">Wood Types</legend>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="woods[]" value="purple-heart">
-                <img src="Photos/wood-types/purpleheart.webp" alt="Purple Heart wood grain">
-                <span>Purple Heart</span>
+               <input type="checkbox" name="woods[]" value="purple-heart">
+               <img src="Photos/wood-types/purpleheart.webp" alt="Purple Heart wood grain">
+               <span>Purple Heart</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="woods[]" value="bodark">
-                <img src="Photos/wood-types/bodark.webp" alt="Bodark wood grain">
-                <span>Bodark</span>
+               <input type="checkbox" name="woods[]" value="bodark">
+               <img src="Photos/wood-types/bodark.webp" alt="Bodark wood grain">
+               <span>Bodark</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="woods[]" value="bloodwood">
-                <img src="Photos/wood-types/bloodwood.webp" alt="Bloodwood wood grain">
-                <span>Bloodwood</span>
+               <input type="checkbox" name="woods[]" value="bloodwood">
+               <img src="Photos/wood-types/bloodwood.webp" alt="Bloodwood wood grain">
+               <span>Bloodwood</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="woods[]" value="padauk">
-                <img src="Photos/wood-types/padauk.webp" alt="African Padauk wood grain">
-                <span>African Padauk</span>
+               <input type="checkbox" name="woods[]" value="padauk">
+               <img src="Photos/wood-types/padauk.webp" alt="African Padauk wood grain">
+               <span>African Padauk</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="woods[]" value="zebrawood">
-                <img src="Photos/wood-types/zebrawood.webp" alt="Zebrawood grain">
-                <span>Zebrawood</span>
+               <input type="checkbox" name="woods[]" value="zebrawood">
+               <img src="Photos/wood-types/zebrawood.webp" alt="Zebrawood grain">
+               <span>Zebrawood</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="woods[]" value="walnut">
-                <img src="Photos/wood-types/blackwalnut.webp" alt="Black Walnut grain">
-                <span>Black Walnut</span>
+               <input type="checkbox" name="woods[]" value="walnut">
+               <img src="Photos/wood-types/blackwalnut.webp" alt="Black Walnut grain">
+               <span>Black Walnut</span>
             </label>
             
             <div class="cb-other-option">
-                <label class="cb-other-option-label">
-                    <span>Have a special type of wood in mind?</span>
-                </label>
-                <input type="text" name="other_wood" placeholder="Your ideas here" class="cb-other-input">
+               <label class="cb-other-option-label">
+                  <span>Have a special type of wood in mind?</span>
+               </label>
+               <input type="text" name="other_wood" placeholder="Your ideas here" class="cb-other-input">
             </div>
             
-        </fieldset>
-        
-    </section>
-    <!--#endregion-->
-
-<!-- Step 4 Patterns--><!--#region-->
-    
-    <section class="custom-board-slide" data-step="4">               
-        <header>
+         </fieldset>
+         
+      </section>
+      <!--#endregion-->
+   
+   <!-- Step 4 Patterns--><!--#region-->
+      
+      <section class="custom-board-slide" data-step="4">               
+         <header>
             <h2>Select a design style.</h2>
-        </header>
-        
-        <fieldset class="cb-checkbox-grid">
+         </header>
+         
+         <fieldset class="cb-checkbox-grid">
             <legend class="visually-hidden">Patterns</legend>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="patterns[]" value="checkerboard">
-                <img src="Photos/patterns/checkerboard.webp" alt="Checkerboard Pattern">
-                <span>Checkerboard</span>
+               <input type="checkbox" name="patterns[]" value="checkerboard">
+               <img src="Photos/patterns/checkerboard.webp" alt="Checkerboard Pattern">
+               <span>Checkerboard</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="patterns[]" value="staircase">
-                <img src="Photos/patterns/staircase.webp" alt="Staircase Pattern">
-                <span>Steps</span>
+               <input type="checkbox" name="patterns[]" value="staircase">
+               <img src="Photos/patterns/staircase.webp" alt="Staircase Pattern">
+               <span>Steps</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="patterns[]" value="chevron">
-                <img src="Photos/patterns/chevron.webp" alt="Chevron Pattern">
-                <span>Chevron</span>
+               <input type="checkbox" name="patterns[]" value="chevron">
+               <img src="Photos/patterns/chevron.webp" alt="Chevron Pattern">
+               <span>Chevron</span>
             </label>
             
             <label class="cb-checkbox-option">
-                <input type="checkbox" name="patterns[]" value="stripes">
-                <img src="Photos/patterns/stripes.webp" alt="Stripe Pattern">
-                <span>Striped</span>
+               <input type="checkbox" name="patterns[]" value="stripes">
+               <img src="Photos/patterns/stripes.webp" alt="Stripe Pattern">
+               <span>Striped</span>
             </label>
             
             <div class="cb-other-option">
-                <label class="cb-other-option-label">
-                    <span>Have a design in mind?</span>
-                </label>
-                <input type="text" name="other_pattern" placeholder="Your ideas here" class="cb-other-input">
+               <label class="cb-other-option-label">
+                  <span>Have a design in mind?</span>
+               </label>
+               <input type="text" name="other_pattern" placeholder="Your ideas here" class="cb-other-input">
             </div>
-        </fieldset>
-    </section>
-        <!--#endregion-->
-
-<!-- Step 5 Features--><!--#region-->
-        <section class="custom-board-slide" data-step="5">
-            <header>
-                <h2>Select your desired features</h2>
-            </header>
+         </fieldset>
+      </section>
+      <!--#endregion-->
+   
+   <!-- Step 5 Features--><!--#region-->
+      <section class="custom-board-slide" data-step="5">
+         <header>
+            <h2>Select your desired features</h2>
+         </header>
+         
+         <fieldset class="cb-checkbox-grid">
+            <legend class="visually-hidden">Board Features</legend>
             
-            <fieldset class="cb-checkbox-grid">
-                <legend class="visually-hidden">Board Features</legend>
-                
-                <!-- Juice Groove -->
-                <label class="cb-checkbox-option">
-                    <input type="checkbox" name="features[]" value="juice-groove">
-                    <img src="Photos/board-features/juice-groove.webp" alt="Juice groove example">
-                    <span>Juice Groove</span>
-                </label>
-                
-                <!-- Feet -->
-                <label class="cb-checkbox-option">
-                    <input type="checkbox" name="features[]" value="feet">
-                    <img src="Photos/board-features/feet.webp" alt="Rubber feet example">
-                    <span>Feet</span>
-                </label>
-                
-                <!-- Handles -->
-                <label class="cb-checkbox-option">
-                    <input type="checkbox" name="features[]" value="handles">
-                    <img src="Photos/board-features/finger-grooves.webp" alt="Handle options example">
-                    <span>Handles</span>
-                </label>
-                
-            </fieldset>
-        </section>
-        <!--#endregion-->
-
-<!--Step 6 Engravings--><!--#region-->
-    <section class="custom-board-slide" data-step="6">
-    <header>
-        <h2>Custom engraving (Optional)</h2>
-    </header>
-
-    <label class="custom-board-engraving">
-        <span class="custom-board-engraving-title">What would you like?</span>
-        <textarea name="engraving" rows="5" placeholder="Names, dates, logos, symbols..."></textarea>
-    </label>
-
-    <div class="custom-board-engraving">
-        <span class="custom-board-engraving-title">Upload files or images (optional)</span>
-
-        <input type="file" name="engraving_file_1" accept="image/*,.pdf" id="engraving_file_1" />
-        <input type="file" name="engraving_file_2" accept="image/*,.pdf" id="engraving_file_2" />
-        <input type="file" name="engraving_file_3" accept="image/*,.pdf" id="engraving_file_3" />
-    </div>
-
-    <input type="hidden" name="engraving_files_names" id="engraving_files_names" value="" />
-    <div class="cb-file-names" id="cb-file-names" aria-live="polite"></div>
-    </section>
-        <!--#endregion-->
-
-<!--Step 7 Review--><!--#region-->
-        
-        <section class="custom-board-slide" data-step="7">
-            <header>
-                <h2>Review & Submit</h2>
-            </header>
+            <!-- Juice Groove -->
+            <label class="cb-checkbox-option">
+               <input type="checkbox" name="features[]" value="juice-groove">
+               <img src="Photos/board-features/juice-groove.webp" alt="Juice groove example">
+               <span>Juice Groove</span>
+            </label>
             
-            <div class="cb-review">
-                
-                <div class="cb-review-section">
-                    <h3>Contact Info</h3>
-                    <p id="review-contact"></p>
-                </div>
-                
-                <div class="cb-review-section">
-                    <h3>Board Size</h3>
-                    <p id="review-size"></p>
-                </div>
-                
-                <div class="cb-review-section">
-                    <h3>Wood Selection</h3>
-                    <div id="review-woods"></div>
-                </div>
-                
-                <div class="cb-review-section">
-                    <h3>Pattern</h3>
-                    <div id="review-pattern"></div>
-                </div>
-                
-                <div class="cb-review-section">
-                    <h3>Features</h3>
-                    <p id="review-features"></p>
-                </div>
-                
-                <div class="cb-review-section">
-                    <h3>Engraving</h3>
-                    <p id="review-engraving"></p>
-                </div>
-
-                <div class="cb-review-section">
-                    <h3>Uploaded Files</h3>
-                    <p id="review-engraving"></p>
-                    <p id="review-engraving-files"></p>
-                </div>
-                
-                <label class="review-textbox">
-                    <span class="review-textbox-title">
-                        Anything else we should know?
-                    </span>
-                    <textarea name="final_notes" rows="4"
-                    placeholder="Special requests, deadlines, inspiration, etc."></textarea>
-                </label>
-                
-                <button type="submit" class="custom-board-submit">
-                    Send Custom Request
-                </button>
-                
+            <!-- Feet -->
+            <label class="cb-checkbox-option">
+               <input type="checkbox" name="features[]" value="feet">
+               <img src="Photos/board-features/feet.webp" alt="Rubber feet example">
+               <span>Feet</span>
+            </label>
+            
+            <!-- Handles -->
+            <label class="cb-checkbox-option">
+               <input type="checkbox" name="features[]" value="handles">
+               <img src="Photos/board-features/finger-grooves.webp" alt="Handle options example">
+               <span>Handles</span>
+            </label>
+            
+         </fieldset>
+      </section>
+      <!--#endregion-->
+   
+   <!--Step 6 Engravings--><!--#region-->
+      <section class="custom-board-slide" data-step="6">
+         <header>
+            <h2>Custom engraving (Optional)</h2>
+         </header>
+         
+         <label class="custom-board-engraving">
+            <span class="custom-board-engraving-title">What would you like?</span>
+            <textarea name="engraving" rows="5" placeholder="Names, dates, logos, symbols..."></textarea>
+         </label>
+         
+         <div class="custom-board-engraving">
+            <span class="custom-board-engraving-title">Upload files or images (optional)</span>
+            
+            <input type="file" name="engraving_file_1" accept="image/*,.pdf" id="engraving_file_1" />
+            <input type="file" name="engraving_file_2" accept="image/*,.pdf" id="engraving_file_2" />
+            <input type="file" name="engraving_file_3" accept="image/*,.pdf" id="engraving_file_3" />
+         </div>
+         
+         <input type="hidden" name="engraving_files_names" id="engraving_files_names" value="" />
+         <div class="cb-file-names" id="cb-file-names" aria-live="polite"></div>
+      </section>
+      <!--#endregion-->
+   
+   <!--Step 7 Review--><!--#region-->
+      
+      <section class="custom-board-slide" data-step="7">
+         <header>
+            <h2>Review & Submit</h2>
+         </header>
+         
+         <div class="cb-review">
+            
+            <div class="cb-review-section">
+               <h3>Contact Info</h3>
+               <p id="review-contact"></p>
             </div>
-        </section>
-        
-        <!--#endregion-->
-
-<!--Buttons--><!--#region-->
-        <div class="custom-board-button">                          
-            <button type="button" class="custom-board-back" disabled>
-                Back
+            
+            <div class="cb-review-section">
+               <h3>Board Size</h3>
+               <p id="review-size"></p>
+            </div>
+            
+            <div class="cb-review-section">
+               <h3>Wood Selection</h3>
+               <div id="review-woods"></div>
+            </div>
+            
+            <div class="cb-review-section">
+               <h3>Pattern</h3>
+               <div id="review-pattern"></div>
+            </div>
+            
+            <div class="cb-review-section">
+               <h3>Features</h3>
+               <p id="review-features"></p>
+            </div>
+            
+            <div class="cb-review-section">
+               <h3>Engraving</h3>
+               <p id="review-engraving"></p>
+            </div>
+            
+            <div class="cb-review-section">
+               <h3>Uploaded Files</h3>
+               <p id="review-engraving"></p>
+               <p id="review-engraving-files"></p>
+            </div>
+            
+            <label class="review-textbox">
+               <span class="review-textbox-title">
+                  Anything else we should know?
+               </span>
+               <textarea name="final_notes" rows="4"
+               placeholder="Special requests, deadlines, inspiration, etc."></textarea>
+            </label>
+            
+            <button type="submit" class="custom-board-submit">
+               Send Custom Request
             </button>
             
-            <button type="button" class="custom-board-next">
-                Next
-            </button>
-        </div>
-    </form>
+         </div>
+      </section>
+      
+      <!--#endregion-->
+   
+   <!--Buttons--><!--#region-->
+      <div class="custom-board-button">                          
+         <button type="button" class="custom-board-back" disabled>
+            Back
+         </button>
+         
+         <button type="button" class="custom-board-next">
+            Next
+         </button>
+      </div>
+   </form>
 </main>
 <!--#endregion-->
 
 <!--Footer--><!--#region-->
-<footer class="site-footer">
-    <div class="footer-top">
-        <ul class="footer-nav">
+   <footer class="site-footer">
+      <div class="footer-top">
+         <ul class="footer-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="custom-boards.html">Custom</a></li>
             <li><a href="index.html#contact-us">Contact</a></li>
-        </ul>
-    </div>
-    
-    <div class="footer-divider"></div>
-    
-    <div class="footer-social">
-        <a href="https://facebook.com" class="facebook-link" target="_blank">
+         </ul>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-social">
+         <a href="https://www.facebook.com/groups/273420570637837" class="facebook-link" target="_blank">
             Facebook
-        </a>
-    </div>
-    
-    <div class="footer-divider"></div>
-    
-    <div class="footer-bottom">
-        <div class="footer-legal">
+         </a>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+         <div class="footer-legal">
             <a href="privacy.html">Privacy Policy</a>
             <span>•</span>
             <a href="terms.html">Terms & Conditions</a>
-        </div>
-        
-        <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
-    </div>
-</footer>
+         </div>
+         
+         <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
+      </div>
+   </footer>
 <!--#endregion-->
 
 <!--Scripts--><!--#region-->
-
-<!-- Hamburger Menu --><!--#region-->
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const hamburger = document.querySelector(".hamburger");
-        const overlay = document.querySelector(".nav-overlay");
-        
-        if (!hamburger || !overlay) return;
-        
-        hamburger.addEventListener("click", () => {
-            overlay.classList.toggle("open");
-            hamburger.classList.toggle("open");
-        });
-        
-        document.querySelectorAll(".nav-overlay a").forEach(link => {
-            link.addEventListener("click", () => {
-                overlay.classList.remove("open");
-                hamburger.classList.remove("open");
-            });
-        });
-    });
-</script>
-<!--#endregion-->
+   document.addEventListener("DOMContentLoaded", () => {
 
-<!-- Custom Board Form --><!--#region-->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        
-        /* =========================================================
-        1) Grab all the elements we need (tabs, slides, buttons)
-        ========================================================= */
-        const tabs = document.querySelectorAll(".custom-board-tab");
-        const slides = document.querySelectorAll(".custom-board-slide");
-        const nextBtn = document.querySelector(".custom-board-next");
-        const backBtn = document.querySelector(".custom-board-back");
-        const underline = document.querySelector(".custom-board-underline");
-        const tabsNav = document.querySelector(".custom-board-tabs"); // scroll target
-        const form = document.querySelector(".custom-board-form form");
-        
-        // If the core UI isn't found, stop so we don't throw errors.
-        if (!tabs.length || !slides.length) return;
-        
-        let currentStep = 1;
-        const totalSteps = slides.length;
-        
-        /* =========================================================
-        2) Prevent Enter from submitting on steps 1–6
-        - Allows Enter inside textareas
-        - Allows Enter to submit ONLY on Step 7
-        ========================================================= */
-        if (form) {
-            form.addEventListener("keydown", (e) => {
-                if (e.key !== "Enter") return;
-                
-                const isTextarea = e.target && e.target.tagName === "TEXTAREA";
-                if (isTextarea) return; // allow Enter inside textareas
-                
-                // If not on the final step, Enter should not submit the form
-                if (currentStep !== totalSteps) {
-                    e.preventDefault();
-                }
-            });
-        }
-        
-        /* =========================================================
-        3) Smooth-scroll the page back to the tabs area
-        - Called whenever the step changes (Next/Back/Tab click)
-        - Scrolls to just above the Step 1–7 navigation
-        ========================================================= */
-        function scrollToTabs() {
-        if (!tabsNav) return;
-
-        // Desktop gets the bigger offset you like
-        // Mobile gets a smaller offset so it doesn't overshoot
-        const isMobile = window.matchMedia("(max-width: 700px)").matches;
-        const yOffset = isMobile ? -70 : -150;
-
-        const y = tabsNav.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-        window.scrollTo({
-            top: y,
-            behavior: "smooth"
-        });
-        }
-        
-        /* =========================================================
-        4) Underline movement for active step tab
-        - Keeps your underline aligned under the active tab
-        ========================================================= */
-        function moveUnderline() {
-            const activeTab = document.querySelector(".custom-board-tab.active");
-            if (!activeTab || !underline) return;
-            
-            const tabRect = activeTab.getBoundingClientRect();
-            const navRect = activeTab.parentElement.getBoundingClientRect();
-            
-            underline.style.width = `${tabRect.width}px`;
-            underline.style.transform = `translateX(${tabRect.left - navRect.left}px)`;
-        }
-        
-        /* =========================================================
-        5) Phone number input mask: 000-000-0000
-        - Forces formatting as they type
-        - Accepts only digits, inserts dashes
-        ========================================================= */
-        const phoneInput = document.querySelector('input[name="phone"]');
-        
-        function formatPhone(value) {
-            const digits = (value || "").replace(/\D/g, "").slice(0, 10);
-            const a = digits.slice(0, 3);
-            const b = digits.slice(3, 6);
-            const c = digits.slice(6, 10);
-            
-            if (digits.length > 6) return `${a}-${b}-${c}`;
-            if (digits.length > 3) return `${a}-${b}`;
-            return a;
-        }
-        
-        if (phoneInput) {
-            phoneInput.addEventListener("input", () => {
-                phoneInput.value = formatPhone(phoneInput.value);
-            });
-            
-            // Optional behavior: clear incomplete phone numbers when leaving the field
-            phoneInput.addEventListener("blur", () => {
-                const digits = phoneInput.value.replace(/\D/g, "");
-                if (digits.length && digits.length < 10) phoneInput.value = "";
-            });
-        }
-        
-        /* =========================================================
-        6) Step 1 validation (Name, Email, Phone)
-        - Blocks moving to Step 2 until valid
-        - Adds red border highlight on invalid fields
-        - Shows/hides the #contact-error message
-        ========================================================= */
-        const nameInput = document.querySelector('[name="name"]');
-        const emailInput = document.querySelector('[name="email"]');
-        const contactErrorMsg = document.getElementById("contact-error");
-        
-        // Add/remove red border class on a field
-        function setError(el, isError) {
-            if (!el) return;
-            el.classList.toggle("cb-error", isError);
-        }
-        
-        // Validate step 1 using built-in browser rules (required, type=email, pattern, etc.)
-        // showUI=true -> show red borders + show message
-        // showUI=false -> silent check (used while typing)
-        function validateStep1(showUI = true) {
-            const fields = [nameInput, emailInput, phoneInput];
-            let allValid = true;
-            
-            fields.forEach(field => {
-                if (!field) return;
-                const valid = field.checkValidity();
-                allValid = allValid && valid;
-                
-                if (showUI) setError(field, !valid);
-            });
-            
-            if (contactErrorMsg && showUI) {
-                contactErrorMsg.style.display = allValid ? "none" : "block";
-            }
-            
-            return allValid;
-        }
-        
-        // Live feedback while typing: show/hide message + add/remove red borders
-        [nameInput, emailInput, phoneInput].forEach(field => {
-            if (!field) return;
-            
-            field.addEventListener("input", () => {
-                setError(field, !field.checkValidity());
-                
-                if (contactErrorMsg) {
-                    contactErrorMsg.style.display = validateStep1(false) ? "none" : "block";
-                }
-            });
-            
-            field.addEventListener("blur", () => {
-                setError(field, !field.checkValidity());
-                
-                if (contactErrorMsg) {
-                    contactErrorMsg.style.display = validateStep1(false) ? "none" : "block";
-                }
-            });
-        });
-        
-        /* =========================================================
-        7) Populate the Review step (Step 7)
-        - Collects selections + text and displays them in review
-        ========================================================= */
-        function populateReview() {
-
-        // Helper: safely get input/select/textarea value by "name"
-        // If not found or empty, return "—"
-        const getValue = (name) =>
-            document.querySelector(`[name="${name}"]`)?.value?.trim() || "—";
-
-        /* ---------------- Contact Info ---------------- */
-        const name  = getValue("name");
-        const email = getValue("email");
-        const phone = getValue("phone");
-
-        const reviewContactEl = document.getElementById("review-contact");
-        if (reviewContactEl) {
-            reviewContactEl.textContent = `${name} • ${email} • ${phone}`;
-        }
-
-        /* ---------------- Board Size ---------------- */
-        const length = getValue("length");
-        const width  = getValue("width");
-        const height = getValue("height");
-
-        const reviewSizeEl = document.getElementById("review-size");
-        if (reviewSizeEl) {
-            reviewSizeEl.textContent = `${length} × ${width} × ${height}`;
-        }
-
-        /* ---------------- Wood Selection ---------------- */
-        const woodsContainer = document.getElementById("review-woods");
-        if (woodsContainer) {
-            woodsContainer.innerHTML = "";
-
-            const woodsChecked = [...document.querySelectorAll('[name="woods[]"]:checked')]
-            .map(i => i.closest("label")?.querySelector("span")?.textContent?.trim())
-            .filter(Boolean);
-
-            const otherWood = document.querySelector('[name="other_wood"]')?.value?.trim();
-
-            if (woodsChecked.length) {
-            const p = document.createElement("p");
-            p.textContent = woodsChecked.join(", ");
-            woodsContainer.appendChild(p);
-            }
-
-            if (otherWood) {
-            const p = document.createElement("p");
-            p.classList.add("review-other");
-            p.textContent = `Custom request: ${otherWood}`;
-            woodsContainer.appendChild(p);
-            }
-
-            if (!woodsChecked.length && !otherWood) {
-            woodsContainer.textContent = "—";
-            }
-        }
-
-        /* ---------------- Pattern ---------------- */
-        const patternsContainer = document.getElementById("review-pattern");
-        if (patternsContainer) {
-            patternsContainer.innerHTML = "";
-
-            const patternsChecked = [...document.querySelectorAll('[name="patterns[]"]:checked')]
-            .map(i => i.closest("label")?.querySelector("span")?.textContent?.trim())
-            .filter(Boolean);
-
-            const otherPattern = document.querySelector('[name="other_pattern"]')?.value?.trim();
-
-            if (patternsChecked.length) {
-            const p = document.createElement("p");
-            p.textContent = patternsChecked.join(", ");
-            patternsContainer.appendChild(p);
-            }
-
-            if (otherPattern) {
-            const p = document.createElement("p");
-            p.classList.add("review-other");
-            p.textContent = `Custom request: ${otherPattern}`;
-            patternsContainer.appendChild(p);
-            }
-
-            if (!patternsChecked.length && !otherPattern) {
-            patternsContainer.textContent = "—";
-            }
-        }
-
-        /* ---------------- Features ---------------- */
-        const features = [...document.querySelectorAll('[name="features[]"]:checked')]
-            .map(i => i.closest("label")?.querySelector("span")?.textContent?.trim())
-            .filter(Boolean)
-            .join(", ") || "—";
-
-        const reviewFeaturesEl = document.getElementById("review-features");
-        if (reviewFeaturesEl) {
-            reviewFeaturesEl.textContent = features;
-        }
-
-        /* ---------------- Engraving text ---------------- */
-        const engravingText = getValue("engraving");
-        const reviewEngravingEl = document.getElementById("review-engraving");
-        if (reviewEngravingEl) {
-            reviewEngravingEl.textContent = engravingText;
-        }
-
-        /* ---------------- Engraving files (from hidden field) ----------------
-            IMPORTANT:
-            This reads the hidden input you update when files are selected:
-            <input type="hidden" name="engraving_files_names" id="engraving_files_names" ...>
-            And prints it into:
-            <p id="review-engraving-files"></p>
-        */
-        const filesRaw =
-            document.querySelector('[name="engraving_files_names"]')?.value?.trim() || "";
-
-        const reviewFilesEl = document.getElementById("review-engraving-files");
-        if (reviewFilesEl) {
-            reviewFilesEl.textContent = filesRaw ? `Files: ${filesRaw}` : "Files: —";
-        }
-        }
-        /* =========================================================
-        8) Switch steps (show/hide slides + update buttons)
-        - Also triggers review population on final step
-        - Scrolls back up to tabs so users don't have to
-        ========================================================= */
-        function showStep(step) {
-            currentStep = step;
-            
-            // Activate correct tab
-            tabs.forEach(tab => {
-                tab.classList.toggle("active", Number(tab.dataset.step) === step);
-            });
-            
-            // Show correct slide
-            slides.forEach(slide => {
-                slide.classList.toggle("active", Number(slide.dataset.step) === step);
-            });
-            
-            // Move underline under active tab
-            moveUnderline();
-            
-            // Populate review content when on final step
-            if (step === totalSteps) {
-                populateReview();
-            }
-            
-            // Back button disabled on Step 1
-            if (backBtn) backBtn.disabled = step === 1;
-            
-            // Next button disabled on final step
-            if (nextBtn) {
-                nextBtn.textContent = "Next";
-                nextBtn.disabled = step === totalSteps;
-            }
-            
-            // Smooth scroll back up to tabs area
-            scrollToTabs();
-        }
-        
-        /* =========================================================
-        9) Tab clicks (Step 1–7 buttons at top)
-        - Optional gate: block leaving Step 1 unless valid
-        ========================================================= */
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                const targetStep = Number(tab.dataset.step);
-                
-                // If leaving Step 1 to any later step, require valid contact info
-                if (currentStep === 1 && targetStep > 1 && !validateStep1(true)) {
-                    const firstBad = [nameInput, emailInput, phoneInput].find(f => f && !f.checkValidity());
-                    firstBad?.focus();
-                    return;
-                }
-                
-                showStep(targetStep);
-            });
-        });
-        
-        /* =========================================================
-        10) Next / Back buttons
-        - Next is gated by Step 1 validity
-        ========================================================= */
-        if (nextBtn) {
-            nextBtn.addEventListener("click", () => {
-                // Gate Step 1 -> Step 2
-                if (currentStep === 1 && !validateStep1(true)) {
-                    const firstBad = [nameInput, emailInput, phoneInput].find(f => f && !f.checkValidity());
-                    firstBad?.focus();
-                    return;
-                }
-                
-                if (currentStep < totalSteps) {
-                    showStep(currentStep + 1);
-                }
-            });
-        }
-        
-        if (backBtn) {
-            backBtn.addEventListener("click", () => {
-                if (currentStep > 1) {
-                    showStep(currentStep - 1);
-                }
-            });
-        }
-        
-        /* =========================================================
-        11) Step 6: Display selected file names + store them
-        - Shows file names in the UI
-        - Copies names into a hidden field for Netlify
-        ========================================================= */
-        const fileInputs = [
-        document.getElementById("engraving_file_1"),
-        document.getElementById("engraving_file_2"),
-        document.getElementById("engraving_file_3"),
-        ];
-
-        const fileNamesEl = document.getElementById("cb-file-names");
-        const fileNamesHidden = document.getElementById("engraving_files_names");
-
-        function updateFileNames() {
-        const names = fileInputs
-            .filter(Boolean)
-            .map(input => (input.files && input.files[0]) ? input.files[0].name : "")
-            .filter(Boolean);
-
-        if (fileNamesEl) {
-            fileNamesEl.textContent = names.length ? `Selected: ${names.join(", ")}` : "";
-        }
-
-        if (fileNamesHidden) {
-            fileNamesHidden.value = names.join(", ");
-        }
-        }
-
-        fileInputs.filter(Boolean).forEach(input => {
-        input.addEventListener("change", updateFileNames);
-        });
-        
-        /* =========================================================
-        12) Initialize
-        - Start on Step 1
-        - Re-align underline on resize
-        ========================================================= */
-        showStep(1);
-        window.addEventListener("resize", moveUnderline);
-        
-    });
-</script>
-<!--#endregion-->
-
-<!--Disappearing Nav Scrolling for Custom--><!--#region-->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const desktopHeader = document.querySelector(".desktop-header");
-        const mobileHeader = document.querySelector(".mobile-header");
-        const hero = document.querySelector(".custom-hero-banner");
-        
-        if (!hero) return;
-        
-        function handleScroll() {
-            const trigger = hero.offsetHeight * 0.3;
-            const hide = window.scrollY > trigger;
-            
-            desktopHeader?.classList.toggle("hide-nav", hide);
-            mobileHeader?.classList.toggle("hide-nav", hide);
-        }
-        
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll();
-    });
-</script>
-<!--#endregion-->
-
-<!--Javascript Back to top--><!--#region-->
-
-<button class="back-to-top">
-    <img src="Photos/icons/up-arrow.svg" alt="Back to top" />
-</button>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const backToTopBtn = document.querySelector(".back-to-top");
-        if (!backToTopBtn) return;
-        
-        function updateBackToTop() {
+      const $ = (sel, root = document) => root.querySelector(sel);
+      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+      
+      /* =========================================================
+      Global UI: Hamburger + Back-to-top + Hide/Show Nav
+      ========================================================= */
+      const hamburger = $(".hamburger");
+      const overlay = $(".nav-overlay");
+      const desktopHeader = $(".desktop-header");
+      const mobileHeader = $(".mobile-header");
+      const hero = $(".custom-hero-banner");
+      const backToTopBtn = $(".back-to-top");
+      
+      const isMenuOpen = () => overlay?.classList.contains("open");
+      
+      const openMenu = () => {
+         if (!hamburger || !overlay) return;
+         overlay.classList.add("open");
+         hamburger.classList.add("open");
+         hamburger.setAttribute("aria-expanded", "true");
+      };
+      
+      const closeMenu = () => {
+         if (!hamburger || !overlay) return;
+         overlay.classList.remove("open");
+         hamburger.classList.remove("open");
+         hamburger.setAttribute("aria-expanded", "false");
+      };
+      
+      const toggleMenu = () => (isMenuOpen() ? closeMenu() : openMenu());
+      
+      if (hamburger && overlay) {
+         hamburger.addEventListener("click", toggleMenu);
+         $$(".nav-overlay a").forEach((a) => a.addEventListener("click", closeMenu));
+         document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && isMenuOpen()) closeMenu();
+         });
+      }
+      
+      backToTopBtn?.addEventListener("click", () => {
+         window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      
+      let ticking = false;
+      
+      const updateGlobalUI = () => {
+         ticking = false;
+         
+         // Back to top
+         if (backToTopBtn) {
             const show = window.scrollY > 400;
             backToTopBtn.style.opacity = show ? "1" : "0";
             backToTopBtn.style.pointerEvents = show ? "auto" : "none";
-        }
-        
-        window.addEventListener("scroll", updateBackToTop, { passive: true });
-        updateBackToTop(); // run once on load
-        
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    });
+         }
+         
+         if (!hero) return;
+         
+         if (isMenuOpen()) {
+            desktopHeader?.classList.remove("hide-nav");
+            mobileHeader?.classList.remove("hide-nav");
+            return;
+         }
+         
+         const trigger = hero.offsetHeight * 0.3;
+         const hide = window.scrollY > trigger;
+         
+         desktopHeader?.classList.toggle("hide-nav", hide);
+         mobileHeader?.classList.toggle("hide-nav", hide);
+      };
+      
+      const onScroll = () => {
+         if (ticking) return;
+         ticking = true;
+         requestAnimationFrame(updateGlobalUI);
+      };
+      
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", () => requestAnimationFrame(updateGlobalUI), { passive: true });
+      updateGlobalUI();
+      
+      /* =========================================================
+      Custom Board Form Wizard
+      ========================================================= */
+      const tabs = $$(".custom-board-tab");
+      const slides = $$(".custom-board-slide");
+      const nextBtn = $(".custom-board-next");
+      const backBtn = $(".custom-board-back");
+      const underline = $(".custom-board-underline");
+      const tabsNav = $(".custom-board-tabs");
+      const form = $(".custom-board-form form");
+      
+      if (!tabs.length || !slides.length) return;
+      
+      let currentStep = 1;
+      const totalSteps = slides.length;
+      
+      /* ---------- Scroll to tabs when step changes ---------- */
+      const scrollToTabs = () => {
+         if (!tabsNav) return;
+         const isMobile = window.matchMedia("(max-width: 700px)").matches;
+         const yOffset = isMobile ? -70 : -150;
+         const y = tabsNav.getBoundingClientRect().top + window.pageYOffset + yOffset;
+         
+         window.scrollTo({ top: y, behavior: "smooth" });
+      };
+      
+      /* ---------- Underline positioning ---------- */
+      const moveUnderline = () => {
+         const activeTab = $(".custom-board-tab.active");
+         if (!activeTab || !underline) return;
+         
+         const tabRect = activeTab.getBoundingClientRect();
+         const navRect = activeTab.parentElement.getBoundingClientRect();
+         
+         underline.style.width = `${tabRect.width}px`;
+         underline.style.transform = `translateX(${tabRect.left - navRect.left}px)`;
+      };
+      
+      /* ---------- Prevent Enter from submitting on steps 1–6 ---------- */
+      if (form) {
+         form.addEventListener("keydown", (e) => {
+            if (e.key !== "Enter") return;
+            
+            const isTextarea = e.target && e.target.tagName === "TEXTAREA";
+            if (isTextarea) return;
+            
+            if (currentStep !== totalSteps) e.preventDefault();
+         });
+      }
+      
+      /* =========================================================
+      Step 1: Phone formatting + validation gate
+      ========================================================= */
+      const nameInput = $('[name="name"]');
+      const emailInput = $('[name="email"]');
+      const phoneInput = $('[name="phone"]');
+      const contactErrorMsg = $("#contact-error");
+      
+      const setError = (el, isError) => {
+         if (!el) return;
+         el.classList.toggle("cb-error", isError);
+      };
+      
+      const formatPhone = (value) => {
+         let digits = (value || "").replace(/\D/g, "");
+         
+         if (digits.startsWith("1") && digits.length > 10) {
+            digits = digits.slice(1);
+         }
+         
+         digits = digits.slice(0, 10);
+         
+         const a = digits.slice(0, 3);
+         const b = digits.slice(3, 6);
+         const c = digits.slice(6, 10);
+         
+         if (digits.length > 6) return `${a}-${b}-${c}`;
+         if (digits.length > 3) return `${a}-${b}`;
+         return a;
+      };
+      
+      if (phoneInput) {
+         phoneInput.addEventListener("input", () => {
+            phoneInput.value = formatPhone(phoneInput.value);
+            setError(phoneInput, !phoneInput.checkValidity());
+            if (contactErrorMsg) contactErrorMsg.style.display = validateStep1(false) ? "none" : "block";
+         });
+         
+         phoneInput.addEventListener("blur", () => {
+            phoneInput.value = formatPhone(phoneInput.value);
+            
+            const digits = phoneInput.value.replace(/\D/g, "");
+            if (digits.length && digits.length < 10) phoneInput.value = "";
+            
+            setError(phoneInput, !phoneInput.checkValidity());
+            if (contactErrorMsg) contactErrorMsg.style.display = validateStep1(false) ? "none" : "block";
+         });
+      }
+      
+      const validateStep1 = (showUI = true) => {
+         const fields = [nameInput, emailInput, phoneInput].filter(Boolean);
+         let allValid = true;
+         
+         fields.forEach((field) => {
+            const valid = field.checkValidity();
+            allValid = allValid && valid;
+            if (showUI) setError(field, !valid);
+         });
+         
+         if (contactErrorMsg && showUI) {
+            contactErrorMsg.style.display = allValid ? "none" : "block";
+         }
+         
+         return allValid;
+      };
+      
+      [nameInput, emailInput].forEach((field) => {
+         if (!field) return;
+         
+         const update = () => {
+            setError(field, !field.checkValidity());
+            if (contactErrorMsg) contactErrorMsg.style.display = validateStep1(false) ? "none" : "block";
+         };
+         
+         field.addEventListener("input", update);
+         field.addEventListener("blur", update);
+      });
+      
+      /* =========================================================
+      Review step population (Step 7)
+      ========================================================= */
+      const getValue = (name) => $(`[name="${name}"]`)?.value?.trim() || "—";
+      
+      const populateReview = () => {
+         // Contact
+         const reviewContactEl = $("#review-contact");
+         if (reviewContactEl) {
+            reviewContactEl.textContent = `${getValue("name")} • ${getValue("email")} • ${getValue("phone")}`;
+         }
+         
+         // Size
+         const reviewSizeEl = $("#review-size");
+         if (reviewSizeEl) {
+            reviewSizeEl.textContent = `${getValue("length")} × ${getValue("width")} × ${getValue("height")}`;
+         }
+         
+         // Woods
+         const woodsContainer = $("#review-woods");
+         if (woodsContainer) {
+            woodsContainer.innerHTML = "";
+            
+            const woodsChecked = $$('[name="woods[]"]:checked')
+            .map((i) => i.closest("label")?.querySelector("span")?.textContent?.trim())
+            .filter(Boolean);
+            
+            const otherWood = $('[name="other_wood"]')?.value?.trim();
+            
+            if (woodsChecked.length) {
+               const p = document.createElement("p");
+               p.textContent = woodsChecked.join(", ");
+               woodsContainer.appendChild(p);
+            }
+            
+            if (otherWood) {
+               const p = document.createElement("p");
+               p.classList.add("review-other");
+               p.textContent = `Custom request: ${otherWood}`;
+               woodsContainer.appendChild(p);
+            }
+            
+            if (!woodsChecked.length && !otherWood) woodsContainer.textContent = "—";
+         }
+         
+         // Patterns
+         const patternsContainer = $("#review-pattern");
+         if (patternsContainer) {
+            patternsContainer.innerHTML = "";
+            
+            const patternsChecked = $$('[name="patterns[]"]:checked')
+            .map((i) => i.closest("label")?.querySelector("span")?.textContent?.trim())
+            .filter(Boolean);
+            
+            const otherPattern = $('[name="other_pattern"]')?.value?.trim();
+            
+            if (patternsChecked.length) {
+               const p = document.createElement("p");
+               p.textContent = patternsChecked.join(", ");
+               patternsContainer.appendChild(p);
+            }
+            
+            if (otherPattern) {
+               const p = document.createElement("p");
+               p.classList.add("review-other");
+               p.textContent = `Custom request: ${otherPattern}`;
+               patternsContainer.appendChild(p);
+            }
+            
+            if (!patternsChecked.length && !otherPattern) patternsContainer.textContent = "—";
+         }
+         
+         // Features
+         const reviewFeaturesEl = $("#review-features");
+         if (reviewFeaturesEl) {
+            const features =
+            $$('[name="features[]"]:checked')
+            .map((i) => i.closest("label")?.querySelector("span")?.textContent?.trim())
+            .filter(Boolean)
+            .join(", ") || "—";
+            
+            reviewFeaturesEl.textContent = features;
+         }
+
+         // Engraving text
+         const reviewEngravingEl = $("#review-engraving");
+         if (reviewEngravingEl) reviewEngravingEl.textContent = getValue("engraving");
+         
+         // Files
+         const filesRaw = $('[name="engraving_files_names"]')?.value?.trim() || "";
+         const reviewFilesEl = $("#review-engraving-files");
+         if (reviewFilesEl) reviewFilesEl.textContent = filesRaw ? `Files: ${filesRaw}` : "Files: —";
+      };
+      
+      /* =========================================================
+      Step switching
+      ========================================================= */
+      const showStep = (step) => {
+         currentStep = step;
+         
+         tabs.forEach((tab) => tab.classList.toggle("active", Number(tab.dataset.step) === step));
+         slides.forEach((slide) => slide.classList.toggle("active", Number(slide.dataset.step) === step));
+         
+         moveUnderline();
+         
+         if (step === totalSteps) populateReview();
+         
+         if (backBtn) backBtn.disabled = step === 1;
+         
+         if (nextBtn) {
+            nextBtn.textContent = "Next";
+            nextBtn.disabled = step === totalSteps;
+         }
+         
+         scrollToTabs();
+      };
+      
+      /* =========================================================
+      Tab clicks + Next/Back
+      ========================================================= */
+      tabs.forEach((tab) => {
+         tab.addEventListener("click", () => {
+            const targetStep = Number(tab.dataset.step);
+            
+            // Gate leaving Step 1
+            if (currentStep === 1 && targetStep > 1 && !validateStep1(true)) {
+               const firstBad = [nameInput, emailInput, phoneInput].find((f) => f && !f.checkValidity());
+               firstBad?.focus();
+               return;
+            }
+            
+            showStep(targetStep);
+         });
+      });
+      
+      nextBtn?.addEventListener("click", () => {
+         if (currentStep === 1 && !validateStep1(true)) {
+            const firstBad = [nameInput, emailInput, phoneInput].find((f) => f && !f.checkValidity());
+            firstBad?.focus();
+            return;
+         }
+         if (currentStep < totalSteps) showStep(currentStep + 1);
+      });
+      
+      backBtn?.addEventListener("click", () => {
+         if (currentStep > 1) showStep(currentStep - 1);
+      });
+      
+      /* =========================================================
+      Step 6: File names -> UI + hidden field
+      ========================================================= */
+      const fileInputs = [
+      $("#engraving_file_1"),
+      $("#engraving_file_2"),
+      $("#engraving_file_3"),
+      ].filter(Boolean);
+      
+      const fileNamesEl = $("#cb-file-names");
+      const fileNamesHidden = $("#engraving_files_names");
+      
+      const updateFileNames = () => {
+         const names = fileInputs
+         .map((input) => (input.files && input.files[0] ? input.files[0].name : ""))
+         .filter(Boolean);
+         
+         if (fileNamesEl) fileNamesEl.textContent = names.length ? `Selected: ${names.join(", ")}` : "";
+         if (fileNamesHidden) fileNamesHidden.value = names.join(", ");
+      };
+      
+      fileInputs.forEach((input) => input.addEventListener("change", updateFileNames));
+
+      showStep(1);
+      window.addEventListener("resize", () => requestAnimationFrame(moveUnderline), { passive: true });
+   });
+</script>
+
+<button class="back-to-top">
+   <img src="Photos/icons/up-arrow.svg" alt="Back to top" />
+</button>
+
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+      const backToTopBtn = document.querySelector(".back-to-top");
+      if (!backToTopBtn) return;
+      
+      function updateBackToTop() {
+         const show = window.scrollY > 400;
+         backToTopBtn.style.opacity = show ? "1" : "0";
+         backToTopBtn.style.pointerEvents = show ? "auto" : "none";
+      }
+      
+      window.addEventListener("scroll", updateBackToTop, { passive: true });
+      updateBackToTop(); // run once on load
+      
+      backToTopBtn.addEventListener("click", () => {
+         window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+   });
 </script>
 <!--#endregion-->
 
-<!--#endregion-->
 
 
 </body>

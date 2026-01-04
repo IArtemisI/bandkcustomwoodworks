@@ -29,22 +29,29 @@
    </header>
    
    <!-- Mobile Navigation -->
-   <header class="mobile-header">   
-      <button class="hamburger">
+   <header class="mobile-header">
+      <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
          <span></span>
          <span></span>
          <span></span>
       </button>
-   </header>  
+   </header>
    
-   <div class="nav-overlay">
+   <nav class="nav-overlay">
       <ul>
          <li><a href="index.html">Home</a></li>
          <li><a href="products.html">Shop</a></li>
          <li><a href="custom-boards.html">Custom</a></li>
          <li><a href="index.html#contact-us">Contact</a></li>
       </ul>
-   </div>
+   </nav>
+
+      <!-- Back To Top Button -->
+   <button class="back-to-top">
+      <img src="Photos/icons/up-arrow.svg" alt="Back to top">
+   </button>
    
    <!-- #endregion -->
    
@@ -139,20 +146,19 @@
    
    <!---------------Footer -------------------------------------------------><!--#region-->
    <footer class="site-footer">
-      
       <div class="footer-top">
          <ul class="footer-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="custom-boards.html">Custom</a></li>
-            <li><a href="#contact-us">Contact</a></li>
+            <li><a href="index.html#contact-us">Contact</a></li>
          </ul>
       </div>
       
       <div class="footer-divider"></div>
       
       <div class="footer-social">
-         <a href="https://facebook.com" class="facebook-link" target="_blank">
+         <a href="https://www.facebook.com/groups/273420570637837" class="facebook-link" target="_blank">
             Facebook
          </a>
       </div>
@@ -168,96 +174,111 @@
          
          <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
       </div>
-      
    </footer>
    <!--#endregion-->
    
    <!---------------Scripts------------------------------------------------------><!--#region-->
-   
-   <!--Hamburger Menu--><!--#region-->
-   
    <script>
       document.addEventListener("DOMContentLoaded", () => {
-         const hamburger = document.querySelector(".hamburger");
-         const overlay = document.querySelector(".nav-overlay");
+
+         const $ = (sel, root = document) => root.querySelector(sel);
+         const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+         const hamburger = $(".hamburger");
+         const overlay = $(".nav-overlay");
+         const desktopHeader = $(".desktop-header");
+         const mobileHeader = $(".mobile-header");
+         const heroSection = $(".products-hero");
+         const backToTopBtn = $(".back-to-top");
          
-         if (!hamburger || !overlay) return;
+         /* =========================================================
+         1) Mobile hamburger / overlay menu
+         ========================================================= */
+         const isMenuOpen = () => overlay?.classList.contains("open");
          
-         hamburger.addEventListener("click", () => {
-            overlay.classList.toggle("open");
-            hamburger.classList.toggle("open");
-         });
+         const openMenu = () => {
+            if (!hamburger || !overlay) return;
+            overlay.classList.add("open");
+            hamburger.classList.add("open");
+            hamburger.setAttribute("aria-expanded", "true");
+         };
          
-         document.querySelectorAll(".nav-overlay a").forEach(link => {
-            link.addEventListener("click", () => {
-               overlay.classList.remove("open");
-               hamburger.classList.remove("open");
-            });
-         });
-      });
-   </script>
-   
-   <!--#endregion-->
-   
-   <!--Back to top--><!--#region-->
-   
-   <button class="back-to-top">
-      <img src="Photos/icons/up-arrow.svg" alt="Back to top">
-   </button>
-   
-   <script>
-      const backToTopBtn = document.querySelector('.back-to-top');
-      
-      window.addEventListener('scroll', () => {
-         if (window.scrollY > 400) {   // show button after scrolling down
-            backToTopBtn.style.opacity = '1';
-            backToTopBtn.style.pointerEvents = 'auto';
-         } else {
-            backToTopBtn.style.opacity = '0';
-            backToTopBtn.style.pointerEvents = 'none';
-         }
-      });
-      
-      backToTopBtn.addEventListener('click', () => {
-         window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-         });
-      });
-   </script>
-   <!--#endregion--> 
-   
-   <!--Home Nav Scrolling for Products--><!--#region-->
-   
-   <script>
-      document.addEventListener("DOMContentLoaded", () => {
-         const desktopHeader = document.querySelector(".desktop-header");
-         const mobileHeader = document.querySelector(".mobile-header");
-         const heroSection = document.querySelector(".products-hero");
-         const overlay = document.querySelector(".nav-overlay");
+         const closeMenu = () => {
+            if (!hamburger || !overlay) return;
+            overlay.classList.remove("open");
+            hamburger.classList.remove("open");
+            hamburger.setAttribute("aria-expanded", "false");
+         };
          
-         if (!heroSection) return;
+         const toggleMenu = () => (isMenuOpen() ? closeMenu() : openMenu());
          
-         function handleScroll() {
-            const hidePoint = heroSection.offsetHeight * 0.5;
-            const shouldHide = window.scrollY > hidePoint;
-            const menuOpen = overlay?.classList.contains("open");
+         if (hamburger && overlay) {
+            hamburger.addEventListener("click", toggleMenu);
             
-            if (shouldHide && !menuOpen) {
-               desktopHeader?.classList.add("hide-nav");
-               mobileHeader?.classList.add("hide-nav");
-            } else {
+            $$(".nav-overlay a").forEach((a) => a.addEventListener("click", closeMenu));
+            
+            document.addEventListener("keydown", (e) => {
+               if (e.key === "Escape" && isMenuOpen()) closeMenu();
+            });
+         }
+         
+         /* =========================================================
+         2) Back-to-top button
+         ========================================================= */
+         const updateBackToTop = () => {
+            if (!backToTopBtn) return;
+            const show = window.scrollY > 400;
+            backToTopBtn.style.opacity = show ? "1" : "0";
+            backToTopBtn.style.pointerEvents = show ? "auto" : "none";
+         };
+         
+         backToTopBtn?.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+         });
+         
+         /* =========================================================
+         3) Hide/show headers after scrolling past hero
+         ========================================================= */
+         let ticking = false;
+         
+         const updateHeaders = () => {
+            if (!heroSection) return;
+            
+            if (isMenuOpen()) {
                desktopHeader?.classList.remove("hide-nav");
                mobileHeader?.classList.remove("hide-nav");
+               return;
             }
-         }
+            
+            const hidePoint = heroSection.offsetHeight * 0.5;
+            const shouldHide = window.scrollY > hidePoint;
+            
+            desktopHeader?.classList.toggle("hide-nav", shouldHide);
+            mobileHeader?.classList.toggle("hide-nav", shouldHide);
+         };
          
-         window.addEventListener("scroll", handleScroll, { passive: true });
-         handleScroll(); // run once on load
+         const updateAll = () => {
+            ticking = false;
+            updateHeaders();
+            updateBackToTop();
+         };
+         
+         const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(updateAll);
+         };
+         
+         window.addEventListener("scroll", onScroll, { passive: true });
+         window.addEventListener("resize", () => {
+            // hero height can change on resize; re-evaluate
+            updateAll();
+         }, { passive: true });
+         
+         // Initialize states on load
+         updateAll();
       });
    </script>
-   <!--#endregion-->
-   
    <!--#endregion-->
    
 </body>
