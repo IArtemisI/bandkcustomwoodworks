@@ -253,7 +253,7 @@
                <label class="cb-other-option-label">
                   <span>Have a special type of wood in mind?</span>
                </label>
-               <input type="text" name="other_wood" placeholder="Your ideas here" class="cb-other-input">
+               <textarea name="other_wood" placeholder="Your ideas here" class="cb-other-input cb-autogrow" rows="3"></textarea>
             </div>
             
          </fieldset>
@@ -299,7 +299,7 @@
                <label class="cb-other-option-label">
                   <span>Have a design in mind?</span>
                </label>
-               <input type="text" name="other_pattern" placeholder="Your ideas here" class="cb-other-input">
+               <textarea name="other_pattern" placeholder="Your ideas here" class="cb-other-input cb-autogrow" rows="3"></textarea>
             </div>
          </fieldset>
       </section>
@@ -347,7 +347,7 @@
          
          <label class="custom-board-engraving">
             <span class="custom-board-engraving-title">What would you like?</span>
-            <textarea name="engraving" rows="5" placeholder="Names, dates, logos, symbols..."></textarea>
+            <textarea name="engraving" rows="5" class="cb-autogrow" placeholder="Names, dates, logos, symbols..."></textarea>
          </label>
          
          <div class="custom-board-engraving">
@@ -412,8 +412,7 @@
                <span class="review-textbox-title">
                   Anything else we should know?
                </span>
-               <textarea name="final_notes" rows="4"
-               placeholder="Special requests, deadlines, inspiration, etc."></textarea>
+               <textarea name="final_notes" rows="4" class="cb-autogrow" placeholder="Special requests, deadlines, inspiration, etc."></textarea>
             </label>
             
             <button type="submit" class="custom-board-submit">
@@ -446,6 +445,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
             <li><a href="index.html#contact-us">Contact</a></li>
          </ul>
       </div>
@@ -555,7 +555,24 @@
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", () => requestAnimationFrame(updateGlobalUI), { passive: true });
       updateGlobalUI();
-      
+
+      /* =========================================================
+      Auto-grow textareas (Step 3 "other wood", Step 4 "other pattern", etc.)
+      ========================================================= */
+      const autoGrow = (ta) => {
+         if (!ta) return;
+         ta.style.height = "auto";
+         ta.style.height = `${ta.scrollHeight}px`;
+      };
+
+      document.querySelectorAll("textarea.cb-autogrow").forEach((ta) => {
+         // grow on type
+         ta.addEventListener("input", () => autoGrow(ta));
+         
+         // grow if browser autofills / restores history
+         requestAnimationFrame(() => autoGrow(ta));
+      });
+
       /* =========================================================
       Custom Board Form Wizard
       ========================================================= */
