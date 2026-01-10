@@ -924,49 +924,48 @@
 /*---------------Product Page---------------------*//* #region */
 
 /*---------------Products Hero----------------------------*//* #region */
-.products-hero { 
+.products-hero-banner { 
    min-height: 50vh;
    background-image: url("Photos/structural/products-hero.webp");
    background-size: cover;
    background-position: center;
    position: relative;
-   
    display: flex;
-   justify-content: center;
-   align-items: center;
+   justify-content: flex-start;
+   align-items:last baseline;
    padding: clamp(10px, 4vw, 40px);
    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
 }
 
-.products-hero::before {
-   content: "";
+.products-hero-overlay {
    position: absolute;
    inset: 0;
-   
    background: linear-gradient(
-   to left,
-   rgba(0, 0, 0, 0.55),
-   rgba(0, 0, 0, 0.25),
-   rgba(0, 0, 0, 0)
+   to top,
+   rgba(0, 0, 0, 0.65),
+   rgba(0, 0, 0, 0.25)
    );
+   z-index: 0;
 }
 
-.products-hero-text {
-   display: flex;
-   justify-content: center;
-   margin: 40px;
+.products-hero-title-wrap {
+   position: relative;
+   z-index: 1;
+   padding:
+   clamp(30px, 6vw, 30px)
+   clamp(20px, 6vw, 120px);
 }
 
-.products-hero-text h1 {
-   font-size: clamp(25px, 5vw, 60px);
-   letter-spacing: 0.1em;
+.products-hero-title-wrap h1 {
+   font-size: clamp(38px, 8vw, 70px);
+   letter-spacing: 0.05em;
    text-transform: uppercase;
-   margin: 10px;
-   color: #391915;
+   margin: 0;
+   color: #ffffff;
    line-height: 1.00;
    font-weight: 400;
    text-shadow:
-   2px 4px 12px rgba(0, 0, 0, 0.3);
+   2px 4px 12px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 900px) {       /*Large Phone*/
@@ -2274,23 +2273,23 @@
 
 /*#endregion*/
 
-/*---------------Thanks---------------------------*//* #region */
+/*---------------FAQs---------------------------*//* #region */
 
 .faqs-page {
    background: transparent;
 }
 
 /* Hero */
-.faqs-hero {
-   min-height: 45vh;
-   background-image: url("Photos/structural/custom-board-hero.webp"); /* swap if you want a different image */
+.faqs-hero-banner {
+   min-height: 40vh;
+   background-color: #9b857b;
    background-size: cover;
    background-position: center;
    position: relative;
-   
    display: flex;
-   align-items: flex-end;
-   padding: clamp(18px, 5vw, 50px);
+   justify-content: flex-start;
+   align-items:last baseline;
+   padding: clamp(10px, 4vw, 40px);
    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
 }
 
@@ -2299,20 +2298,20 @@
    inset: 0;
    background: linear-gradient(
    to top,
-   rgba(0, 0, 0, 0.68),
-   rgba(0, 0, 0, 0.22)
+   rgba(0, 0, 0, 0.65),
+   rgba(0, 0, 0, 0.25)
    );
    z-index: 0;
 }
 
-.faqs-hero-inner {
+.faqs-hero-title-wrap {
    position: relative;
    z-index: 1;
    max-width: 950px;
    padding: clamp(14px, 3vw, 24px) clamp(14px, 3vw, 28px);
 }
 
-.faqs-hero-inner h1 {
+.faqs-hero-title-wrap h1 {
    margin: 0 0 10px;
    font-size: clamp(34px, 8vw, 70px);
    letter-spacing: 0.06em;
@@ -2321,14 +2320,6 @@
    font-weight: 400;
    line-height: 1;
    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.9);
-}
-
-.faqs-hero-inner p {
-   margin: 0;
-   color: rgba(255, 255, 255, 0.92);
-   font-size: clamp(16px, 3vw, 20px);
-   line-height: 1.5;
-   max-width: 70ch;
 }
 
 /* Page wrapper */
@@ -2353,19 +2344,12 @@
 }
 
 .faqs-card-head h2 {
-   margin: 0 0 6px;
-   font-size: clamp(22px, 4vw, 34px);
+   margin: 0 0 20px;
+   font-size: clamp(26px, 4vw, 38px);
    color: #391915;
    text-transform: uppercase;
-   letter-spacing: 0.05em;
+   letter-spacing: 0.08em;
    font-weight: 500;
-}
-
-.faqs-card-head p {
-   margin: 0 0 14px;
-   color: rgba(57, 25, 21, 0.85);
-   font-size: clamp(16px, 3vw, 18px);
-   line-height: 1.5;
 }
 
 /* Quick tips */
@@ -2378,7 +2362,7 @@
 
 .faqs-tips li {
    color: rgba(57, 25, 21, 0.95);
-   font-size: clamp(16px, 3vw, 18px);
+   font-size: clamp(20px, 3vw, 24px);
    line-height: 1.55;
 }
 
@@ -2410,7 +2394,8 @@
    
    padding: 16px 16px;
    font-family: "Scope One", serif;
-   font-size: clamp(16px, 3vw, 20px);
+   font-size: clamp(20px, 3vw, 24px);
+   font-weight: 600;
    letter-spacing: 0.02em;
    color: #391915;
    text-align: left;
@@ -2438,7 +2423,7 @@
 .faqs-a li {
    margin: 0;
    color: rgba(57, 25, 21, 0.92);
-   font-size: clamp(16px, 3vw, 18px);
+   font-size: clamp(20px, 3vw, 22px);
    line-height: 1.6;
 }
 
@@ -2525,7 +2510,7 @@
 
 /* ---------- Page Header ---------- */
 .info-hero-banner {
-   min-height: 50vh;
+   min-height: 40vh;
    background-color: #9b857b;
    background-size: cover;
    background-position: center;
