@@ -14,7 +14,7 @@
    />
 </head>
 <body>
-   <!-- Navigation --><!--#region-->
+<!-- Navigation --><!--#region-->
    <header class="desktop-header">
       <nav class="desktop-nav">
          <a href="index.html" class="nav-brand">B&amp;K Custom Woodworks</a>
@@ -25,16 +25,27 @@
             <li><a href="custom-boards.html">Custom</a></li>
             <li><a href="faqs.html">FAQs</a></li>
             <li><a href="index.html#contact-us">Contact</a></li>
+            <li><a href="cart.html" class="nav-cart-link" aria-label="View cart">
+               <img src="Photos/icons/shopping-cart.svg" alt="" class="nav-cart-icon">
+               <span class="cart-badge" data-cart-count>0</span></a>
+            </li>
          </ul>
       </nav>
    </header>
    
    <header class="mobile-header">
-      <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      <div class="mobile-left">
+         <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         
+         <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      </div>
       
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-         <span></span><span></span><span></span>
-      </button>
+      <a href="cart.html" class="mobile-cart-link" aria-label="View cart">
+         <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon">
+         <span class="cart-badge" data-cart-count>0</span>
+      </a>
    </header>
    
    <nav class="nav-overlay">
@@ -51,11 +62,12 @@
    <button class="back-to-top" aria-label="Back to top">
       <img src="Photos/icons/up-arrow.svg" alt="Back to top">
    </button>
-   <!-- #endregion -->
    
-   <!-- FAQ Hero --><!--#region-->
+   <!-- #endregion -->
+
+<!-- FAQ Hero --><!--#region-->
    <main class="faqs-page">
-      <section class="faqs-hero-banner">
+      <section class="faqs-hero-banner" data-hero>
          <div class="faqs-hero-overlay"></div>
          
          <div class="faqs-hero-title-wrap">
@@ -63,8 +75,8 @@
          </div>
       </section>
       <!-- #endregion -->
-   
-   <!-- Quick Care Basics --><!--#region-->
+
+<!-- Quick Care Basics --><!--#region-->
       <section class="faqs-wrap fade-in-section">
          <!-- Quick Tips -->
          <section class="faqs-card">
@@ -81,8 +93,8 @@
             </ul>
          </section>
          <!-- #endregion -->
-   
-   <!-- FAQS Dropdowns --><!--#region-->
+
+<!-- FAQS Dropdowns --><!--#region-->
          <section class="faqs-card">
             <header class="faqs-card-head">
                <h2>Frequently Asked Questions</h2>
@@ -111,8 +123,8 @@
                   </button>
                   <div class="faqs-a" hidden>
                      <p>
-                        No. Dishwashers combine heat, prolonged water exposure, and harsh detergents — the
-                        triple-threat that can warp, crack, or dry out hardwood quickly.
+                        No. Dishwashers combine heat, prolonged water exposure, and harsh detergents that
+                        can warp, crack, or dry out hardwood quickly.
                      </p>
                   </div>
                </article>
@@ -124,9 +136,9 @@
                   </button>
                   <div class="faqs-a" hidden>
                      <p>
-                        That’s raised grain — normal when wood fibers absorb moisture. Once dry, a light rub
-                        with board wax (or food-grade mineral oil) usually smooths it out. If needed, a very
-                        light hand-sanding (fine grit) can help, then re-oil/wax.
+                        That’s raised grain. This is normal when wood fibers absorb moisture. 
+                        Once dry, a light rub with board wax usually smooths it out. If needed,
+                        a very light hand-sanding (fine grit) can help, then reapply the wax.
                      </p>
                   </div>
                </article>
@@ -138,7 +150,7 @@
                   </button>
                   <div class="faqs-a" hidden>
                      <p>
-                        A good rule: once a month for regular use, and more often if your board looks dry
+                        Once a month for regular use, and more often if your board looks dry
                         (lighter color, rough feel) or during winter/dry climates. Heavy use boards may
                         want oil/wax every 2–3 weeks.
                      </p>
@@ -155,7 +167,7 @@
                      <p>
                         Our board wax is handmade with food-grade beeswax and food-safe oils (commonly
                         mineral oil), designed to hydrate wood and create a light protective barrier.
-                        It helps keep boards looking rich and reduces drying and water absorption.
+                        It helps keep boards looking vibrant and reduces drying and water absorption.
                      </p>
                   </div>
                </article>
@@ -183,7 +195,7 @@
                   </button>
                   <div class="faqs-a" hidden>
                      <p>
-                        It shouldn’t. If it feels sticky, too much wax was left on the surface — just buff
+                        It shouldn’t. If it feels sticky, too much wax was left on the surface.Just buff
                         it more with a clean cloth. The goal is a soft sheen, not a waxy layer.
                      </p>
                   </div>
@@ -197,8 +209,7 @@
                   </button>
                   <div class="faqs-a" hidden>
                      <p>
-                        Yes — our finishes are selected to be food safe once cured. Because each piece is
-                        handcrafted from natural hardwoods, normal variation in color and grain is expected.
+                        Yes. All of our products are food safe.
                      </p>
                   </div>
                </article>
@@ -212,7 +223,7 @@
                      <p>
                         Absolutely. Use our Custom Board form to choose woods, dimensions, patterns, and
                         features (like grooves, handles, engraving). If you have a special idea, add it in
-                        the notes — we love weird (in a good way).
+                        the notes and we will get in touch with you as soon as possible.
                      </p>
                   </div>
                </article>
@@ -224,8 +235,7 @@
                   </button>
                   <div class="faqs-a" hidden>
                      <p>
-                        Each piece is unique. You may see natural variation in grain, color, and figure.
-                        That’s not a defect — that’s the tree showing off.
+                        Each piece is unique. You may see natural variation in grain, color, and pattern.
                      </p>
                   </div>
                </article>
@@ -237,7 +247,7 @@
                   </button>
                   <div class="faqs-a" hidden>
                      <p>
-                        Send us a message through our contact form and we’ll get back to you as soon as we can.
+                        Send us a message through our contact form and we’ll get back to you as soon as we can.<br>
                         <a class="faqs-link" href="index.html#contact-us">Contact us</a>
                      </p>
                   </div>
@@ -247,8 +257,8 @@
          </section>
    </main>
    <!-- #endregion -->
-   
-   <!-- Footer --><!--#region-->
+
+<!-- Footer --><!--#region-->
    <footer class="site-footer">
       <div class="footer-top">
          <ul class="footer-nav">
@@ -281,127 +291,14 @@
       </div>
    </footer>
    <!-- #endregion -->
-   
-   <!-- Scripts --><!--#region-->
-   <script>
-      document.addEventListener("DOMContentLoaded", () => {
-         const $ = (sel, root = document) => root.querySelector(sel);
-         const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-         
-         // Hamburger
-         const hamburger = $(".hamburger");
-         const overlay = $(".nav-overlay");
-         
-         const closeMenu = () => {
-            if (!hamburger || !overlay) return;
-            overlay.classList.remove("open");
-            hamburger.classList.remove("open");
-            hamburger.setAttribute("aria-expanded", "false");
-         };
-         
-         const toggleMenu = () => {
-            if (!hamburger || !overlay) return;
-            const open = overlay.classList.toggle("open");
-            hamburger.classList.toggle("open", open);
-            hamburger.setAttribute("aria-expanded", open ? "true" : "false");
-         };
-         
-         if (hamburger && overlay) {
-            hamburger.addEventListener("click", toggleMenu);
-            $$(".nav-overlay a").forEach(a => a.addEventListener("click", closeMenu));
-            document.addEventListener("keydown", (e) => {
-               if (e.key === "Escape") closeMenu();
-            });
-         }
-         
-         // Back to top
-         const backToTopBtn = $(".back-to-top");
-         const updateBackToTop = () => {
-            if (!backToTopBtn) return;
-            const show = window.scrollY > 400;
-            backToTopBtn.style.opacity = show ? "1" : "0";
-            backToTopBtn.style.pointerEvents = show ? "auto" : "none";
-         };
-         window.addEventListener("scroll", updateBackToTop, { passive: true });
-         updateBackToTop();
-         
-         backToTopBtn?.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-         });
-         
-         // Hide/show nav on scroll (uses hero height like your other pages)
-         const desktopHeader = $(".desktop-header");
-         const mobileHeader = $(".mobile-header");
-         const hero = $(".faqs-hero");
-         
-         const updateNav = () => {
-            if (!hero) return;
-            if (overlay?.classList.contains("open")) {
-               desktopHeader?.classList.remove("hide-nav");
-               mobileHeader?.classList.remove("hide-nav");
-               return;
-            }
-            const trigger = hero.offsetHeight * 0.35;
-            const hide = window.scrollY > trigger;
-            desktopHeader?.classList.toggle("hide-nav", hide);
-            mobileHeader?.classList.toggle("hide-nav", hide);
-         };
-         
-         let ticking = false;
-         const onScroll = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(() => {
-               ticking = false;
-               updateNav();
-            });
-         };
-         
-         window.addEventListener("scroll", onScroll, { passive: true });
-         window.addEventListener("resize", onScroll, { passive: true });
-         updateNav();
-         
-         // Fade in sections (if you already have this globally, it won't hurt)
-         const reveal = $$(".fade-in-section");
-         if (reveal.length) {
-            const io = new IntersectionObserver((entries, obs) => {
-               entries.forEach(e => {
-                  if (!e.isIntersecting) return;
-                  e.target.classList.add("visible");
-                  obs.unobserve(e.target);
-               });
-            }, { threshold: 0.2 });
-            reveal.forEach(el => io.observe(el));
-         }
-         
-         // Accordion
-         const items = $$(".faqs-item");
-         items.forEach((item) => {
-            const btn = $(".faqs-q", item);
-            const panel = $(".faqs-a", item);
-            if (!btn || !panel) return;
-            
-            btn.addEventListener("click", () => {
-               const isOpen = btn.getAttribute("aria-expanded") === "true";
-               
-               // Close others (nice UX)
-               items.forEach((other) => {
-                  const b = $(".faqs-q", other);
-                  const p = $(".faqs-a", other);
-                  if (!b || !p) return;
-                  b.setAttribute("aria-expanded", "false");
-                  p.hidden = true;
-                  other.classList.remove("is-open");
-               });
-               
-               // Toggle current
-               btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
-               panel.hidden = isOpen;
-               item.classList.toggle("is-open", !isOpen);
-            });
-         });
-      });
-   </script>
+
+<!-- Scripts --><!--#region-->
+<script src="javascript/cart.js" defer></script>
+<script src="javascript/navigation.js" defer></script>
+<script src="javascript/header-scroll.js" defer></script>
+<script src="javascript/back-to-top.js" defer></script>
+<script src="javascript/fade-in.js" defer></script>
+<script src="javascript/faqs.js" defer></script>
    <!-- #endregion -->
 
 </body>

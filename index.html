@@ -13,7 +13,7 @@
    />
 </head>
 <body>
-   <!---------------Navigation----------------------------------------------><!--#region-->
+<!---------------Navigation----------------------------------------------><!--#region-->
    <!-- Desktop Navigation -->
    <header class="desktop-header">
       <nav class="desktop-nav">
@@ -25,16 +25,27 @@
             <li><a href="custom-boards.html">Custom</a></li>
             <li><a href="faqs.html">FAQs</a></li>
             <li><a href="#contact-us">Contact</a></li>
+            <li><a href="cart.html" class="nav-cart-link" aria-label="View cart">
+               <img src="Photos/icons/shopping-cart.svg" alt="" class="nav-cart-icon">
+               <span class="cart-badge" data-cart-count>0</span></a>
+            </li>
          </ul>
       </nav>
    </header>
    
    <header class="mobile-header">
-      <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      <div class="mobile-left">
+         <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         
+         <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      </div>
       
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-         <span></span><span></span><span></span>
-      </button>
+      <a href="cart.html" class="mobile-cart-link" aria-label="View cart">
+         <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon">
+         <span class="cart-badge" data-cart-count>0</span>
+      </a>
    </header>
    
    <nav class="nav-overlay">
@@ -53,8 +64,8 @@
    </button>
    
    <!--#endregion-->
-   
-   <!---------------Hero Section--------------------------------------------><!--#region-->
+
+<!---------------Hero Section--------------------------------------------><!--#region-->
    <main>
       <section class="hero">
          <div class="hero-content">
@@ -68,8 +79,8 @@
          </div>
       </section>
       <!--#endregion-->
-   
-   <!---------------Our Promise Banner ------------------------------------------------><!--#region-->
+
+<!---------------Our Promise Banner ------------------------------------------------><!--#region-->
    <section class="welcome-split fade-in-section">
       <div class="welcome-left">
          <h2>Our<br />Promise</h2>
@@ -86,8 +97,8 @@
       </div>
    </section>
    <!--#endregion-->
-   
-   <!---------------Shop-Banner----------------------------------------------><!--#region-->
+
+<!---------------Shop-Banner----------------------------------------------><!--#region-->
    
    <section class="shop-banner fade-in-section">
       <div class="shop-banner-inner">
@@ -103,8 +114,8 @@
    </section>
    
    <!--#endregion-->
-   
-   <!---------------Board Wax Banner-----------------------------------------------><!--#region-->
+
+<!---------------Board Wax Banner-----------------------------------------------><!--#region-->
    
    <section id="board-wax" class="board-wax-block">
       <figure class="board-wax-image">
@@ -120,8 +131,8 @@
          </article>
       </section>
       <!--#endregion-->
-   
-   <!---------------Custom Board Banner-------------------------------------------><!--#region-->
+
+<!---------------Custom Board Banner-------------------------------------------><!--#region-->
    <section id="custom-boards" class="custom-board-options fade-in">
       <div class="custom-board-inner">
          <h2>Custom Cutting Boards</h2>            
@@ -173,8 +184,8 @@
       </div>
    </section>
    <!--#endregion-->
-   
-   <!---------------Contact Us----------------------------------------------><!--#region-->
+
+<!---------------Contact Us----------------------------------------------><!--#region-->
          <section class="contact-wrapper" id="contact-us">
             <h2>Contact Us</h2>
             
@@ -221,8 +232,8 @@
       </section>
    </main>
    <!-- #endregion -->
-   
-   <!---------------Footer--------------------------------------------------><!--#region-->
+
+<!---------------Footer--------------------------------------------------><!--#region-->
    <footer class="site-footer">
       <div class="footer-top">
          <ul class="footer-nav">
@@ -255,141 +266,14 @@
       </div>
    </footer>
    <!--#endregion-->
-   
-   <!---------------Scripts------------------------------------------------------><!--#region-->
-   <script>
-      document.addEventListener("DOMContentLoaded", () => {
-         /* =========================================================
-         Helpers
-         ========================================================= */
-         const $ = (sel, root = document) => root.querySelector(sel);
-         const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-         
-         /* =========================================================
-         1) Fade-in reveal (.fade-in + .fade-in-section)
-         ========================================================= */
-         const revealEls = $$(".fade-in, .fade-in-section");
-         if (revealEls.length) {
-            if ("IntersectionObserver" in window) {
-               const io = new IntersectionObserver(
-               (entries, obs) => {
-                  entries.forEach((entry) => {
-                     if (!entry.isIntersecting) return;
-                     entry.target.classList.add("visible");
-                     obs.unobserve(entry.target);
-                  });
-               },
-               { threshold: 0.2 }
-               );
-               
-               revealEls.forEach((el) => io.observe(el));
-            } else {
-               // Old browsers: just show everything
-               revealEls.forEach((el) => el.classList.add("visible"));
-            }
-         }
-         /* =========================================================
-         2) Mobile hamburger / overlay menu
-         ========================================================= */
-         const hamburger = $(".hamburger");
-         const overlay = $(".nav-overlay");
-         
-         const isMenuOpen = () => overlay?.classList.contains("open");
-         
-         const openMenu = () => {
-            if (!hamburger || !overlay) return;
-            overlay.classList.add("open");
-            hamburger.classList.add("open");
-            hamburger.setAttribute("aria-expanded", "true");
-         };
-         
-         const closeMenu = () => {
-            if (!hamburger || !overlay) return;
-            overlay.classList.remove("open");
-            hamburger.classList.remove("open");
-            hamburger.setAttribute("aria-expanded", "false");
-         };
-         
-         const toggleMenu = () => (isMenuOpen() ? closeMenu() : openMenu());
-         
-         if (hamburger && overlay) {
-            hamburger.addEventListener("click", toggleMenu);
-            
-            $$(".nav-overlay a").forEach((a) => a.addEventListener("click", closeMenu));
-            
-            document.addEventListener("keydown", (e) => {
-               if (e.key === "Escape" && isMenuOpen()) closeMenu();
-            });
-         }
-         
-         /* =========================================================
-         3) Hide/show headers after scrolling past hero
-         ========================================================= */
-         const desktopHeader = $(".desktop-header");
-         const mobileHeader = $(".mobile-header");
-         const hero = $(".hero");
-         
-         let ticking = false;
-         
-         const updateHeaders = () => {
-            ticking = false;
-            if (!hero) return;
-            
-            if (isMenuOpen()) {
-               desktopHeader?.classList.remove("hide-nav");
-               mobileHeader?.classList.remove("hide-nav");
-               return;
-            }
-            
-            const hidePoint = hero.offsetHeight * 0.5;
-            const shouldHide = window.scrollY > hidePoint;
-            
-            desktopHeader?.classList.toggle("hide-nav", shouldHide);
-            mobileHeader?.classList.toggle("hide-nav", shouldHide);
-         };
-         
-         const onScroll = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(updateHeaders);
-         };
-         
-         window.addEventListener("scroll", onScroll, { passive: true });
-         window.addEventListener("resize", updateHeaders, { passive: true });
-         updateHeaders();
-         
-         /* =========================================================
-         4) Back-to-top button
-         ========================================================= */
-         const backToTopBtn = $(".back-to-top");
-         
-         const updateBackToTop = () => {
-            if (!backToTopBtn) return;
-            const show = window.scrollY > 400;
-            backToTopBtn.style.opacity = show ? "1" : "0";
-            backToTopBtn.style.pointerEvents = show ? "auto" : "none";
-         };
-         
-         const updateAllOnScroll = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(() => {
-               updateHeaders();
-               updateBackToTop();
-            });
-         };
-         
-         window.removeEventListener("scroll", onScroll);
-         window.addEventListener("scroll", updateAllOnScroll, { passive: true });
-         
-         updateBackToTop();
-         
-         backToTopBtn?.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-         });
-      });
-   </script>
-   <!--#endregion-->
-   
+
+<!---------------Scripts------------------------------------------------------><!--#region-->
+<script src="javascript/cart.js" defer></script>
+<script src="javascript/navigation.js" defer></script>
+<script src="javascript/header-scroll.js" defer></script>
+<script src="javascript/back-to-top.js" defer></script>
+<script src="javascript/fade-in.js" defer></script>
+<!--#endregion-->
+
 </body>
 </html>

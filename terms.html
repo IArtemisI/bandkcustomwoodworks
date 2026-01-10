@@ -14,9 +14,8 @@
    />
 </head>
 <body>
-   
-   <!---------------Navigation----------------------------------------------><!--#region-->
-   <!-- Desktop Navigation -->
+
+<!---------------Navigation----------------------------------------------><!--#region-->
    <header class="desktop-header">
       <nav class="desktop-nav">
          <a href="index.html" class="nav-brand">B&amp;K Custom Woodworks</a>
@@ -27,16 +26,27 @@
             <li><a href="custom-boards.html">Custom</a></li>
             <li><a href="faqs.html">FAQs</a></li>
             <li><a href="index.html#contact-us">Contact</a></li>
+            <li><a href="cart.html" class="nav-cart-link" aria-label="View cart">
+               <img src="Photos/icons/shopping-cart.svg" alt="" class="nav-cart-icon">
+               <span class="cart-badge" data-cart-count>0</span></a>
+            </li>
          </ul>
       </nav>
    </header>
    
    <header class="mobile-header">
-      <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      <div class="mobile-left">
+         <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         
+         <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      </div>
       
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-         <span></span><span></span><span></span>
-      </button>
+      <a href="cart.html" class="mobile-cart-link" aria-label="View cart">
+         <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon">
+         <span class="cart-badge" data-cart-count>0</span>
+      </a>
    </header>
    
    <nav class="nav-overlay">
@@ -55,18 +65,18 @@
    </button>
    
    <!-- #endregion -->
-   
-   <!---------------Heading----------------------------------------------><!--#region-->
+
+<!---------------Heading----------------------------------------------><!--#region-->
    <main>
-      <section class="info-hero-banner">
+      <section class="info-hero-banner" data-hero>
          <div class="info-hero-overlay"></div>
          <div class="info-hero-title-wrap">
             <h1>Terms & Conditions</h1>
          </div>
       </section>
       <!--#endregion-->
-   
-   <!---------------Content----------------------------------------------><!--#region-->
+
+<!---------------Content----------------------------------------------><!--#region-->
       <section class="info-wrapper fade-in-section">
          <h2>Terms of Service</h2>
          
@@ -120,8 +130,8 @@
       
    </main>
    <!--#endregion-->
-   
-   <!---------------Footer--------------------------------------------------><!--#region-->
+
+<!---------------Footer--------------------------------------------------><!--#region-->
    <footer class="site-footer">
       <div class="footer-top">
          <ul class="footer-nav">
@@ -154,110 +164,15 @@
       </div>
    </footer>
    <!--#endregion-->
-   
-   <!---------------Scripts------------------------------------------------------><!--#region-->
-   <script>
-      document.addEventListener("DOMContentLoaded", () => {
-         const $ = (sel, root = document) => root.querySelector(sel);
-         const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-         
-         /* =========================================================
-         Global UI: Hamburger + Back-to-top + Hide/Show Nav + Fade-in
-         ========================================================= */
-         const hamburger = $(".hamburger");
-         const overlay = $(".nav-overlay");
-         const desktopHeader = $(".desktop-header");
-         const mobileHeader = $(".mobile-header");
-         const hero = $(".info-hero-banner"); 
-         const backToTopBtn = $(".back-to-top");
-         
-         const isMenuOpen = () => overlay?.classList.contains("open");
-         
-         const openMenu = () => {
-            if (!hamburger || !overlay) return;
-            overlay.classList.add("open");
-            hamburger.classList.add("open");
-            hamburger.setAttribute("aria-expanded", "true");
-         };
-         
-         const closeMenu = () => {
-            if (!hamburger || !overlay) return;
-            overlay.classList.remove("open");
-            hamburger.classList.remove("open");
-            hamburger.setAttribute("aria-expanded", "false");
-         };
-         
-         const toggleMenu = () => (isMenuOpen() ? closeMenu() : openMenu());
-         
-         if (hamburger && overlay) {
-            hamburger.addEventListener("click", toggleMenu);
-            
-            $$(".nav-overlay a").forEach((a) => a.addEventListener("click", closeMenu));
-            
-            document.addEventListener("keydown", (e) => {
-               if (e.key === "Escape" && isMenuOpen()) closeMenu();
-            });
-         }
-         
-         // Back to top
-         backToTopBtn?.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-         });
-         
-         // Fade-in sections
-         const reveal = $$(".fade-in, .fade-in-section");
-         if (reveal.length) {
-            const io = new IntersectionObserver(
-            (entries, obs) => {
-               entries.forEach((e) => {
-                  if (!e.isIntersecting) return;
-                  e.target.classList.add("visible");
-                  obs.unobserve(e.target);
-               });
-            },
-            { threshold: 0.2 }
-            );
-            
-            reveal.forEach((el) => io.observe(el));
-         }
-         
-         let ticking = false;
-         
-         const updateUI = () => {
-            ticking = false;
-            
-            if (backToTopBtn) {
-               const show = window.scrollY > 400;
-               backToTopBtn.style.opacity = show ? "1" : "0";
-               backToTopBtn.style.pointerEvents = show ? "auto" : "none";
-            }
-            
-            if (!hero) return;
-            if (isMenuOpen()) {
-               desktopHeader?.classList.remove("hide-nav");
-               mobileHeader?.classList.remove("hide-nav");
-               return;
-            }
-            
-            const trigger = hero.offsetHeight * 0.35;
-            const hide = window.scrollY > trigger;
-            
-            desktopHeader?.classList.toggle("hide-nav", hide);
-            mobileHeader?.classList.toggle("hide-nav", hide);
-         };
-         
-         const onScroll = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(updateUI);
-         };
-         
-         window.addEventListener("scroll", onScroll, { passive: true });
-         window.addEventListener("resize", () => requestAnimationFrame(updateUI), { passive: true });
-         updateUI();
-      });
-   </script>
+
+<!---------------Scripts------------------------------------------------------><!--#region-->
+<script src="javascript/cart.js" defer></script>
+<script src="javascript/navigation.js" defer></script>
+<script src="javascript/header-scroll.js" defer></script>
+<script src="javascript/back-to-top.js" defer></script>
+<script src="javascript/fade-in.js" defer></script>
+
    <!--#endregion-->
-   
+
 </body>
 </html>
