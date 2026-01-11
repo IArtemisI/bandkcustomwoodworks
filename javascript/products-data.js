@@ -4,7 +4,14 @@
          order: 1,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-001/product1-1.webp",
+         "Photos/products/product-001/product1-2.webp",
+         "Photos/products/product-001/product1-3.webp",
+         "Photos/products/product-001/product1-4.webp"
+         ],
+         image: "Photos/products/product-001/product1-1.webp",
+
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true
@@ -13,7 +20,14 @@
          order: 2,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-002/product2-1.webp",
+         "Photos/products/product-002/product2-2.webp",
+         "Photos/products/product-002/product2-3.webp",
+         "Photos/products/product-002/product2-4.webp"
+         ],
+         image: "Photos/products/product-002/product2-1.webp",
+
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true
@@ -22,7 +36,14 @@
          order: 3,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-003/product3-1.webp",
+         "Photos/products/product-003/product3-2.webp",
+         "Photos/products/product-003/product3-3.webp",
+         "Photos/products/product-003/product3-4.webp"
+         ],
+         image: "Photos/products/product-003/product3-1.webp",
+         
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true
@@ -31,7 +52,14 @@
          order: 4,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-004/product4-1.webp",
+         "Photos/products/product-004/product4-2.webp",
+         "Photos/products/product-004/product4-3.webp",
+         "Photos/products/product-004/product4-4.webp"
+         ],
+         image: "Photos/products/product-004/product4-1.webp",
+
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true
@@ -40,7 +68,14 @@
          order: 5,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-005/product5-1.webp",
+         "Photos/products/product-005/product5-2.webp",
+         "Photos/products/product-005/product5-3.webp",
+         "Photos/products/product-005/product5-4.webp"
+         ],
+         image: "Photos/products/product-005/product5-1.webp",
+
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true
@@ -49,7 +84,14 @@
          order: 6,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-006/product6-1.webp",
+         "Photos/products/product-006/product6-2.webp",
+         "Photos/products/product-006/product6-3.webp",
+         "Photos/products/product-006/product6-4.webp"
+         ],
+         image: "Photos/products/product-006/product6-1.webp",
+
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true
@@ -58,7 +100,14 @@
          order: 7,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-007/product7-1.webp",
+         "Photos/products/product-007/product7-2.webp",
+         "Photos/products/product-007/product7-3.webp",
+         "Photos/products/product-007/product7-4.webp"
+         ],
+         image: "Photos/products/product-007/product7-1.webp",
+
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true
@@ -67,7 +116,14 @@
          order: 8,
          title: "Cutting Board",
          price: 199.0,
-         image: "Photos/icons/under-construction.webp",
+         images: [
+         "Photos/products/product-008/product8-1.webp",
+         "Photos/products/product-008/product8-2.webp",
+         "Photos/products/product-008/product8-3.webp",
+         "Photos/products/product-008/product8-4.webp"
+         ],
+         image: "Photos/products/product-008/product8-1.webp",
+
          description: "Handcrafted end-grain cutting board built for daily use and long-term durability.",
          specs: ["Size: L x W x H", "Woods: --"],
          inStock: true

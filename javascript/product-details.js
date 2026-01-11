@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
    const specsEl = $("#productSpecs");
    const crumbEl = $("#breadcrumbProduct");
    const addBtn = $("#addToCartBtn");
+   const thumbsEl = $(".product-detail-thumbs");
+   
+   const FALLBACK_IMG = "Photos/icons/under-construction.webp";
    
    const renderNotFound = () => {
       if (cardEl) {
@@ -32,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
    }
    
-   // Populate content
+   /* ---------------- TEXT CONTENT ---------------- */
+   
    if (titleEl) titleEl.textContent = product.title;
    if (priceEl) priceEl.textContent = `$${Number(product.price).toFixed(2)}`;
    if (descEl) descEl.textContent = product.description || "";
@@ -40,12 +44,74 @@ document.addEventListener("DOMContentLoaded", () => {
    
    document.title = `${product.title} – B&K Custom Woodworks`;
    
+   /* ---------------- IMAGE LOGIC ---------------- */
+   
+   const images =
+   Array.isArray(product.images) && product.images.length
+   ? product.images
+   : [product.image || FALLBACK_IMG];
+   
+   let currentIndex = 0;
+   
    if (imgEl) {
-      imgEl.src = product.image;
+      imgEl.src = images[0];
       imgEl.alt = product.title;
    }
    
-   // Specs list
+   // Build thumbnails (images[1]–images[3])
+   if (thumbsEl) {
+      thumbsEl.innerHTML = "";
+      
+      images.slice(1, 4).forEach((src, index) => {
+         const btn = document.createElement("button");
+         btn.className = "product-thumb";
+         btn.type = "button";
+         btn.setAttribute("aria-label", `Thumbnail ${index + 1}`);
+         
+         const img = document.createElement("img");
+         img.src = src || FALLBACK_IMG;
+         img.alt = "";
+         
+         btn.appendChild(img);
+         
+         btn.addEventListener("click", () => {
+            currentIndex = index + 1; // keep cycling logic in sync
+            if (imgEl) imgEl.src = images[currentIndex] || FALLBACK_IMG;
+            
+            thumbsEl
+            .querySelectorAll(".product-thumb")
+            .forEach((b) => b.classList.remove("is-active"));
+            
+            btn.classList.add("is-active");
+         });
+         
+         thumbsEl.appendChild(btn);
+      });
+   }
+   
+   // Click main image to cycle (mobile-friendly)
+   if (imgEl && images.length > 1) {
+      imgEl.addEventListener("click", () => {
+         currentIndex = (currentIndex + 1) % images.length;
+         imgEl.src = images[currentIndex] || FALLBACK_IMG;
+         
+         if (thumbsEl) {
+            thumbsEl
+            .querySelectorAll(".product-thumb")
+            .forEach((b) => b.classList.remove("is-active"));
+            
+            const thumbIndex = currentIndex - 1;
+            const thumbButtons = thumbsEl.querySelectorAll(".product-thumb");
+            
+            if (thumbIndex >= 0 && thumbIndex < thumbButtons.length) {
+               thumbButtons[thumbIndex].classList.add("is-active");
+            }
+         }
+      });
+   }
+   
+   /* ---------------- SPECS ---------------- */
+   
    if (specsEl) {
       specsEl.innerHTML = "";
       (product.specs || []).forEach((spec) => {
@@ -64,7 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
    }
    
-   // Stock + Add to Cart
+   /* ---------------- CART ---------------- */
+   
    const inStock = !!product.inStock;
    
    if (addBtn) {
@@ -73,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
       
       addBtn.addEventListener("click", () => {
          if (!window.BKCart?.addToCart) return;
-         
          window.BKCart.addToCart(productId, 1);
          window.location.href = "cart.html";
       });
