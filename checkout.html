@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <title>Checkout – B&amp;K Custom Woodworks</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <link rel="stylesheet" href="main-style.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Flamenco:wght@300;400&family=Scope+One&display=swap" rel="stylesheet">
+</head>
+
+<body class="checkout-page">
+   
+   <!---------------Navigation--------------------------------------------><!--#region-->
+   <header class="desktop-header">
+      <nav class="desktop-nav">
+         <a href="index.html" class="nav-brand">B&amp;K Custom Woodworks</a>
+         
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="index.html#contact-us">Contact</a></li>
+            <li>
+               <a href="cart.html" class="nav-cart-link" aria-label="View cart">
+                  <img src="Photos/icons/shopping-cart.svg" alt="" class="nav-cart-icon">
+                  <span class="cart-badge" data-cart-count>0</span>
+               </a>
+            </li>
+         </ul>
+      </nav>
+   </header>
+   
+   <header class="mobile-header">
+      <div class="mobile-left">
+         <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         
+         <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+      </div>
+      
+      <a href="cart.html" class="mobile-cart-link" aria-label="View cart">
+         <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon">
+         <span class="cart-badge" data-cart-count>0</span>
+      </a>
+   </header>
+   
+   <nav class="nav-overlay">
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="products.html">Shop</a></li>
+         <li><a href="custom-boards.html">Custom</a></li>
+         <li><a href="faqs.html">FAQs</a></li>
+         <li><a href="index.html#contact-us">Contact</a></li>
+      </ul>
+   </nav>
+   
+   <button class="back-to-top" aria-label="Back to top">
+      <img src="Photos/icons/up-arrow.svg" alt="Back to top">
+   </button>
+   <!--#endregion-->
+   
+   <!---------------Checkout Hero-----------------------------------------><!--#region-->
+   <section class="checkout-hero" data-hero>
+      <div class="checkout-hero-overlay"></div>
+      <div class="checkout-hero-title-wrap">
+         <h1>Checkout</h1>
+      </div>
+   </section>
+   <!--#endregion-->
+   
+   <!---------------Checkout Content--------------------------------------><!--#region-->
+   <main class="checkout">
+      <section class="checkout-card">
+         
+         <div id="checkoutEmpty" class="checkout-empty" hidden>
+            <p>Your cart is empty.</p>
+            <a href="products.html" class="checkout-btn">Continue Shopping</a>
+         </div>
+         
+         <div id="checkoutWrap" class="checkout-wrap" hidden>
+            <h2 class="checkout-title">Order Summary</h2>
+            
+            <ul class="checkout-list" id="checkoutList"></ul>
+            
+            <div class="checkout-summary">
+               <div class="checkout-row">
+                  <span>Subtotal</span>
+                  <strong id="checkoutSubtotal">$0.00</strong>
+               </div>
+               
+               <p class="checkout-note">
+                  Shipping + tax will be handled during payment.
+               </p>
+               
+               <div class="checkout-actions">
+                  <a href="cart.html" class="checkout-btn checkout-btn-ghost">Back to Cart</a>
+                  <button class="checkout-btn" type="button" id="payNowBtn" disabled>
+                     Continue to Payment
+                  </button>
+               </div>
+               
+               <p class="checkout-note checkout-note-small">
+                  *Payment will be processed securely through Helcim.
+               </p>
+            </div>
+         </div>
+         
+      </section>
+   </main>
+   <!--#endregion-->
+   
+   <!---------------Footer------------------------------------------------><!--#region-->
+   <footer class="site-footer">
+      <div class="footer-top">
+         <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="index.html#contact-us">Contact</a></li>
+         </ul>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-social">
+         <a href="https://www.facebook.com/groups/273420570637837" class="facebook-link" target="_blank">
+            Facebook
+         </a>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+         <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms &amp; Conditions</a>
+         </div>
+         
+         <p class="footer-copy">© 2024 B&amp;K Custom Woodworks</p>
+      </div>
+   </footer>
+   <!--#endregion-->
+   
+   <!---------------Scripts-----------------------------------------------><!--#region-->
+   <script src="javascript/cart.js" defer></script>
+   <script src="javascript/products-data.js" defer></script>
+   <script src="javascript/navigation.js" defer></script>
+   <script src="javascript/header-scroll.js" defer></script>
+   <script src="javascript/back-to-top.js" defer></script>
+   <script src="javascript/fade-in.js" defer></script>
+   <script src="javascript/checkout-page.js" defer></script>
+   <!--#endregion-->
+   
+</body>
+</html>

@@ -7,19 +7,31 @@
    <link rel="stylesheet" href="main-style.css" />
 </head>
 
+   <!---------------Thanks-----------------------------------------------><!--#region-->
 <body class="thanks-page">
    <main class="thanks">
-      <section class="thanks-card" aria-label="Message sent confirmation">
-         <h1 class="thanks-title">Message Sent</h1>
+      <section class="thanks-card" aria-label="Confirmation">
+         <h1 class="thanks-title" id="thanksTitle">Thank You!</h1>
          
-         <p class="thanks-text">
-            Thanks for reaching out! <br>We will get in contact with you as soon as possible!
+         <p class="thanks-text" id="thanksText">
+            Thanks for reaching out! <br>
+            We will get in contact with you as soon as possible!
          </p>
          
-         <a href="index.html" class="thanks-button">
-            Back to Home
-         </a>
+         <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:18px;">
+            <a href="index.html" class="thanks-button">Back to Home</a>
+            <a href="products.html" class="thanks-button" style="text-decoration:none;">
+               Continue Shopping
+            </a>
+         </div>
       </section>
    </main>
+   <!--#endregion-->
+   
+<!---------------Scripts-----------------------------------------------><!--#region-->
+<script src="javascript/cart.js" defer></script>
+<script src="javascript/thanks-page.js" defer></script>
+<!--#endregion-->
+
 </body>
 </html>

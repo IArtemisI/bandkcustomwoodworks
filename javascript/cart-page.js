@@ -1,3 +1,4 @@
+/*cart-page.js*/
 
 document.addEventListener("DOMContentLoaded", () => {
    const listEl = document.getElementById("cartList");
@@ -44,60 +45,69 @@ document.addEventListener("DOMContentLoaded", () => {
          <div class="cart-item-info">
             <h3 class="cart-item-title">${product.title}</h3>
             <p class="cart-item-price">${money(product.price)}</p>
-            
+                  
+            ${
+                  Array.isArray(product.specs) && product.specs.length
+                  ? `<ul class="cart-item-specs">
+                     ${product.specs.map((s) => `<li>${s}</li>`).join("")}
+                  </ul>`
+                  : ""
+               }
+               
             <div class="cart-qty">
                <button class="cart-qty-btn" type="button" data-action="dec" data-id="${line.id}">−</button>
                <span class="cart-qty-num">${qty}</span>
                <button class="cart-qty-btn" type="button" data-action="inc" data-id="${line.id}">+</button>
-               <button class="cart-remove" type="button" data-action="remove" data-id="${line.id}">Remove</button>
+               <button class="cart-remove" type="button" data-action="remove" data-id="${line.id}" aria-label="Remove item from cart">
+               <img src="Photos/icons/trash.svg" alt="" /></button>
             </div>
          </div>
-            
+               
          <div class="cart-item-total">${money(lineTotal)}</div>
-      `;
-         listEl.appendChild(li);
-      });
-      
-      subtotalEl.textContent = money(subtotal);
-   };
-   
-   const updateQty = (id, delta) => {
-      const cart = window.BKCart?.readCart?.();
-      if (!cart || !Array.isArray(cart.items)) return;
-      
-      const idx = cart.items.findIndex((it) => it.id === id);
-      if (idx === -1) return;
-      
-      cart.items[idx].qty = Number(cart.items[idx].qty || 0) + delta;
-      
-      if (cart.items[idx].qty <= 0) {
-         cart.items.splice(idx, 1);
-      }
-      
-      window.BKCart.writeCart(cart);
-      render();
-   };
-   
-   const removeItem = (id) => {
-      const cart = window.BKCart?.readCart?.();
-      if (!cart || !Array.isArray(cart.items)) return;
-      
-      cart.items = cart.items.filter((it) => it.id !== id);
-      window.BKCart.writeCart(cart);
-      render();
-   };
-   
-   listEl.addEventListener("click", (e) => {
-      const btn = e.target.closest("button[data-action]");
-      if (!btn) return;
-      
-      const id = btn.getAttribute("data-id");
-      const action = btn.getAttribute("data-action");
-      
-      if (action === "inc") updateQty(id, 1);
-      if (action === "dec") updateQty(id, -1);
-      if (action === "remove") removeItem(id);
+         `;
+      listEl.appendChild(li);
    });
    
+   subtotalEl.textContent = money(subtotal);
+};
+
+const updateQty = (id, delta) => {
+   const cart = window.BKCart?.readCart?.();
+   if (!cart || !Array.isArray(cart.items)) return;
+   
+   const idx = cart.items.findIndex((it) => it.id === id);
+   if (idx === -1) return;
+   
+   cart.items[idx].qty = Number(cart.items[idx].qty || 0) + delta;
+   
+   if (cart.items[idx].qty <= 0) {
+      cart.items.splice(idx, 1);
+   }
+   
+   window.BKCart.writeCart(cart);
    render();
+};
+
+const removeItem = (id) => {
+   const cart = window.BKCart?.readCart?.();
+   if (!cart || !Array.isArray(cart.items)) return;
+   
+   cart.items = cart.items.filter((it) => it.id !== id);
+   window.BKCart.writeCart(cart);
+   render();
+};
+
+listEl.addEventListener("click", (e) => {
+   const btn = e.target.closest("button[data-action]");
+   if (!btn) return;
+   
+   const id = btn.getAttribute("data-id");
+   const action = btn.getAttribute("data-action");
+   
+   if (action === "inc") updateQty(id, 1);
+   if (action === "dec") updateQty(id, -1);
+   if (action === "remove") removeItem(id);
+});
+
+render();
 });
