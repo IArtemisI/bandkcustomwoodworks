@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8" />
    <title>Product – B&K Custom Woodworks</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link rel="stylesheet" href="main-style.css" />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Flamenco:wght@300;400&family=Scope+One&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+      href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Flamenco:wght@300;400&family=Scope+One&display=swap"
+      rel="stylesheet" />
 </head>
-<body>
 
-<!---------------Navigation----------------------------------------------><!--#region-->
+<body>
+   <!--Navigation--><!--#region-->
    <!-- Desktop Navigation -->
    <header class="desktop-header">
       <nav class="desktop-nav">
          <a href="index.html" class="nav-brand">B&amp;K Custom Woodworks</a>
-         
+
          <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="custom-boards.html">Custom</a></li>
             <li><a href="faqs.html">FAQs</a></li>
             <li><a href="index.html#contact-us">Contact</a></li>
-            <li><a href="cart.html" class="nav-cart-link" aria-label="View cart">
-               <img src="Photos/icons/shopping-cart.svg" alt="" class="nav-cart-icon">
-               <span class="cart-badge" data-cart-count>0</span></a>
+            <li>
+               <a href="cart.html" class="nav-cart-link" aria-label="View cart">
+                  <img src="Photos/icons/shopping-cart.svg" alt="" class="nav-cart-icon" />
+                  <span class="cart-badge" data-cart-count>0</span></a>
             </li>
          </ul>
       </nav>
    </header>
-   
+
    <header class="mobile-header">
       <div class="mobile-left">
          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
             <span></span><span></span><span></span>
          </button>
-         
+
          <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
       </div>
-      
+
       <a href="cart.html" class="mobile-cart-link" aria-label="View cart">
-         <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon">
+         <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon" />
          <span class="cart-badge" data-cart-count>0</span>
       </a>
    </header>
-   
+
    <nav class="nav-overlay">
       <ul>
          <li><a href="index.html">Home</a></li>
@@ -55,19 +59,18 @@
          <li><a href="index.html#contact-us">Contact</a></li>
       </ul>
    </nav>
-   
+
    <!-- Back To Top Button -->
    <button class="back-to-top" aria-label="Back to top">
-      <img src="Photos/icons/up-arrow.svg" alt="Back to top">
+      <img src="Photos/icons/up-arrow.svg" alt="Back to top" />
    </button>
-   
+
    <!-- #endregion -->
 
-<!---------------Product Breadcrumbs Hero ----------------------------------><!--#region-->
-   
+   <!--Product Breadcrumbs Hero --><!--#region-->
+
    <section class="product-details-hero" data-hero>
       <div class="product-details-hero-inner">
-         
          <nav class="product-details-breadcrumbs" aria-label="Breadcrumb">
             <a href="index.html">Home</a>
             <span class="crumb-sep">›</span>
@@ -75,67 +78,63 @@
             <span class="crumb-sep">›</span>
             <span class="crumb-current" id="breadcrumbProduct">Product Name</span>
          </nav>
-         
+
          <a href="products.html" class="product-details-backlink">← Back to Products</a>
-         
       </div>
    </section>
-   
+
    <!--#endregion-->
 
-<!---------------Page Content ----------------------------------><!--#region-->
+   <!--Page Content --><!--#region-->
    <main class="product-detail">
       <div class="product-detail-card">
-         
          <div class="product-detail-grid">
             <!-- Left: Images -->
             <section class="product-detail-media">
-               <img
-               class="product-detail-main-img"
-               id="productImage"
-               src="Photos/icons/under-construction.webp"
-               alt="Product Name">
-               
+               <img class="product-detail-main-img" id="productImage" src="Photos/icons/under-construction.webp"
+                  alt="Product Name" />
+
                <!-- thumbnails (optional now, useful later) -->
                <div class="product-detail-thumbs">
                   <button class="product-thumb" type="button" aria-label="Thumbnail 1">
-                     <img src="Photos/icons/under-construction.webp" alt="">
+                     <img src="Photos/icons/under-construction.webp" alt="" />
                   </button>
                   <button class="product-thumb" type="button" aria-label="Thumbnail 2">
-                     <img src="Photos/icons/under-construction.webp" alt="">
+                     <img src="Photos/icons/under-construction.webp" alt="" />
                   </button>
                   <button class="product-thumb" type="button" aria-label="Thumbnail 3">
-                     <img src="Photos/icons/under-construction.webp" alt="">
+                     <img src="Photos/icons/under-construction.webp" alt="" />
                   </button>
                </div>
             </section>
-            
+
             <!-- Right: Info -->
             <section class="product-detail-info">
                <h1 class="product-detail-title" id="productTitle">Product Name</h1>
                <p class="product-detail-price" id="productPrice">$199</p>
-               
+
                <p class="product-detail-desc" id="productDesc">
                   Add a short, compelling description here.
                </p>
-               
+
                <ul class="product-detail-specs" id="productSpecs">
                   <li><strong>Size:</strong> 18" x 12" x 1.5"</li>
                   <li><strong>Woods:</strong> Maple, Walnut</li>
                </ul>
-               
+
                <div class="product-detail-actions">
                   <button class="product-detail-buy" id="addToCartBtn" type="button">
-                  Add to Cart
+                     Add to Cart
                   </button>
-                  
+
                   <a class="product-detail-contact" href="index.html#contact-us">
                      Ask a question
                   </a>
                </div>
-               
+
                <p class="product-detail-note">
-                  *Due to items being handmade variations in color, texture, and appearance should be expected.
+                  *Due to items being handmade variations in color, texture, and
+                  appearance should be expected.
                </p>
             </section>
          </div>
@@ -143,7 +142,7 @@
    </main>
    <!--#endregion-->
 
-<!---------------Footer--------------------------------------------------><!--#region-->
+   <!--Footer--><!--#region-->
    <footer class="site-footer">
       <div class="footer-top">
          <ul class="footer-nav">
@@ -154,40 +153,40 @@
             <li><a href="index.html#contact-us">Contact</a></li>
          </ul>
       </div>
-      
+
       <div class="footer-divider"></div>
-      
+
       <div class="footer-social">
          <a href="https://www.facebook.com/groups/273420570637837" class="facebook-link" target="_blank">
             Facebook
          </a>
       </div>
-      
+
       <div class="footer-divider"></div>
-      
+
       <div class="footer-bottom">
          <div class="footer-legal">
             <a href="privacy.html">Privacy Policy</a>
             <span>•</span>
             <a href="terms.html">Terms & Conditions</a>
          </div>
-         
+
          <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
       </div>
    </footer>
-<!--#endregion-->
+   <!--#endregion-->
 
-<!---------------Scripts------------------------------------------------------><!--#region-->
+   <!--Scripts--><!--#region-->
 
-<script src="javascript/cart.js" defer></script>
-<script src="javascript/products-data.js" defer></script>
-<script src="javascript/navigation.js" defer></script>
-<script src="javascript/header-scroll.js" defer></script>
-<script src="javascript/back-to-top.js" defer></script>
-<script src="javascript/fade-in.js" defer></script>
-<script src="javascript/product-details.js" defer></script>
+   <script src="javascript/cart.js" defer></script>
+   <script src="javascript/products-data.js" defer></script>
+   <script src="javascript/navigation.js" defer></script>
+   <script src="javascript/header-scroll.js" defer></script>
+   <script src="javascript/back-to-top.js" defer></script>
+   <script src="javascript/fade-in.js" defer></script>
+   <script src="javascript/product-details.js" defer></script>
 
-<!--#endregion-->
-
+   <!--#endregion-->
 </body>
+
 </html>
