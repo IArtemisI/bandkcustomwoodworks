@@ -1262,7 +1262,7 @@
 /*--Products Details Page--*/
 /*#region*/
 
-/*---Product Details Hero---*/
+/*--Product Details Hero--*/
 /*#region*/
 
 .product-details-hero {
@@ -1354,7 +1354,7 @@
 
 /*#endregion*/
 
-/*---Products Details Card---*/
+/*--Products Details Card--*/
 /*#region*/
 .product-detail {
    width: 95%;
@@ -1579,7 +1579,7 @@
 /*--Shopping Cart--*/
 /*#region*/
 
-/*---Cart Details Hero---*/
+/*--Cart Details Hero--*/
 /*#region*/
 
 .cart-hero-banner {
@@ -1626,7 +1626,7 @@
 
 /*#endregion*/
 
-/*---Cart ---*/
+/*--Cart --*/
 /*#region*/
 
 .cart {
@@ -2203,7 +2203,7 @@
       2px 4px 12px rgba(0, 0, 0, 0.9);
 }
 
-/* --- Mobile --- */
+/* -- Mobile -- */
 
 @media (max-width: 700px) {
    .custom-hero-banner {
@@ -2225,7 +2225,7 @@
 
 /*#endregion*/
 
-/*--Custom Board Form---------*/
+/*--Custom Board Form--*/
 /*#region*/
 .custom-board-form {
    max-width: 1200px;
@@ -2250,7 +2250,7 @@
    box-shadow: 0 0 12px rgba(57, 25, 21, 0.2);
 }
 
-/*----------Submit Error--------*/
+/*--Submit Error--*/
 /*#region*/
 
 .cb-error {
@@ -2368,7 +2368,7 @@
 
 /*#endregion*/
 
-/*-- Custom Contact Info---------- */
+/*-- Custom Contact Info-- */
 /*#region*/
 .custom-board-contact {
    display: flex;
@@ -2414,7 +2414,7 @@
 
 /*#endregion*/
 
-/*-----------Size*/
+/*--Size*/
 /*#region*/
 .custom-board-size-layout {
    display: grid;
@@ -2537,7 +2537,7 @@
 
 /*#endregion*/
 
-/*----------Wood/Patterns/Features---------*/
+/*--Wood/Patterns/Features--*/
 /*#region*/
 .cb-checkbox-grid {
    display: grid;
@@ -2680,7 +2680,7 @@
 
 /*#endregion*/
 
-/*---------- Engraving--*/
+/*-- Engraving--*/
 /*#region*/
 .custom-board-engraving {
    display: flex;
