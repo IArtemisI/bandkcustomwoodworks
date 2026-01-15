@@ -78,7 +78,7 @@
       <!-- #endregion -->
 
       <!-- Quick Care Basics --><!--#region-->
-      <section class="faqs-wrap fade-in-section">
+      <div class="faqs-wrap fade-in-section">
          <!-- Quick Tips -->
          <section class="faqs-card">
             <header class="faqs-card-head">
@@ -105,11 +105,13 @@
 
                <!-- Cutting Board Care -->
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>How do I clean my cutting board day-to-day?</span>
+                  <h3 class="faqs-heading">How do I clean my cutting board day-to-day?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-1">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-1" hidden>
                      <p>
                         Use warm water and a small amount of mild dish soap. Scrub gently, rinse quickly,
                         and dry right away. Then stand it on edge so both sides can fully air dry.
@@ -118,11 +120,13 @@
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>Can I put my board in the dishwasher?</span>
+                  <h3 class="faqs-heading">Can I put my board in the dishwasher?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-2">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-2" hidden>
                      <p>
                         No. Dishwashers combine heat, prolonged water exposure, and harsh detergents that
                         can warp, crack, or dry out hardwood quickly.
@@ -131,11 +135,13 @@
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>Why does my board feel “fuzzy” after washing?</span>
+                  <h3 class="faqs-heading">Why does my board feel “fuzzy” after washing?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-3">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-3" hidden>
                      <p>
                         That’s raised grain. This is normal when wood fibers absorb moisture.
                         Once dry, a light rub with board wax usually smooths it out. If needed,
@@ -145,11 +151,13 @@
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>How often should I oil or wax my board?</span>
+                  <h3 class="faqs-heading">How often should I oil or wax my board?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-4">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-4" hidden>
                      <p>
                         Once a month for regular use, and more often if your board looks dry
                         (lighter color, rough feel) or during winter/dry climates. Heavy use boards may
@@ -160,11 +168,13 @@
 
                <!-- Board Wax / Beeswax -->
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>What is your board wax made from?</span>
+                  <h3 class="faqs-heading">What is your board wax made from?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-5">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-5" hidden>
                      <p>
                         Our board wax is handmade with food-grade beeswax and food-safe oils (commonly
                         mineral oil), designed to hydrate wood and create a light protective barrier.
@@ -174,27 +184,31 @@
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>How do I apply board wax correctly?</span>
+                  <h3 class="faqs-heading">How do I apply board wax correctly?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-6">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
-                     <ol class="faqs-steps">
-                        <li>Make sure the board is clean and completely dry.</li>
-                        <li>Apply a small amount of wax with a cloth (or paper towel).</li>
-                        <li>Rub in with the grain, covering all sides and edges.</li>
-                        <li>Let it soak in for 15–30 minutes (or overnight for very dry boards).</li>
-                        <li>Buff off the excess until it feels smooth, not sticky.</li>
-                     </ol>
-                  </div>
+
+            <div class="faqs-a" id="faq-6" hidden>
+               <ol class="faqs-steps">
+                  <li>Make sure the board is clean and completely dry.</li>
+                  <li>Apply a small amount of wax with a cloth (or paper towel).</li>
+                  <li>Rub in with the grain, covering all sides and edges.</li>
+                  <li>Let it soak in for 15–30 minutes (or overnight for very dry boards).</li>
+                  <li>Buff off the excess until it feels smooth, not sticky.</li>
+               </ol>
+            </div>
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>Will board wax make my board slippery or sticky?</span>
+                  <h3 class="faqs-heading">Will board wax make my board slippery or sticky?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-7">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-7" hidden>
                      <p>
                         It shouldn’t. If it feels sticky, too much wax was left on the surface.Just buff
                         it more with a clean cloth. The goal is a soft sheen, not a waxy layer.
@@ -204,11 +218,13 @@
 
                <!-- Product / Ordering -->
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>Are your boards food safe?</span>
+                  <h3 class="faqs-heading">Are your boards food safe?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-8">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-8" hidden>
                      <p>
                         Yes. All of our products are food safe.
                      </p>
@@ -216,11 +232,13 @@
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>Do you take custom requests (sizes/woods/patterns/engraving)?</span>
+                  <h3 class="faqs-heading">Do you take custom requests (sizes/woods/patterns/engraving)?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-9">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-9" hidden>
                      <p>
                         Absolutely. Use our Custom Board form to choose woods, dimensions, patterns, and
                         features (like grooves, handles, engraving). If you have a special idea, add it in
@@ -230,11 +248,13 @@
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>What should I expect with handmade wood products?</span>
+                  <h3 class="faqs-heading">What should I expect with handmade wood products?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-10">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-10" hidden>
                      <p>
                         Each piece is unique. You may see natural variation in grain, color, and pattern.
                      </p>
@@ -242,11 +262,13 @@
                </article>
 
                <article class="faqs-item">
-                  <button class="faqs-q" type="button" aria-expanded="false">
-                     <span>Still have a question?</span>
+                  <h3 class="faqs-heading">Still have a question?</h3>
+
+                  <button class="faqs-q" type="button" aria-expanded="false" aria-controls="faq-11">
                      <span class="faqs-icon" aria-hidden="true"></span>
                   </button>
-                  <div class="faqs-a" hidden>
+
+                  <div class="faqs-a" id="faq-11" hidden>
                      <p>
                         Send us a message through our contact form and we’ll get back to you as soon as we can.<br>
                         <a class="faqs-link" href="index.html#contact-us">Contact us</a>
@@ -256,6 +278,7 @@
 
             </div>
          </section>
+      </div>
    </main>
    <!-- #endregion -->
 
