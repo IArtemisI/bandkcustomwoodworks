@@ -5,7 +5,11 @@
    <meta charset="UTF-8" />
    <title>Custom Boards – B&K Custom Woodworks</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="main-style.css" />
+   
+   <!-- Main CSS (non-render-blocking) -->
+<link rel="preload" href="main-style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="main-style.css"></noscript>
+
 
    <!-- Google Fonts (non-render-blocking) -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
