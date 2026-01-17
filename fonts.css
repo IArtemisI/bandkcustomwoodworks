@@ -1,0 +1,26 @@
+/* Eagle Lake */
+@font-face {
+  font-family: "Eagle Lake";
+  src: url("fonts/eagle-lake-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Flamenco */
+@font-face {
+  font-family: "Flamenco";
+  src: url("fonts/flamenco-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Scope One */
+@font-face {
+  font-family: "Scope One";
+  src: url("fonts/scope-one-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
