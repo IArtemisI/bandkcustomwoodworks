@@ -75,6 +75,14 @@
    backdrop-filter: blur(8px);
    -webkit-backdrop-filter: blur(8px);
    z-index: 99999;
+   transition: opacity 0.3s ease, transform 0.3s ease;
+   will-change: transform, opacity;
+}
+
+.mobile-header.hide-nav {
+   opacity: 0;
+   transform: translateY(-20px);
+   pointer-events: none;
 }
 
 .mobile-left {
@@ -166,14 +174,6 @@
 
 .hamburger.open span:nth-child(3) {
    transform: translateY(clamp(-8px, -2vw, -14px)) rotate(-45deg);
-}
-
-.mobile-header.hide-nav {
-   /* hides on scroll*/
-   opacity: 0;
-   transform: translateY(-20px);
-   pointer-events: none;
-   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* FULLSCREEN OVERLAY MENU */
