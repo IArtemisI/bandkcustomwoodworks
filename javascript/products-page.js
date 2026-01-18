@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
          height="320"
          />
          
-         <h3>${p.title}</h3>
+         <h2>${p.title}</h2>
          <p class="price">${money(p.price)}</p>
       </a>
       `;
