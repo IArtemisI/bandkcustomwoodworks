@@ -1054,62 +1054,30 @@
       2px 4px 12px rgba(0, 0, 0, 0.9);
 }
 
-@media (max-width: 900px) {
-
-   /*Large Phone*/
-   .products-hero {
-      align-items: flex-end;
-      min-height: 30vh;
-   }
-
-   .products-hero-text h1 {
-      font-size: clamp(25px, 6vw, 40px);
-      margin: 5px;
-   }
-}
-
-@media (max-width: 400px) {
-
-   /*Small Phone*/
-   .products-hero-text h1 {
-      font-size: clamp(18px, 5vw, 30px);
-   }
-}
-
 /* #endregion */
 
 /*--Products Listed For Sale--*//*#region*/
-
 .product-grid {
    width: 100%;
+   min-height: 1200px;
 }
 
-/* Products list wrapper (the UL becomes the grid) */
 .product-grid-list {
    width: 95%;
    max-width: 1400px;
    margin: clamp(20px, 5vw, 40px) auto;
-
    display: grid;
    gap: clamp(20px, 4vw, 35px);
    grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 40vw, 400px), 1fr));
-
    list-style: none;
    padding: 0;
 }
 
-/* Remove default li spacing */
 .product-grid-list li {
    margin: 0;
    padding: 0;
 }
 
-/* Section wrapper can just be full width now */
-.product-grid {
-   width: 100%;
-}
-
-/* Individual product card */
 .product-card {
    overflow: hidden;
    text-align: center;
@@ -1178,13 +1146,11 @@
 
 @media (max-width: 900px) {
 
-   /*Large Phone*/
    .product-grid-list {
       width: 92%;
       margin: 20px auto;
       gap: clamp(14px, 3vw, 20px);
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      /*Two Item Per*/
    }
 
    .product-card {
@@ -1215,7 +1181,6 @@
 }
 
 .product-card.is-out {
-   /*Out of Stock*/
    opacity: 0.6;
 }
 
@@ -1236,9 +1201,7 @@
       margin: 0;
       font-size: clamp(16px, 4vw, 17px);
    }
-
 }
-
 
 /*#endregion*/
 
@@ -3144,7 +3107,6 @@
    text-decoration: underline;
 }
 
-/* Callout */
 .faqs-callout {
    background: rgba(255, 255, 255, 0.35);
    border: 2px solid rgba(57, 25, 21, 0.18);
@@ -3465,6 +3427,7 @@
    color: #391915;
    padding: clamp(35px, 6vw, 60px) clamp(15px, 4vw, 40px)clamp(25px, 5vw, 40px);
    margin-top: 80px;
+   min-height: 240px;
    text-align: center;
    border-top: 3px solid rgba(255, 255, 255, 0.3);
    box-shadow:
@@ -3484,10 +3447,12 @@
 .footer-nav {
    list-style: none;
    display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
    gap: clamp(20px, 6vw, 40px);
    margin: 0;
    padding: 0;
-}
+ }
 
 .footer-nav a {
    font-size: clamp(20px, 4vw, 30px);
@@ -3535,7 +3500,6 @@
    transform: translateY(-2px);
 }
 
-/* Bottom - Legal Stuff */
 .footer-bottom {
    max-width: 900px;
    margin: 0 auto;
@@ -3555,7 +3519,6 @@
 }
 
 .footer-legal a {
-   /*Privacy & Terms Typography*/
    color: #391915;
    text-decoration: none;
    border-radius: 8px;
@@ -3567,7 +3530,6 @@
 }
 
 .footer-copy {
-   /*Copyright Typography*/
    font-size: clamp(16px, 4vw, 20px);
    font-weight: 500;
    color: #391915;
@@ -3584,11 +3546,8 @@
 @media (max-width: 700px) {
    .site-footer {
       text-align: center;
-      /* keep your desktop feel */
-      padding: 32px 16px 26px;
    }
 
-   /* Make sure the wrapper doesn't create weird widths */
    .footer-top,
    .footer-bottom {
       max-width: 520px;
@@ -3596,32 +3555,26 @@
       margin-right: auto;
    }
 
-   /* NAV: centered + wraps nicely (no sideways scroll) */
    .footer-nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 14px 12px;
-      /* row gap / column gap */
       margin: 0;
       padding: 0;
    }
 
    .footer-nav a {
       margin-top: 0;
-      /* remove the “desktop bump” */
       font-size: 18px;
       letter-spacing: 1px;
       padding: 5px 5%;
-      /* better tap target */
       display: inline-block;
    }
 
-   /* Dividers: keep them intentional, not “random lines” */
    .footer-divider {
       height: 3px;
       max-width: 320px;
-      /* shorter so it looks designed */
       margin: 18px auto;
       opacity: 0.9;
    }
@@ -3631,7 +3584,6 @@
       letter-spacing: 1.5px;
    }
 
-   /* Legal: allow wrap, keep centered */
    .footer-legal {
       flex-wrap: wrap;
       justify-content: center;
@@ -3739,7 +3691,6 @@
 /* #endregion */
 
 /*--Structural Styles --*//* #region */
-
 body {
    margin: 0;
    background-color: #ede0d4;
@@ -3769,3 +3720,7 @@ html {
 }
 
 /* #endregion */
+
+/*Test Region*//*#region*/
+
+/*#endregion*/

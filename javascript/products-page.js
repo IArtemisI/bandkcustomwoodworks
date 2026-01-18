@@ -1,3 +1,4 @@
+//products-page.js
 document.addEventListener("DOMContentLoaded", () => {
 	const grid = document.getElementById("productsGrid");
 	if (!grid) return;
@@ -25,12 +26,20 @@ document.addEventListener("DOMContentLoaded", () => {
       <a class="product-card" href="product-details.html?id=${encodeURIComponent(
 				id
 			)}" aria-label="View ${p.title}">
-         <img src="${p.image}" alt="${p.title}">
+         <img
+         src="${p.thumb || p.image}"
+         alt="${p.title}"
+         loading="lazy"
+         decoding="async"
+         width="400"
+         height="320"
+         />
+         
          <h3>${p.title}</h3>
          <p class="price">${money(p.price)}</p>
       </a>
       `;
-
+      
 		// Optional: if out of stock, visually “quiet” it
 		if (!inStock) {
 			li.querySelector(".product-card")?.classList.add("is-out");

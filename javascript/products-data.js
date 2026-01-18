@@ -13,6 +13,7 @@
 				"Photos/products/product-001/product1-4.webp",
 			],
 			image: "Photos/products/product-001/product1-1.webp",
+         thumb: "Photos/products/product-001/product1-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -30,6 +31,7 @@
 				"Photos/products/product-002/product2-4.webp",
 			],
 			image: "Photos/products/product-002/product2-1.webp",
+         thumb: "Photos/products/product-002/product2-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -47,6 +49,7 @@
 				"Photos/products/product-003/product3-4.webp",
 			],
 			image: "Photos/products/product-003/product3-1.webp",
+         thumb: "Photos/products/product-003/product3-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -64,6 +67,7 @@
 				"Photos/products/product-004/product4-4.webp",
 			],
 			image: "Photos/products/product-004/product4-1.webp",
+         thumb: "Photos/products/product-004/product4-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -81,6 +85,7 @@
 				"Photos/products/product-005/product5-4.webp",
 			],
 			image: "Photos/products/product-005/product5-1.webp",
+         thumb: "Photos/products/product-005/product5-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -98,6 +103,7 @@
 				"Photos/products/product-006/product6-4.webp",
 			],
 			image: "Photos/products/product-006/product6-1.webp",
+         thumb: "Photos/products/product-006/product6-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -115,6 +121,7 @@
 				"Photos/products/product-007/product7-4.webp",
 			],
 			image: "Photos/products/product-007/product7-1.webp",
+         thumb: "Photos/products/product-007/product7-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -132,6 +139,7 @@
 				"Photos/products/product-008/product8-4.webp",
 			],
 			image: "Photos/products/product-008/product8-1.webp",
+         thumb: "Photos/products/product-008/product8-thumb.webp",
 
 			description:
 				"Handcrafted end-grain cutting board built for daily use and long-term durability.",
@@ -143,6 +151,7 @@
 			title: "Board Wax",
 			price: 0.99,
 			image: "Photos/structural/board-wax-image.webp",
+         thumb: "Photos/products/product-009/board-wax-image-thumb.webp",
 			description:
 				"Made with food grade bees wax, mineral oil, and vitamin e oil.",
 			specs: ["Size: 8 oz"],
