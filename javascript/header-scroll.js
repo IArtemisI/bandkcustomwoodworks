@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
    const recalcHidePoint = () => {
       // Layout read happens here (not during scroll), on load/resize only
-      hidePoint = hero.offsetHeight * 0.5;
+      hidePoint = hero.getBoundingClientRect().height * 0.5;
    };
    
    const updateHeaders = () => {
