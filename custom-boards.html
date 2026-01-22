@@ -5,11 +5,13 @@
    <meta charset="UTF-8" />
    <title>Custom Boards – B&K Custom Woodworks</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="description" content="Handcrafted custom made cutting boards. "/>
    <link rel="stylesheet" href="main-style.css" />
-
+   
    <link rel="preload" href="fonts/eagle-lake-regular.woff2" as="font" type="font/woff2" crossorigin>
    <link rel="preload" href="fonts/scope-one-regular.woff2" as="font" type="font/woff2" crossorigin>
-   
+   <link rel="preload" as="image" href="Photos/structural/custom-board-hero-800.webp" imagesrcset="Photos/structural/custom-board-hero-640.webp 640w, Photos/structural/custom-board-hero-800.webp 800w, Photos/structural/custom-board-hero-960.webp 960w, Photos/structural/custom-board-hero-1280.webp 1280w, Photos/structural/custom-board-hero-1920.webp 1920w" imagesizes="(max-width: 700px) 100vw, 1200px" fetchpriority="high">
+
    <link rel="preload" href="fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
    <noscript><link rel="stylesheet" href="fonts.css"></noscript>
 </head>
@@ -19,7 +21,7 @@
    <header class="desktop-header">
       <nav class="desktop-nav">
          <a href="index.html" class="nav-brand">B&amp;K Custom Woodworks</a>
-
+         
          <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
@@ -30,119 +32,136 @@
                <a href="cart.html" class="nav-cart-link" aria-label="View cart">
                   <img src="Photos/icons/shopping-cart.svg" alt="" class="nav-cart-icon" />
                   <span class="cart-badge" data-cart-count>0</span></a>
-            </li>
+               </li>
+            </ul>
+         </nav>
+      </header>
+      
+      <header class="mobile-header">
+         <div class="mobile-left">
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+               <span></span><span></span><span></span>
+            </button>
+            
+            <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
+         </div>
+         
+         <a href="cart.html" class="mobile-cart-link" aria-label="View cart">
+            <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon" />
+            <span class="cart-badge" data-cart-count>0</span>
+         </a>
+      </header>
+      
+      <nav class="nav-overlay">
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="custom-boards.html">Custom</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="index.html#contact-us">Contact</a></li>
          </ul>
       </nav>
-   </header>
-
-   <header class="mobile-header">
-      <div class="mobile-left">
-         <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-         </button>
-
-         <a href="index.html" class="mobile-brand">B&amp;K Custom Woodworks</a>
-      </div>
-
-      <a href="cart.html" class="mobile-cart-link" aria-label="View cart">
-         <img src="Photos/icons/shopping-cart.svg" alt="" class="mobile-cart-icon" />
-         <span class="cart-badge" data-cart-count>0</span>
-      </a>
-   </header>
-
-   <nav class="nav-overlay">
-      <ul>
-         <li><a href="index.html">Home</a></li>
-         <li><a href="products.html">Shop</a></li>
-         <li><a href="custom-boards.html">Custom</a></li>
-         <li><a href="faqs.html">FAQs</a></li>
-         <li><a href="index.html#contact-us">Contact</a></li>
-      </ul>
-   </nav>
-
-   <!-- Back To Top Button -->
-   <button class="back-to-top" aria-label="Back to top">
-      <img src="Photos/icons/up-arrow.svg" alt="Back to top" />
-   </button>
-
-   <!-- #endregion -->
-
-   <!--Hero Section--><!--#region-->
-
-   <section class="custom-hero-banner" data-hero>
-      <div class="custom-hero-overlay"></div>
-
-      <div class="custom-hero-title-wrap">
-         <h1>Design Your Custom Board</h1>
-      </div>
-   </section>
-
-   <!--#endregion-->
-
-   <!--Tab Navigation --><!--#region-->
-   <main class="custom-board-form">
-      <nav class="custom-board-tabs" aria-label="Custom board tabs">
-         <button class="custom-board-tab" data-step="1">Step 1</button>
-         <button class="custom-board-tab" data-step="2">Step 2</button>
-         <button class="custom-board-tab" data-step="3">Step 3</button>
-         <button class="custom-board-tab" data-step="4">Step 4</button>
-         <button class="custom-board-tab" data-step="5">Step 5</button>
-         <button class="custom-board-tab" data-step="6">Step 6</button>
-         <button class="custom-board-tab" data-step="7">Step 7</button>
-
-         <span class="custom-board-underline"></span>
-      </nav>
-
+      
+      <!-- Back To Top Button -->
+      <button class="back-to-top" aria-label="Back to top">
+         <img src="Photos/icons/up-arrow.svg" alt="Back to top" />
+      </button>
+      
+      <!-- #endregion -->
+      
+      <!--Hero Section--><!--#region-->
+      <section class="custom-hero-banner" data-hero>
+         <img
+         class="custom-hero-media"
+         src="Photos/structural/custom-board-hero-1280.webp"
+         srcset="
+         Photos/structural/custom-board-hero-640.webp 640w,
+         Photos/structural/custom-board-hero-800.webp 800w,
+         Photos/structural/custom-board-hero-960.webp 960w,
+         Photos/structural/custom-board-hero-1280.webp 1280w,
+         Photos/structural/custom-board-hero-1920.webp 1920w
+         "
+         sizes="(max-width: 700px) 100vw, 1200px"
+         alt=""
+         width="1920"
+         height="1080"
+         fetchpriority="high"
+         decoding="async"
+         />
+         
+         <div class="custom-hero-overlay"></div>
+         
+         <div class="custom-hero-title-wrap">
+            <h1>Design Your Custom Board</h1>
+         </div>
+      </section>
+      
       <!--#endregion-->
-
-      <!--Form --><!--#region-->
-      <form name="custom-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
+      
+      <!--Tab Navigation --><!--#region-->
+      <main class="custom-board-form">
+         <nav class="custom-board-tabs" aria-label="Custom board tabs">
+            <button class="custom-board-tab" data-step="1">Step 1</button>
+            <button class="custom-board-tab" data-step="2">Step 2</button>
+            <button class="custom-board-tab" data-step="3">Step 3</button>
+            <button class="custom-board-tab" data-step="4">Step 4</button>
+            <button class="custom-board-tab" data-step="5">Step 5</button>
+            <button class="custom-board-tab" data-step="6">Step 6</button>
+            <button class="custom-board-tab" data-step="7">Step 7</button>
+            
+            <span class="custom-board-underline"></span>
+         </nav>
+         
+         <!--#endregion-->
+         
+         <!--Form --><!--#region-->
+         <form name="custom-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
          action="form-sent.html" enctype="multipart/form-data">
          <input type="hidden" name="form-name" value="custom-request" />
-
+         
          <p style="display: none">
             <label>Do not fill this out if you are human: <input name="bot-field" /></label>
          </p>
          <!--#endregion-->
-
+         
          <!-- Step 1 Contact Info--><!--#region-->
-
+         
          <section class="custom-board-slide active" data-step="1">
             <header>
                <h2>How can we contact you?</h2>
             </header>
-
+            
             <label class="custom-board-contact">
                <span class="custom-board-contact-title">Name</span>
                <input type="text" name="name" placeholder="Your name" required />
             </label>
-
+            
             <label class="custom-board-contact">
                <span class="custom-board-contact-title">Email</span>
                <input type="email" name="email" placeholder="you@example.com" required />
             </label>
-
+            
             <label class="custom-board-contact">
                <span class="custom-board-contact-title">Phone Number</span>
                <input type="tel" name="phone" placeholder="000-000-0000" required inputmode="tel"
-                  autocomplete="tel" maxlength="18"
-                  pattern="^(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
-                  title="000-000-0000 or 1-000-000-0000" />
+               autocomplete="tel" maxlength="18"
+               pattern="^(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+               title="000-000-0000 or 1-000-000-0000" />
             </label>
-
+            
             <p class="cb-error-msg" id="contact-error" style="display: none">
                Please enter your name, a valid email, and a 10-digit phone number.
             </p>
          </section>
-
+         
          <!--#endregion-->
-
+         
          <!-- Step 2 Board Size --><!--#region-->
          <section class="custom-board-slide" data-step="2">
             <header>
                <h2>Choose the perfect size</h2>
             </header>
-
+            
             <div class="custom-board-size-layout">
                <div class="custom-board-size-fields">
                   <label class="custom-board-size">
@@ -157,7 +176,7 @@
                         <option>22 in</option>
                      </select>
                   </label>
-
+                  
                   <label class="custom-board-size">
                      <span class="custom-board-size-title">Width</span>
                      <select name="width">
@@ -169,7 +188,7 @@
                         <option>24 in</option>
                      </select>
                   </label>
-
+                  
                   <label class="custom-board-size">
                      <span class="custom-board-size-title">Height</span>
                      <select name="height">
@@ -180,7 +199,7 @@
                      </select>
                   </label>
                </div>
-
+               
                <!-- Right side (image) 4:5 ratio 1000x1250 -->
                <aside class="custom-board-size-image" aria-label="Board size preview">
                   <img src="Photos/structural/size-preview.webp" alt="Example cutting board size reference" />
@@ -188,131 +207,131 @@
             </div>
          </section>
          <!--#endregion-->
-
+         
          <!-- Step 3 Wood Types--><!--#region-->
          <section class="custom-board-slide" data-step="3">
             <header>
                <h2>Choose one or more hardwoods</h2>
             </header>
-
+            
             <fieldset class="cb-checkbox-grid">
                <legend class="visually-hidden">Wood Types</legend>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="woods[]" value="purple-heart" />
                   <img src="Photos/wood-types/purpleheart.webp" alt="Purple Heart wood grain" />
                   <span>Purple Heart</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="woods[]" value="bodark" />
                   <img src="Photos/wood-types/bodark.webp" alt="Bodark wood grain" />
                   <span>Bodark</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="woods[]" value="bloodwood" />
                   <img src="Photos/wood-types/bloodwood.webp" alt="Bloodwood wood grain" />
                   <span>Bloodwood</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="woods[]" value="padauk" />
                   <img src="Photos/wood-types/padauk.webp" alt="African Padauk wood grain" />
                   <span>African Padauk</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="woods[]" value="zebrawood" />
                   <img src="Photos/wood-types/zebrawood.webp" alt="Zebrawood grain" />
                   <span>Zebrawood</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="woods[]" value="walnut" />
                   <img src="Photos/wood-types/blackwalnut.webp" alt="Black Walnut grain" />
                   <span>Black Walnut</span>
                </label>
-
+               
                <div class="cb-other-option">
                   <label class="cb-other-option-label">
                      <span>Have a special type of wood in mind?</span>
                   </label>
                   <textarea name="other_wood" placeholder="Your ideas here" class="cb-other-input cb-autogrow"
-                     rows="3"></textarea>
+                  rows="3"></textarea>
                </div>
             </fieldset>
          </section>
          <!--#endregion-->
-
+         
          <!-- Step 4 Patterns--><!--#region-->
-
+         
          <section class="custom-board-slide" data-step="4">
             <header>
                <h2>Select a design style.</h2>
             </header>
-
+            
             <fieldset class="cb-checkbox-grid">
                <legend class="visually-hidden">Patterns</legend>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="patterns[]" value="checkerboard" />
                   <img src="Photos/patterns/checkerboard.webp" alt="Checkerboard Pattern" />
                   <span>Checkerboard</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="patterns[]" value="staircase" />
                   <img src="Photos/patterns/staircase.webp" alt="Staircase Pattern" />
                   <span>Steps</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="patterns[]" value="chevron" />
                   <img src="Photos/patterns/chevron.webp" alt="Chevron Pattern" />
                   <span>Chevron</span>
                </label>
-
+               
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="patterns[]" value="stripes" />
                   <img src="Photos/patterns/stripes.webp" alt="Stripe Pattern" />
                   <span>Striped</span>
                </label>
-
+               
                <div class="cb-other-option">
                   <label class="cb-other-option-label">
                      <span>Have a design in mind?</span>
                   </label>
                   <textarea name="other_pattern" placeholder="Your ideas here" class="cb-other-input cb-autogrow"
-                     rows="3"></textarea>
+                  rows="3"></textarea>
                </div>
             </fieldset>
          </section>
          <!--#endregion-->
-
+         
          <!-- Step 5 Features--><!--#region-->
          <section class="custom-board-slide" data-step="5">
             <header>
                <h2>Select your desired features</h2>
             </header>
-
+            
             <fieldset class="cb-checkbox-grid">
                <legend class="visually-hidden">Board Features</legend>
-
+               
                <!-- Juice Groove -->
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="features[]" value="juice-groove" />
                   <img src="Photos/board-features/juice-groove.webp" alt="Juice groove example" />
                   <span>Juice Groove</span>
                </label>
-
+               
                <!-- Feet -->
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="features[]" value="feet" />
                   <img src="Photos/board-features/feet.webp" alt="Rubber feet example" />
                   <span>Feet</span>
                </label>
-
+               
                <!-- Handles -->
                <label class="cb-checkbox-option">
                   <input type="checkbox" name="features[]" value="handles" />
@@ -322,101 +341,101 @@
             </fieldset>
          </section>
          <!--#endregion-->
-
+         
          <!--Step 6 Engravings--><!--#region-->
          <section class="custom-board-slide" data-step="6">
             <header>
                <h2>Custom engraving (Optional)</h2>
             </header>
-
+            
             <label class="custom-board-engraving">
                <span class="custom-board-engraving-title">What would you like?</span>
                <textarea name="engraving" rows="5" class="cb-autogrow"
-                  placeholder="Names, dates, logos, symbols..."></textarea>
+               placeholder="Names, dates, logos, symbols..."></textarea>
             </label>
-
+            
             <div class="custom-board-engraving">
                <span class="custom-board-engraving-title">Upload files or images (optional)</span>
-
+               
                <input type="file" name="engraving_file_1" accept="image/*,.pdf" id="engraving_file_1" />
                <input type="file" name="engraving_file_2" accept="image/*,.pdf" id="engraving_file_2" />
                <input type="file" name="engraving_file_3" accept="image/*,.pdf" id="engraving_file_3" />
             </div>
-
+            
             <input type="hidden" name="engraving_files_names" id="engraving_files_names" value="" />
             <div class="cb-file-names" id="cb-file-names" aria-live="polite"></div>
          </section>
          <!--#endregion-->
-
+         
          <!--Step 7 Review--><!--#region-->
-
+         
          <section class="custom-board-slide" data-step="7">
             <header>
                <h2>Review & Submit</h2>
             </header>
-
+            
             <div class="cb-review">
                <div class="cb-review-section">
                   <h3>Contact Info</h3>
                   <p id="review-contact"></p>
                </div>
-
+               
                <div class="cb-review-section">
                   <h3>Board Size</h3>
                   <p id="review-size"></p>
                </div>
-
+               
                <div class="cb-review-section">
                   <h3>Wood Selection</h3>
                   <div id="review-woods"></div>
                </div>
-
+               
                <div class="cb-review-section">
                   <h3>Pattern</h3>
                   <div id="review-pattern"></div>
                </div>
-
+               
                <div class="cb-review-section">
                   <h3>Features</h3>
                   <p id="review-features"></p>
                </div>
-
+               
                <div class="cb-review-section">
                   <h3>Engraving</h3>
                   <p id="review-engraving"></p>
                </div>
-
+               
                <div class="cb-review-section">
                   <h3>Uploaded Files</h3>
                   <p id="review-engraving-files"></p>
                </div>
-
+               
                <label class="review-textbox">
                   <span class="review-textbox-title">
                      Anything else we should know?
                   </span>
                   <textarea name="final_notes" rows="4" class="cb-autogrow"
-                     placeholder="Special requests, deadlines, inspiration, etc."></textarea>
+                  placeholder="Special requests, deadlines, inspiration, etc."></textarea>
                </label>
-
+               
                <button type="submit" class="custom-board-submit">
                   Send Custom Request
                </button>
             </div>
          </section>
-
+         
          <!--#endregion-->
-
+         
          <!--Buttons--><!--#region-->
          <div class="custom-board-button">
             <button type="button" class="custom-board-back" disabled>Back</button>
-
+            
             <button type="button" class="custom-board-next">Next</button>
          </div>
       </form>
    </main>
    <!--#endregion-->
-
+   
    <!--Footer--><!--#region-->
    <footer class="site-footer">
       <div class="footer-top">
@@ -428,29 +447,29 @@
             <li><a href="index.html#contact-us">Contact</a></li>
          </ul>
       </div>
-
+      
       <div class="footer-divider"></div>
-
+      
       <div class="footer-social">
          <a href="https://www.facebook.com/groups/273420570637837" class="facebook-link" target="_blank">
             Facebook
          </a>
       </div>
-
+      
       <div class="footer-divider"></div>
-
+      
       <div class="footer-bottom">
          <div class="footer-legal">
             <a href="privacy.html">Privacy Policy</a>
             <span>•</span>
             <a href="terms.html">Terms & Conditions</a>
          </div>
-
+         
          <p class="footer-copy">© 2024 B&K Custom Woodworks</p>
       </div>
    </footer>
    <!--#endregion-->
-
+   
    <!--Scripts--><!--#region-->
    <script src="javascript/cart.js" defer></script>
    <script src="javascript/navigation.js" defer></script>
