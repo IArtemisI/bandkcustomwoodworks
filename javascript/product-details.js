@@ -1,147 +1,206 @@
+// product-details.js
+
 document.addEventListener("DOMContentLoaded", () => {
-	const $ = (sel, root = document) => root.querySelector(sel);
+  const $ = (sel, root = document) => root.querySelector(sel);
 
-	// Pull id from URL (?id=product-001)
-	const params = new URLSearchParams(window.location.search);
-	const productId = params.get("id");
-	const product = productId ? window.BKProducts?.[productId] : null;
+  // Pull elements
+  const cardEl = $(".product-detail-card");
+  const titleEl = $("#productTitle");
+  const priceEl = $("#productPrice");
+  const descEl = $("#productDesc");
+  const imgEl = $("#productImage");
+  const specsEl = $("#productSpecs");
+  const crumbEl = $("#breadcrumbProduct");
+  const addBtn = $("#addToCartBtn");
+  const thumbsEl = $(".product-detail-thumbs");
 
-	const cardEl = $(".product-detail-card");
-	const titleEl = $("#productTitle");
-	const priceEl = $("#productPrice");
-	const descEl = $("#productDesc");
-	const imgEl = $("#productImage");
-	const specsEl = $("#productSpecs");
-	const crumbEl = $("#breadcrumbProduct");
-	const addBtn = $("#addToCartBtn");
-	const thumbsEl = $(".product-detail-thumbs");
+  const FALLBACK_IMG = "Photos/icons/under-construction.webp";
 
-	const FALLBACK_IMG = "Photos/icons/under-construction.webp";
+  /* =========================================================
+     Helpers for your image naming:
+     base = "Photos/products/product-001/product1-1"
+     files: base-640.webp, base-960.webp, base-1280.webp
+     ========================================================= */
+  const buildSrcSet = (base) =>
+    `${base}-640.webp 640w, ${base}-960.webp 960w, ${base}-1280.webp 1280w`;
 
-	const renderNotFound = () => {
-		if (cardEl) {
-			cardEl.innerHTML = `
+  const pickFallbackSrc = (base) => `${base}-960.webp`;
+
+  const looksLikeFullFile = (s) => /\.(avif|webp|jpe?g|png|gif|svg)$/i.test(s || "");
+
+  const setMainImage = (srcOrBase) => {
+    if (!imgEl) return;
+
+    // Empty? fallback
+    if (!srcOrBase) {
+      imgEl.removeAttribute("srcset");
+      imgEl.removeAttribute("sizes");
+      imgEl.src = FALLBACK_IMG;
+      return;
+    }
+
+    // If it's already a full filename (ends with .webp/.jpg/etc), use as-is
+    // (This supports product-009 which only has "image": "...something.webp")
+    if (looksLikeFullFile(srcOrBase) || srcOrBase === FALLBACK_IMG) {
+      imgEl.removeAttribute("srcset");
+      imgEl.removeAttribute("sizes");
+      imgEl.src = srcOrBase;
+      return;
+    }
+
+    // Otherwise treat it as a base path and apply srcset
+    imgEl.src = pickFallbackSrc(srcOrBase);
+    imgEl.srcset = buildSrcSet(srcOrBase);
+    imgEl.sizes = "(max-width: 900px) 100vw, 660px";
+  };
+
+  /* =========================================================
+     Get product from URL (?id=product-001)
+     ========================================================= */
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+  const product = productId ? window.BKProducts?.[productId] : null;
+
+  const renderNotFound = () => {
+    if (cardEl) {
+      cardEl.innerHTML = `
         <h2>Product not found</h2>
         <p>This item may no longer be available.</p>
         <a href="products.html" class="shop-banner-button">Back to Shop</a>
       `;
-		}
-		if (crumbEl) crumbEl.textContent = "Product Not Found";
-		document.title = "Product Not Found – B&K Custom Woodworks";
-	};
+    }
+    if (crumbEl) crumbEl.textContent = "Product Not Found";
+    document.title = "Product Not Found – B&K Custom Woodworks";
+  };
 
-	if (!product) {
-		renderNotFound();
-		return;
-	}
+  if (!product) {
+    renderNotFound();
+    return;
+  }
 
-	/* -- TEXT CONTENT -- */
+  /* =========================================================
+     TEXT CONTENT
+     ========================================================= */
+  if (titleEl) titleEl.textContent = product.title;
+  if (priceEl) priceEl.textContent = `$${Number(product.price).toFixed(2)}`;
+  if (descEl) descEl.textContent = product.description || "";
+  if (crumbEl) crumbEl.textContent = product.title;
 
-	if (titleEl) titleEl.textContent = product.title;
-	if (priceEl) priceEl.textContent = `$${Number(product.price).toFixed(2)}`;
-	if (descEl) descEl.textContent = product.description || "";
-	if (crumbEl) crumbEl.textContent = product.title;
+  document.title = `${product.title} – B&K Custom Woodworks`;
 
-	document.title = `${product.title} – B&K Custom Woodworks`;
+  /* =========================================================
+     IMAGE LOGIC
+     ========================================================= */
+  // Prefer product.images[] (multiple). Otherwise fall back to product.image (single) or FALLBACK.
+  const images =
+    Array.isArray(product.images) && product.images.length
+      ? product.images
+      : [product.image || FALLBACK_IMG];
 
-	/* -- IMAGE LOGIC -- */
+  let currentIndex = 0;
 
-	const images =
-		Array.isArray(product.images) && product.images.length
-			? product.images
-			: [product.image || FALLBACK_IMG];
+  // Main image (LCP)
+  if (imgEl) {
+    imgEl.alt = product.title;
 
-	let currentIndex = 0;
+    // LCP hints
+    imgEl.loading = "eager";
+    imgEl.fetchPriority = "high";
+    imgEl.decoding = "async";
 
-	if (imgEl) {
-		imgEl.src = images[0];
-		imgEl.alt = product.title;
-	}
+    setMainImage(images[0]);
+  }
 
-	// Build thumbnails (images[1]–images[3])
-	if (thumbsEl) {
-		thumbsEl.innerHTML = "";
+  // Thumbnails (images[1]–images[3])
+  if (thumbsEl) {
+    thumbsEl.innerHTML = "";
 
-		images.slice(1, 4).forEach((src, index) => {
-			const btn = document.createElement("button");
-			btn.className = "product-thumb";
-			btn.type = "button";
-			btn.setAttribute("aria-label", `Thumbnail ${index + 1}`);
+    images.slice(1, 4).forEach((srcOrBase, index) => {
+      const btn = document.createElement("button");
+      btn.className = "product-thumb";
+      btn.type = "button";
+      btn.setAttribute("aria-label", `Thumbnail ${index + 1}`);
 
-			const img = document.createElement("img");
-			img.src = src || FALLBACK_IMG;
-			img.alt = "";
+      const img = document.createElement("img");
 
-			btn.appendChild(img);
+      // If this is a "base", use -640.webp. If it's a full filename, use it directly.
+      img.src = looksLikeFullFile(srcOrBase) ? srcOrBase : `${srcOrBase}-640.webp`;
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
 
-			btn.addEventListener("click", () => {
-				currentIndex = index + 1; // keep cycling logic in sync
-				if (imgEl) imgEl.src = images[currentIndex] || FALLBACK_IMG;
+      btn.appendChild(img);
 
-				thumbsEl
-					.querySelectorAll(".product-thumb")
-					.forEach((b) => b.classList.remove("is-active"));
+      btn.addEventListener("click", () => {
+        currentIndex = index + 1;
+        setMainImage(images[currentIndex]);
 
-				btn.classList.add("is-active");
-			});
+        thumbsEl
+          .querySelectorAll(".product-thumb")
+          .forEach((b) => b.classList.remove("is-active"));
 
-			thumbsEl.appendChild(btn);
-		});
-	}
+        btn.classList.add("is-active");
+      });
 
-	// Click main image to cycle (mobile-friendly)
-	if (imgEl && images.length > 1) {
-		imgEl.addEventListener("click", () => {
-			currentIndex = (currentIndex + 1) % images.length;
-			imgEl.src = images[currentIndex] || FALLBACK_IMG;
+      thumbsEl.appendChild(btn);
+    });
+  }
 
-			if (thumbsEl) {
-				thumbsEl
-					.querySelectorAll(".product-thumb")
-					.forEach((b) => b.classList.remove("is-active"));
+  // Click main image to cycle (mobile-friendly)
+  if (imgEl && images.length > 1) {
+    imgEl.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      setMainImage(images[currentIndex]);
 
-				const thumbIndex = currentIndex - 1;
-				const thumbButtons = thumbsEl.querySelectorAll(".product-thumb");
+      if (thumbsEl) {
+        thumbsEl
+          .querySelectorAll(".product-thumb")
+          .forEach((b) => b.classList.remove("is-active"));
 
-				if (thumbIndex >= 0 && thumbIndex < thumbButtons.length) {
-					thumbButtons[thumbIndex].classList.add("is-active");
-				}
-			}
-		});
-	}
+        const thumbIndex = currentIndex - 1;
+        const thumbButtons = thumbsEl.querySelectorAll(".product-thumb");
 
-	/* -- SPECS -- */
+        if (thumbIndex >= 0 && thumbIndex < thumbButtons.length) {
+          thumbButtons[thumbIndex].classList.add("is-active");
+        }
+      }
+    });
+  }
 
-	if (specsEl) {
-		specsEl.innerHTML = "";
-		(product.specs || []).forEach((spec) => {
-			const li = document.createElement("li");
-			const idx = spec.indexOf(":");
+  /* =========================================================
+     SPECS
+     ========================================================= */
+  if (specsEl) {
+    specsEl.innerHTML = "";
+    (product.specs || []).forEach((spec) => {
+      const li = document.createElement("li");
+      const idx = spec.indexOf(":");
 
-			if (idx !== -1) {
-				const label = spec.slice(0, idx + 1);
-				const value = spec.slice(idx + 1).trim();
-				li.innerHTML = `<strong>${label}</strong> ${value}`;
-			} else {
-				li.textContent = spec;
-			}
+      if (idx !== -1) {
+        const label = spec.slice(0, idx + 1);
+        const value = spec.slice(idx + 1).trim();
+        li.innerHTML = `<strong>${label}</strong> ${value}`;
+      } else {
+        li.textContent = spec;
+      }
 
-			specsEl.appendChild(li);
-		});
-	}
+      specsEl.appendChild(li);
+    });
+  }
 
-	/* -- CART -- */
+  /* =========================================================
+     CART
+     ========================================================= */
+  const inStock = !!product.inStock;
 
-	const inStock = !!product.inStock;
+  if (addBtn) {
+    addBtn.disabled = !inStock;
+    addBtn.textContent = inStock ? "Add to Cart" : "Out of Stock";
 
-	if (addBtn) {
-		addBtn.disabled = !inStock;
-		addBtn.textContent = inStock ? "Add to Cart" : "Out of Stock";
-
-		addBtn.addEventListener("click", () => {
-			if (!window.BKCart?.addToCart) return;
-			window.BKCart.addToCart(productId, 1);
-			window.location.href = "cart.html";
-		});
-	}
+    addBtn.addEventListener("click", () => {
+      if (!window.BKCart?.addToCart) return;
+      window.BKCart.addToCart(productId, 1);
+      window.location.href = "cart.html";
+    });
+  }
 });

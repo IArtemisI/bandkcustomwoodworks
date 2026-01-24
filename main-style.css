@@ -1115,7 +1115,7 @@
    height: clamp(260px, 22vw, 340px);
    object-fit: cover;
    display: block;
-   pointer-events: none;
+ 
    user-select: none;
 }
 
@@ -1214,7 +1214,6 @@
    background-position: center;
    display: flex;
    align-items: flex-end;
-   /*pushes to bottom*/
    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
    background-color: #ede0d4;
    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
@@ -1225,7 +1224,6 @@
    max-width: 1200px;
    margin: 0 auto;
    padding: 0 clamp(16px, 5vw, 40px) 10px;
-   
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -1254,7 +1252,6 @@
 }
 
 .crumb-sep {
-   /*arrow*/
    margin: 0 8px;
    opacity: 0.55;
 }
@@ -1263,7 +1260,7 @@
    font-weight: 500;
 }
 
-/* Right-side back link */
+
 .product-details-backlink {
    font-size: clamp(18px, 4vw, 24px);
    letter-spacing: 0.06em;
@@ -1312,7 +1309,7 @@
 
 .product-detail-grid {
    display: grid;
-   grid-template-columns: 500px 1fr auto;
+   grid-template-columns: 1.1fr 0.9fr;
    gap: clamp(18px, 4vw, 44px);
    align-items: start;
 }
@@ -1432,7 +1429,7 @@
 
 .product-detail-buy {
    background: #9b857b;
-   color: #ffffff;
+   color: #391915;
    border: 2px solid rgba(57, 25, 21, 0.18);
    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
@@ -1469,14 +1466,11 @@
 }
 
 @media (max-width: 900px) {
-   
-   /* Stack layout: image full width on top, then thumbs, then info */
    .product-detail-grid {
       grid-template-columns: 1fr;
       gap: clamp(16px, 4vw, 24px);
    }
    
-   /* Make sure the media section stays on top */
    .product-detail-media {
       order: 1;
    }
@@ -1485,7 +1479,6 @@
       order: 2;
    }
    
-   /* Full-width main image at top */
    .product-detail-main-img {
       width: 100%;
       height: clamp(260px, 65vw, 420px);
@@ -1493,7 +1486,6 @@
       border-radius: 16px;
    }
    
-   /* Thumbnails below the main image */
    .product-detail-thumbs {
       margin-top: 12px;
       display: grid;
@@ -1505,7 +1497,6 @@
       height: 72px;
    }
    
-   /* Make the text spacing nicer after the image block */
    .product-detail-title {
       margin-top: 6px;
    }
